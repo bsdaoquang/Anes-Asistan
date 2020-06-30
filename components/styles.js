@@ -18,7 +18,7 @@ export const styles = StyleSheet.create({
     padding: 8
   },
   headerTitle:{
-    fontSize: 24,
+    fontSize: 18,
     color: '#00bfa5',
     fontFamily: 'sans-serif',
     textAlign: 'center',
@@ -27,7 +27,7 @@ export const styles = StyleSheet.create({
   },
   headerSubTitle:{
     textAlign: 'center',
-    fontSize: 20,
+    fontSize: 16,
     color: '#777',
     fontWeight: '300',
     fontFamily: 'sans-serif'
@@ -81,14 +81,14 @@ export const styles = StyleSheet.create({
     paddingVertical: 8,
   },
   titleInputDesc:{
-    fontSize: 13,
+    fontSize: 11,
     color: '#c1c1c1',
     fontStyle: 'italic',
     paddingHorizontal: 5
   },
   titleInputText:{
     color: '#777',
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: '300',
     textAlign: 'left',
     paddingVertical: 5
@@ -99,32 +99,39 @@ export const styles = StyleSheet.create({
     flex:4,
     flexDirection: 'row',
     borderRadius: 4,
-    borderStyle: 'solid',
-    borderWidth: 1,
-    borderColor: '#c1c1c1'
   },
+  buttonContainVertical:{
+    flex:4,
+    borderRadius: 4,
+  },
+  
   buttonNonSelect:{
     flex: 1,
     flexDirection: 'row',
     backgroundColor: '#ededed',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    borderStyle: 'solid',
+    borderWidth: 0.5,
+    borderColor: '#c1c1c1',
+    height: 40
   },
   buttonSelect :{
     flex: 1,
     flexDirection: 'row',
     backgroundColor: '#00bfa5',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    height: 40
   },
 
   buttonTextSelect:{
-    fontSize: 14,
+    fontSize: 12,
     fontFamily: 'sans-serif',
     color: '#fafafa'
   },
   buttonTextNonSelect:{
-    fontSize: 14,
+    fontSize: 12,
     fontFamily: 'sans-serif',
     color: '#777'
   },
