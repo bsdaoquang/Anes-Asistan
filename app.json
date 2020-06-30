@@ -3,6 +3,11 @@
     "name": "Anesthesia Assistant",
     "slug": "anesassitan",
     "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -26,9 +31,9 @@
       "config": {
         "googleMobileAdsAppId": "ca-app-pub-3940256099942544~1458002511"
       },
-
     "web": {
       "favicon": "./assets/favicon.png"
+      }
     }
   }
 }

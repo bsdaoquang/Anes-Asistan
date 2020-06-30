@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import {View, Text, TextInput, ScrollView, TouchableOpacity, TouchableWithoutFeedback, KeyboardAvoidingView, Keyboard} from 'react-native'
+
 import AdMob from '../components/AdMob'
+
 import {styles} from '../components/styles'
 import {t} from '../locales/index'
 
@@ -270,6 +272,10 @@ export default function NauseaVomiting(){
 	    </KeyboardAvoidingView>
 
 	    </ScrollView>
+
+	    <View>
+	    	<AdMob />
+	    </View>
 	</View>
 	)
 }
