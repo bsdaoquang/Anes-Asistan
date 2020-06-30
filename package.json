@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "expo": "~38.0.1",
+    "expo-ads-admob": "^8.2.1",
     "expo-localization": "~8.2.1",
     "expo-status-bar": "^1.0.0",
     "i18n": "^0.10.0",

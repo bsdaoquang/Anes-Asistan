@@ -1,6 +1,5 @@
-mport React from 'react'
+import React from 'react'
 import {View, Text} from 'react-native';
-import {styles} from '../styles_global/styles'
 import {AdMobBanner} from 'expo-ads-admob'
 
 export default function AdMob(){
@@ -9,7 +8,7 @@ export default function AdMob(){
       <AdMobBanner
         style={styles.bottomBanner}
         bannerSize = "fullBanner"
-        adUnitID = "ca-app-pub-6209888091137615/1563055691"
+        adUnitID = "ca-app-pub-6209888091137615/4493908153"
         serverPersonallizedAds = {false}
       />
     </View>

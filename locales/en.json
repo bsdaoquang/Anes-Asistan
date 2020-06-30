@@ -1,3 +1,20 @@
 {
   "nausea_voimiting": "Nausea and Voimiting",
+  "nausea_voimiting_desc": "Predicts risk of Postoperative Nausea and Vomiting (PONV)",
+  "nausea_voimiting_info": "Use in patients undergoing general anesthesia.",
+  "gender": "Gender",
+  "male": "Male",
+  "female": "Female",
+  "smoking_status": "Smoking Status",
+  "yes": "Yes",
+  "no": "No",
+  "history_ motion_sickness": "History of motion sickness or PONV",
+  "use_postoperative_opioid": "Use of postoperative opioids",
+  "point": "Points",
+  "apfel_score": "Apfel Score",
+  "rick_ponv": "24-hour risk of PONV",
+  "ponv_advice": "Consider prophylactic anti-emetics in patients with higher scores.",
+  "advice": "Advice",
+  "facts_figures": "FACTS & FIGURES",
+  "creator": "Creator"
 }

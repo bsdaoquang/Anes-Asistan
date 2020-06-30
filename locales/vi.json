@@ -1,3 +1,20 @@
 {
-	"nausea_voimiting": "nôn ói"
+  "nausea_voimiting": "Buồn nôn và nôn sau phẫu thuật",
+  "nausea_voimiting_desc": "Đánh giá nguy cơ buồn nôn và nôn sau phẫu thuật",
+  "nausea_voimiting_info": "Sử dụng trong những trường hợp gây mê toàn thân",
+  "gender": "Giới tính",
+  "male": "Nam",
+  "female": "Nữ",
+  "smoking_status": "Hút thuốc lá",
+  "yes": "Có",
+  "no": "Không",
+  "history_ motion_sickness": "Say tàu xe hoặc PONV",
+  "use_postoperative_opioid": "Có Opioids hậu phẫu",
+  "point": "Điểm",
+  "apfel_score": "Thang điểm Apfel",
+  "rick_ponv": "Nguy cơ PONV trong 24 giờ",
+  "ponv_advice": "Sử dụng thuốc chống nôn dự phòng cho những bệnh nhân có nguy cơ cao",
+  "advice": "Lời khuyên",
+  "facts_figures": "Đánh giá",
+  "creator": "Người tạo"
 }
