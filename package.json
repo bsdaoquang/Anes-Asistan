@@ -17,6 +17,8 @@
     "react": "~16.11.0",
     "react-dom": "~16.11.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.0.tar.gz",
+    "react-native-dropdown-picker": "^3.0.5",
+    "react-native-picker-dropdown": "^0.1.2",
     "react-native-web": "~0.11.7"
   },
   "devDependencies": {

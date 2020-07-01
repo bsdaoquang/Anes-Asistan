@@ -121,16 +121,16 @@ export default function DifficultAirway(){
 									 </TouchableOpacity>
 
 									 <TouchableOpacity
-										 style= {thyromental == 1 ? styles.buttonSelect : styles.buttonNonSelect}
-										 onPress={() => setThyromental(1)}>
-										 <Text style={thyromental == 1? styles.buttonTextSelect : styles.buttonTextNonSelect}>II</Text>
+										 style= {mallampati == 1 ? styles.buttonSelect : styles.buttonNonSelect}
+										 onPress={() => setMallampati(1)}>
+										 <Text style={mallampati == 1? styles.buttonTextSelect : styles.buttonTextNonSelect}>II</Text>
 										 <Text style={styles.titleInputDesc}>+1</Text>
 									 </TouchableOpacity>
 
 									 <TouchableOpacity
-										 style= {thyromental == 2 ? styles.buttonSelect : styles.buttonNonSelect}
-										 onPress={() => setThyromental(2)}>
-										 <Text style={thyromental == 2? styles.buttonTextSelect : styles.buttonTextNonSelect}>III - IV</Text>
+										 style= {mallampati == 2 ? styles.buttonSelect : styles.buttonNonSelect}
+										 onPress={() => setMallampati(2)}>
+										 <Text style={mallampati == 2? styles.buttonTextSelect : styles.buttonTextNonSelect}>III - IV</Text>
 										 <Text style={styles.titleInputDesc}>+2</Text>
 									 </TouchableOpacity>
 

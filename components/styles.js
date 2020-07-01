@@ -93,6 +93,41 @@ export const styles = StyleSheet.create({
     textAlign: 'left',
     paddingVertical: 5
   },
+  inputContent:{
+    flex: 4
+  },
+  unitContainInput:{
+    flex:2
+  },
+  input:{
+    marginHorizontal: 5,
+    flexDirection: 'row',
+    borderColor: '#777',
+    borderBottomWidth: 1,
+    textAlign: 'right',
+    paddingHorizontal: 10,
+    fontSize: 16,
+    fontWeight: 'bold',
+    fontFamily: 'sans-serif',
+    color: '#777',
+  },
+  alertText:{
+    color: '#ef9a9a',
+    fontSize: 12,
+    fontFamily: 'sans-serif',
+    padding: 5,
+    fontStyle: 'italic'
+  },
+  unitContainInput:{
+    flex: 2,
+    //paddingHorizontal: 8,
+    paddingVertical: 8,
+  },
+  unitTitle:{
+    color: '#777',
+    fontFamily: 'sans-serif',
+    textAlign: 'center'
+  },
 
   /*this is styles for radio button*/
   buttonContainHorizontal:{

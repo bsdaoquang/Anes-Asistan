@@ -62,28 +62,28 @@ export default function NauseaVomiting(){
 		              </View>
 
 		              <View style={styles.buttonContainHorizontal}>
-						<TouchableOpacity
-							style= {gender == 0 ? styles.buttonSelect : styles.buttonNonSelect}
-							onPress={() => setGender(0)}>
+										<TouchableOpacity
+											style= {gender == 0 ? styles.buttonSelect : styles.buttonNonSelect}
+											onPress={() => setGender(0)}>
 
-							<Text style={gender == 0? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('male')}</Text>
-							<Text style={styles.titleInputDesc}>+0</Text>
+											<Text style={gender == 0? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('male')}</Text>
+											<Text style={styles.titleInputDesc}>+0</Text>
 
-						</TouchableOpacity>
+										</TouchableOpacity>
 
-						<TouchableOpacity
-							style={gender == 1 ? styles.buttonSelect : styles.buttonNonSelect}
-							onPress={() => setGender(1)}>
+										<TouchableOpacity
+											style={gender == 1 ? styles.buttonSelect : styles.buttonNonSelect}
+											onPress={() => setGender(1)}>
 
-							<Text style={gender == 1? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('female')}</Text>
-							<Text style={styles.titleInputDesc}>+1</Text>
+											<Text style={gender == 1? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('female')}</Text>
+											<Text style={styles.titleInputDesc}>+1</Text>
 
-						</TouchableOpacity>
-		              </View>
-		            </View>
-		            {/*end input contain*/}
-	          	</View>
-	         	 {/*end from contain*/}
+										</TouchableOpacity>
+						              </View>
+						            </View>
+						            {/*end input contain*/}
+					          	</View>
+					         	 {/*end from contain*/}
 
 	         	 {/*This is form container*/}
 	          	<View style={styles.formContain}>
@@ -94,28 +94,28 @@ export default function NauseaVomiting(){
 		              </View>
 
 		              <View style={styles.buttonContainHorizontal}>
-						<TouchableOpacity
-							style= {smoke == 0 ? styles.buttonSelect : styles.buttonNonSelect}
-							onPress={() => setSmoke(0)}>
+										<TouchableOpacity
+											style= {smoke == 0 ? styles.buttonSelect : styles.buttonNonSelect}
+											onPress={() => setSmoke(0)}>
 
-							<Text style={smoke == 0? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('yes')}</Text>
-							<Text style={styles.titleInputDesc}>+0</Text>
+											<Text style={smoke == 0? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('yes')}</Text>
+											<Text style={styles.titleInputDesc}>+0</Text>
 
-						</TouchableOpacity>
+										</TouchableOpacity>
 
-						<TouchableOpacity
-							style={smoke == 1 ? styles.buttonSelect : styles.buttonNonSelect}
-							onPress={() => setSmoke(1)}>
+										<TouchableOpacity
+											style={smoke == 1 ? styles.buttonSelect : styles.buttonNonSelect}
+											onPress={() => setSmoke(1)}>
 
-							<Text style={smoke == 1? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('no')}</Text>
-							<Text style={styles.titleInputDesc}>+1</Text>
+											<Text style={smoke == 1? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('no')}</Text>
+											<Text style={styles.titleInputDesc}>+1</Text>
 
-						</TouchableOpacity>
-		              </View>
-		            </View>
-		            {/*end input contain*/}
-	          	</View>
-	         	 {/*end from contain*/}
+										</TouchableOpacity>
+						              </View>
+						            </View>
+						            {/*end input contain*/}
+					          	</View>
+					         	 {/*end from contain*/}
 
 	         	 {/*This is form container*/}
 	          	<View style={styles.formContain}>
@@ -126,30 +126,30 @@ export default function NauseaVomiting(){
 		              </View>
 
 		              <View style={styles.buttonContainHorizontal}>
-						<TouchableOpacity
-							style= {history == 1 ? styles.buttonSelect : styles.buttonNonSelect}
-							onPress={() => setHistory(1)}>
+										<TouchableOpacity
+											style= {history == 1 ? styles.buttonSelect : styles.buttonNonSelect}
+											onPress={() => setHistory(1)}>
 
-							<Text style={history == 1? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('yes')}</Text>
-							<Text style={styles.titleInputDesc}>+1</Text>
+											<Text style={history == 1? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('yes')}</Text>
+											<Text style={styles.titleInputDesc}>+1</Text>
 
-						</TouchableOpacity>
+										</TouchableOpacity>
 
-						<TouchableOpacity
-							style={history == 0 ? styles.buttonSelect : styles.buttonNonSelect}
-							onPress={() => setHistory(0)}>
+										<TouchableOpacity
+											style={history == 0 ? styles.buttonSelect : styles.buttonNonSelect}
+											onPress={() => setHistory(0)}>
 
-							<Text style={history == 0? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('no')}</Text>
-							<Text style={styles.titleInputDesc}>+0</Text>
+											<Text style={history == 0? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('no')}</Text>
+											<Text style={styles.titleInputDesc}>+0</Text>
 
-						</TouchableOpacity>
-		              </View>
-		            </View>
-		            {/*end input contain*/}
-	          	</View>
-	         	 {/*end from contain*/}
+										</TouchableOpacity>
+						              </View>
+						            </View>
+						            {/*end input contain*/}
+					          	</View>
+					         	 {/*end from contain*/}
 
-	         	{/*This is form container*/}
+	         		{/*This is form container*/}
 	          	<View style={styles.formContain}>
 		            {/*This is input contain*/}
 		            <View style={styles.inputContain}>
@@ -158,30 +158,30 @@ export default function NauseaVomiting(){
 		              </View>
 
 		              <View style={styles.buttonContainHorizontal}>
-						<TouchableOpacity
-							style= {opioid == 1 ? styles.buttonSelect : styles.buttonNonSelect}
-							onPress={() => setOpioid(1)}>
+										<TouchableOpacity
+											style= {opioid == 1 ? styles.buttonSelect : styles.buttonNonSelect}
+											onPress={() => setOpioid(1)}>
 
-							<Text style={opioid == 1? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('yes')}</Text>
-							<Text style={styles.titleInputDesc}>+1</Text>
+											<Text style={opioid == 1? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('yes')}</Text>
+											<Text style={styles.titleInputDesc}>+1</Text>
 
-						</TouchableOpacity>
+										</TouchableOpacity>
 
-						<TouchableOpacity
-							style={opioid == 0 ? styles.buttonSelect : styles.buttonNonSelect}
-							onPress={() => setOpioid(0)}>
+										<TouchableOpacity
+											style={opioid == 0 ? styles.buttonSelect : styles.buttonNonSelect}
+											onPress={() => setOpioid(0)}>
 
-							<Text style={opioid == 0? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('no')}</Text>
-							<Text style={styles.titleInputDesc}>+0</Text>
+											<Text style={opioid == 0? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('no')}</Text>
+											<Text style={styles.titleInputDesc}>+0</Text>
 
-						</TouchableOpacity>
-		              </View>
-		            </View>
-		            {/*end input contain*/}
-	          	</View>
-	         	 {/*end from contain*/}
+										</TouchableOpacity>
+						              </View>
+						            </View>
+						            {/*end input contain*/}
+					          	</View>
+					         	 {/*end from contain*/}
 
-	         	{/*This is result contain*/}
+	         		{/*This is result contain*/}
 		          <View style={styles.resultContain}>
 		              <View style={styles.resultTitle}>
 		                <Text style={styles.resultTitleText}>{point} {t('point')}</Text>
