@@ -102,7 +102,6 @@ export const styles = StyleSheet.create({
   },
   buttonContainVertical:{
     flex:4,
-    borderRadius: 4,
   },
 
   buttonNonSelect:{
@@ -116,7 +115,7 @@ export const styles = StyleSheet.create({
     borderColor: '#c1c1c1',
     padding: 5,
     minHeight: 40,
-    maxHeight: 50
+    maxHeight: 50,
   },
   buttonSelect :{
     flex: 1,
@@ -126,7 +125,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 5,
     minHeight: 40,
-    maxHeight: 50
+    maxHeight: 50,
   },
 
   buttonTextSelect:{

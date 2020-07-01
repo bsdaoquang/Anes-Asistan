@@ -6,10 +6,12 @@ import { StyleSheet, Text, View } from 'react-native';
 import NauseaVomiting from './formulas/nauseaAndVomiting'
 import PulmonaryComplication from './formulas/pulmonary_complication'
 import ASAPhysical from './formulas/asa_physical'
+import DifficultAirway from './formulas/difficult_airway'
 
 export default function App() {
   return (
-    <ASAPhysical />
+    <DifficultAirway />
+    //<ASAPhysical />
   	//<PulmonaryComplication />
     //<NauseaVomiting />
   );

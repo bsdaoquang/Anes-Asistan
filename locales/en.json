@@ -56,5 +56,19 @@
   "asa6": "Declared brain-dead patient whose organs are being removed for donor purposes",
   "asa_advice": "for emergency surgery, add suffix E. Emergency = delay would lead to “significant increase in the threat to life or body part”. ASA 2014",
 
-
+  "difficult_airway_title": "El-Ganzouri Risk Index (EGRI) for Difficult Airway",
+  "difficult_airway_desc": "Predicts risk of difficult airway",
+  "mount_open": "Mount opening",
+  "thyromental": "Thyromental distance",
+  "mallampati": "Modified Mallampati Classification",
+  "nick_movement": "Nick movement",
+  "ability_prognath": "Ability to prognath",
+  "weight": "Weight",
+  "history_difficult": "History of difficult intubation",
+  "none": "None",
+  "questionable": "Questionable",
+  "definite": "Definite",
+  "difficult_airway_advice": "Consider precautions such as video-assisted laryngoscopy or awake intubation in high-risk patients.",
+  "specificity": "93.8% Specificity",
+  "risk_difficult" : "Risk difficult airway"
 }

@@ -56,4 +56,19 @@
   "asa6": "Bệnh nhân chết não, chờ hiến tạng",
   "asa_advice": "Với bệnh nhân cấp cứu, thêm hậu tố E phía sau. Nếu trì hoãn có thể “gia tăng đáng kể mối đe dọa đến tính mạng hoặc các cơ quan cơ thể”. ASA 2014",
 
+  "difficult_airway_title": "Chỉ số El-Ganzouri (EGRI)",
+  "difficult_airway_desc": "Đánh giá nguy cơ đặt nội khí quản khó",
+  "mount_open": "Mở miệng",
+  "thyromental": "Khoảng cách cằm giáp",
+  "mallampati": "Phân loại mallampati",
+  "nick_movement": "Ngửa cổ tối đa",
+  "ability_prognath": "Tiên lượng (có yếu tố cằm lẹm)",
+  "weight": "Cân nặng",
+  "history_difficult": "Tiền sử đặt nội khí quản khó",
+  "none": "Không",
+  "questionable": "Không xác định",
+  "definite": "Có",
+  "difficult_airway_advice": "Chuẩn bị biện pháp phòng ngừa ở những bệnh nhân có nguy cơ cao như đèn đặt nội khí quản khó...",
+  "specificity": "Đặc hiệu 93.8%",
+  "risk_difficult": "Nguy cơ"
 }

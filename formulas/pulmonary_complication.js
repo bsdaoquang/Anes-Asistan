@@ -287,116 +287,116 @@ export default function PulmonaryComplication(){
 		              </View>
 
 		              <View style={styles.buttonContainHorizontal}>
-						<TouchableOpacity
-							style= {emergency == 8 ? styles.buttonSelect : styles.buttonNonSelect}
-							onPress={() => setEmergency(8)}>
+										<TouchableOpacity
+											style= {emergency == 8 ? styles.buttonSelect : styles.buttonNonSelect}
+											onPress={() => setEmergency(8)}>
 
-							<Text style={emergency == 8? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('yes')}</Text>
-							<Text style={styles.titleInputDesc}>+8</Text>
+											<Text style={emergency == 8? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('yes')}</Text>
+											<Text style={styles.titleInputDesc}>+8</Text>
 
-						</TouchableOpacity>
+										</TouchableOpacity>
 
-						<TouchableOpacity
-							style={emergency == 0 ? styles.buttonSelect : styles.buttonNonSelect}
-							onPress={() => setEmergency(0)}>
+										<TouchableOpacity
+											style={emergency == 0 ? styles.buttonSelect : styles.buttonNonSelect}
+											onPress={() => setEmergency(0)}>
 
-							<Text style={emergency == 0? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('no')}</Text>
-							<Text style={styles.titleInputDesc}>+0</Text>
+											<Text style={emergency == 0? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('no')}</Text>
+											<Text style={styles.titleInputDesc}>+0</Text>
 
-						</TouchableOpacity>
-		              </View>
-		            </View>
-		            {/*end input contain*/}
-	          	</View>
-	         	 {/*end from contain*/}
+										</TouchableOpacity>
+						              </View>
+						            </View>
+						            {/*end input contain*/}
+					          	</View>
+					         	 {/*end from contain*/}
 
-	         	{/*This is result contain*/}
-		          <View style={styles.resultContain}>
-		              <View style={styles.resultTitle}>
-		                <Text style={styles.resultTitleText}>{point} {t('point')}</Text>
-		              	<Text style={styles.resultTitleDesc}>{t('aricat_score')}</Text>
-		           </View>
+				         	{/*This is result contain*/}
+					          <View style={styles.resultContain}>
+					              <View style={styles.resultTitle}>
+					                <Text style={styles.resultTitleText}>{point} {t('point')}</Text>
+					              	<Text style={styles.resultTitleDesc}>{t('aricat_score')}</Text>
+					           </View>
 
-		           <Text style={styles.result}>{risk}%</Text>
-		           <Text style={styles.unit}>{t('risk_complication')}</Text>
-		          </View>
-		          {/*End result contain*/}
+					           <Text style={styles.result}>{risk}%</Text>
+					           <Text style={styles.unit}>{t('risk_complication')}</Text>
+					          </View>
+					          {/*End result contain*/}
 
-		         <View style={styles.formInfo}>
-		         	<Text style={styles.titleInfo}>{t('note')}</Text>
-              		<Text style={styles.infoText}>{t('complication_advice')}</Text>
-            	</View>
+					         <View style={styles.formInfo}>
+					         	<Text style={styles.titleInfo}>{t('note')}</Text>
+			              		<Text style={styles.infoText}>{t('complication_advice')}</Text>
+			            	</View>
 
-            	<View style={styles.formInfo}>
-            		<Text style={styles.titleInfo}>{t('facts_figures')}</Text>
+			            	<View style={styles.formInfo}>
+			            		<Text style={styles.titleInfo}>{t('facts_figures')}</Text>
 
-            		<View style={styles.formInfo2col}>
-	            		<View style={styles.infoCol1}>
-		            		<Text style={styles.infoText}>{t('aricat_score')}</Text>
-	            		</View>
+			            		<View style={styles.formInfo2col}>
+				            		<View style={styles.infoCol1}>
+					            		<Text style={styles.infoText}>{t('aricat_score')}</Text>
+				            		</View>
 
-	            		<View style={styles.infoCol2}>
-	            			<Text style={styles.infoText}>{t('risk_group')}</Text>
-	            		</View>
+				            		<View style={styles.infoCol2}>
+				            			<Text style={styles.infoText}>{t('risk_group')}</Text>
+				            		</View>
 
-	            		<View style={styles.infoCol2}>
-	            			<Text style={styles.infoText}>{t('risk_hospital')}</Text>
-	            		</View>
-	            	</View>
+				            		<View style={styles.infoCol2}>
+				            			<Text style={styles.infoText}>{t('risk_hospital')}</Text>
+				            		</View>
+				            	</View>
 
-	            	<View style={styles.formInfo2col}>
-	            		<View style={styles.infoCol1}>
-		            		<Text style={styles.infoText}>{'<26'}</Text>
-	            		</View>
+				            	<View style={styles.formInfo2col}>
+				            		<View style={styles.infoCol1}>
+					            		<Text style={styles.infoText}>{'<26'}</Text>
+				            		</View>
 
-	            		<View style={styles.infoCol2}>
-	            			<Text style={styles.infoText}>{t('low')}</Text>
-	            		</View>
+				            		<View style={styles.infoCol2}>
+				            			<Text style={styles.infoText}>{t('low')}</Text>
+				            		</View>
 
-	            		<View style={styles.infoCol2}>
-	            			<Text style={styles.infoText}>1.6%</Text>
-	            		</View>
-	            	</View>
+				            		<View style={styles.infoCol2}>
+				            			<Text style={styles.infoText}>1.6%</Text>
+				            		</View>
+				            	</View>
 
-	            	<View style={styles.formInfo2col}>
-	            		<View style={styles.infoCol1}>
-		            		<Text style={styles.infoText}>26 - 44</Text>
-	            		</View>
+				            	<View style={styles.formInfo2col}>
+				            		<View style={styles.infoCol1}>
+					            		<Text style={styles.infoText}>26 - 44</Text>
+				            		</View>
 
-	            		<View style={styles.infoCol2}>
-	            			<Text style={styles.infoText}>{t('intermediate')}</Text>
-	            		</View>
+				            		<View style={styles.infoCol2}>
+				            			<Text style={styles.infoText}>{t('intermediate')}</Text>
+				            		</View>
 
-	            		<View style={styles.infoCol2}>
-	            			<Text style={styles.infoText}>13.3%</Text>
-	            		</View>
-	            	</View>
+				            		<View style={styles.infoCol2}>
+				            			<Text style={styles.infoText}>13.3%</Text>
+				            		</View>
+				            	</View>
 
-	            	<View style={styles.formInfo2col}>
-	            		<View style={styles.infoCol1}>
-		            		<Text style={styles.infoText}>{'≥45'}</Text>
-	            		</View>
+				            	<View style={styles.formInfo2col}>
+				            		<View style={styles.infoCol1}>
+					            		<Text style={styles.infoText}>{'≥45'}</Text>
+				            		</View>
 
-	            		<View style={styles.infoCol2}>
-	            			<Text style={styles.infoText}>{t('high')}</Text>
-	            		</View>
+				            		<View style={styles.infoCol2}>
+				            			<Text style={styles.infoText}>{t('high')}</Text>
+				            		</View>
 
-	            		<View style={styles.infoCol2}>
-	            			<Text style={styles.infoText}>42.1%</Text>
-	            		</View>
-	            	</View>
+				            		<View style={styles.infoCol2}>
+				            			<Text style={styles.infoText}>42.1%</Text>
+				            		</View>
+				            	</View>
 
-            	</View>
+			            	</View>
 
-            	<View style={styles.formInfo}>
-            		<Text style={styles.infoText}>{t('creator')}: {'Dr. Jaume Canet'}</Text>
-				</View>
+			            	<View style={styles.formInfo}>
+			            		<Text style={styles.infoText}>{t('creator')}: {'Dr. Jaume Canet'}</Text>
+							</View>
 
-	      	</View>
-	      </TouchableWithoutFeedback>
-	    </KeyboardAvoidingView>
+				      	</View>
+				      </TouchableWithoutFeedback>
+				    </KeyboardAvoidingView>
 
-	    </ScrollView>
+				    </ScrollView>
 
 	</View>
 	)
