@@ -14,26 +14,26 @@ export default function NauseaVomiting(){
 	const [opioid, setOpioid] = useState(0)
 
 	var point = gender + smoke + history + opioid
-	var rick = 0
+	var risk = 0
 
 	switch(point) {
 	  case 0:
-	    rick = 10
+	    risk = 10
 	    break;
 	  case 1:
-	    rick = 21
+	    risk = 21
 	    break;
 	  case 2:
-	    rick = 39
+	    risk = 39
 	    break;
 	  case 3:
-	    rick = 61
+	    risk = 61
 	    break;
 	  case 4:
-	    rick = 79
+	    risk = 79
 	    break;
 	  default:
-	    rick = 0
+	    risk = 0
 	}
 
 	return(
@@ -188,8 +188,8 @@ export default function NauseaVomiting(){
 		              	<Text style={styles.resultTitleDesc}>{t('apfel_score')}</Text>
 		           </View>
 
-		           <Text style={styles.result}>{rick}%</Text>
-		           <Text style={styles.unit}>{t('rick_ponv')}</Text>
+		           <Text style={styles.result}>{risk}%</Text>
+		           <Text style={styles.unit}>{t('risk_ponv')}</Text>
 		          </View>
 		          {/*End result contain*/}
 
@@ -207,7 +207,7 @@ export default function NauseaVomiting(){
 	            		</View>
 
 	            		<View style={styles.infoCol2}>
-	            			<Text style={styles.infoText}>{t('rick_ponv')}</Text>
+	            			<Text style={styles.infoText}>{t('risk_ponv')}</Text>
 	            		</View>
 	            	</View>
 
