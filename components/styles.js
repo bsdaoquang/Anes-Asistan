@@ -99,23 +99,25 @@ export const styles = StyleSheet.create({
     flex:4,
     flexDirection: 'row',
     borderRadius: 4,
-    borderStyle: 'solid',
-    borderWidth: 1,
-    borderColor: '#c1c1c1'
   },
   buttonNonSelect:{
     flex: 1,
     flexDirection: 'row',
     backgroundColor: '#ededed',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    height: 40,
+    borderStyle: 'solid',
+    borderWidth: 1,
+    borderColor: '#c1c1c1'
   },
   buttonSelect :{
     flex: 1,
     flexDirection: 'row',
     backgroundColor: '#00bfa5',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    height: 40
   },
 
   buttonTextSelect:{

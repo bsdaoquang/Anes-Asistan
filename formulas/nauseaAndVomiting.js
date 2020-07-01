@@ -52,7 +52,7 @@ export default function NauseaVomiting(){
 				<View style={styles.formInfo}>
               		<Text style={styles.infoText}>{t('nausea_voimiting_info')}</Text>
             	</View>
-				
+
 				{/*This is form container*/}
 	          	<View style={styles.formContain}>
 		            {/*This is input contain*/}
@@ -62,7 +62,7 @@ export default function NauseaVomiting(){
 		              </View>
 
 		              <View style={styles.buttonContainHorizontal}>
-						<TouchableOpacity 
+						<TouchableOpacity
 							style= {gender == 0 ? styles.buttonSelect : styles.buttonNonSelect}
 							onPress={() => setGender(0)}>
 
@@ -94,7 +94,7 @@ export default function NauseaVomiting(){
 		              </View>
 
 		              <View style={styles.buttonContainHorizontal}>
-						<TouchableOpacity 
+						<TouchableOpacity
 							style= {smoke == 0 ? styles.buttonSelect : styles.buttonNonSelect}
 							onPress={() => setSmoke(0)}>
 
@@ -126,7 +126,7 @@ export default function NauseaVomiting(){
 		              </View>
 
 		              <View style={styles.buttonContainHorizontal}>
-						<TouchableOpacity 
+						<TouchableOpacity
 							style= {history == 1 ? styles.buttonSelect : styles.buttonNonSelect}
 							onPress={() => setHistory(1)}>
 
@@ -158,7 +158,7 @@ export default function NauseaVomiting(){
 		              </View>
 
 		              <View style={styles.buttonContainHorizontal}>
-						<TouchableOpacity 
+						<TouchableOpacity
 							style= {opioid == 1 ? styles.buttonSelect : styles.buttonNonSelect}
 							onPress={() => setOpioid(1)}>
 
@@ -259,23 +259,20 @@ export default function NauseaVomiting(){
 	            		<View style={styles.infoCol2}>
 	            			<Text style={styles.infoText}>79%</Text>
 	            		</View>
-	            	</View>	            	
+	            	</View>
 
             	</View>
 
             	<View style={styles.formInfo}>
             		<Text style={styles.infoText}>{t('creator')}: {'Dr. Christian C. Apfel'}</Text>
 				</View>
-            	
-	      	</View>	
+
+	      	</View>
 	      </TouchableWithoutFeedback>
 	    </KeyboardAvoidingView>
 
 	    </ScrollView>
 
-	    <View>
-	    	<AdMob />
-	    </View>
 	</View>
 	)
 }
