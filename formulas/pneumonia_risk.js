@@ -21,7 +21,7 @@ export default function PostoperativePneumona(){
 	const [procedure, setProcedure] = useState(0)
 	const [age, setAge] = useState(age)
 
-	var risk
+	var risk = 0
 
 	if (age != null) {
 		var e = Math.E
@@ -278,28 +278,30 @@ export default function PostoperativePneumona(){
 					</View>
 				 {/*end from contain*/}
 
+				 { risk != 0 ?
 
-	         	{/*This is result contain*/}
 		          <View style={styles.resultContain}>
 		              <View style={styles.resultTitle}>
 		                <Text style={styles.resultTitleText}>{t('pneumonia_risk')}</Text>
-										<Text style={styles.resultTitleDesc}></Text>
+						<Text style={styles.resultTitleDesc}></Text>
 		           </View>
 
-		           <Text style={styles.result}>{risk} %</Text>
-		           <Text style={styles.unit}></Text>
-		          </View>
-		          {/*End result contain*/}
+		           	<Text style={styles.result}>{risk} %</Text>
+		         </View>
 
-							<View style={styles.formInfo}>
-		            <Text style={styles.titleInfo}>{t('formula')}</Text>
-		            <Text style={styles.infoText}>{t('formula_postopreative_desc_1')}</Text>
+		           	: null
+
+		           }
+
+					<View style={styles.formInfo}>
+			            <Text style={styles.titleInfo}>{t('formula')}</Text>
+			            <Text style={styles.infoText}>{t('formula_postopreative_desc_1')}</Text>
 		            <Text style={styles.infoText}>{t('formula_postopreative_desc_2')}</Text>
 		          </View>
 
             	<View style={styles.formInfo}>
             		<Text style={styles.infoText}>{t('creator')}: {'Dr. Abdel R. El-Ganzouri'}</Text>
-							</View>
+				</View>
 
 
 	      	</View>
