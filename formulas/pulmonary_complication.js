@@ -43,7 +43,7 @@ export default function PulmonaryComplication(){
 				<View style={styles.formInfo}>
               		<Text style={styles.infoText}>{t('pulmonary_complication_info')}</Text>
             	</View>
-				
+
 				{/*This is form container*/}
 	          	<View style={styles.formContain}>
 		            {/*This is input contain*/}
@@ -53,7 +53,7 @@ export default function PulmonaryComplication(){
 		              </View>
 
 		              <View style={styles.buttonContainHorizontal}>
-						<TouchableOpacity 
+						<TouchableOpacity
 							style= {age == 0 ? styles.buttonSelect : styles.buttonNonSelect}
 							onPress={() => setAge(0)}>
 
@@ -95,7 +95,7 @@ export default function PulmonaryComplication(){
 		              </View>
 
 		              <View style={styles.buttonContainHorizontal}>
-						<TouchableOpacity 
+						<TouchableOpacity
 							style= {preoperative == 0 ? styles.buttonSelect : styles.buttonNonSelect}
 							onPress={() => setPreoperative(0)}>
 
@@ -138,7 +138,7 @@ export default function PulmonaryComplication(){
 		              </View>
 
 		              <View style={styles.buttonContainHorizontal}>
-						<TouchableOpacity 
+						<TouchableOpacity
 							style= {respiratory == 17 ? styles.buttonSelect : styles.buttonNonSelect}
 							onPress={() => setRespiratory(17)}>
 
@@ -170,7 +170,7 @@ export default function PulmonaryComplication(){
 		              </View>
 
 		              <View style={styles.buttonContainHorizontal}>
-						<TouchableOpacity 
+						<TouchableOpacity
 							style= {anemia == 11 ? styles.buttonSelect : styles.buttonNonSelect}
 							onPress={() => setAnemia(11)}>
 
@@ -202,7 +202,7 @@ export default function PulmonaryComplication(){
 		              </View>
 
 		              <View style={styles.buttonContainVertical}>
-						<TouchableOpacity 
+						<TouchableOpacity
 							style= {incision == 0 ? styles.buttonSelect : styles.buttonNonSelect}
 							onPress={() => setIncision(0)}>
 
@@ -211,7 +211,7 @@ export default function PulmonaryComplication(){
 
 						</TouchableOpacity>
 
-						<TouchableOpacity 
+						<TouchableOpacity
 							style= {incision == 15 ? styles.buttonSelect : styles.buttonNonSelect}
 							onPress={() => setIncision(15)}>
 
@@ -220,7 +220,7 @@ export default function PulmonaryComplication(){
 
 						</TouchableOpacity>
 
-						<TouchableOpacity 
+						<TouchableOpacity
 							style= {incision == 24 ? styles.buttonSelect : styles.buttonNonSelect}
 							onPress={() => setIncision(24)}>
 
@@ -245,7 +245,7 @@ export default function PulmonaryComplication(){
 		              </View>
 
 		              <View style={styles.buttonContainVertical}>
-						<TouchableOpacity 
+						<TouchableOpacity
 							style= {duration == 0 ? styles.buttonSelect : styles.buttonNonSelect}
 							onPress={() => setDuration(0)}>
 
@@ -254,7 +254,7 @@ export default function PulmonaryComplication(){
 
 						</TouchableOpacity>
 
-						<TouchableOpacity 
+						<TouchableOpacity
 							style= {duration == 16 ? styles.buttonSelect : styles.buttonNonSelect}
 							onPress={() => setduration(16)}>
 
@@ -263,7 +263,7 @@ export default function PulmonaryComplication(){
 
 						</TouchableOpacity>
 
-						<TouchableOpacity 
+						<TouchableOpacity
 							style= {duration == 23 ? styles.buttonSelect : styles.buttonNonSelect}
 							onPress={() => setDuration(23)}>
 
@@ -287,7 +287,7 @@ export default function PulmonaryComplication(){
 		              </View>
 
 		              <View style={styles.buttonContainHorizontal}>
-						<TouchableOpacity 
+						<TouchableOpacity
 							style= {emergency == 8 ? styles.buttonSelect : styles.buttonNonSelect}
 							onPress={() => setEmergency(8)}>
 
@@ -391,16 +391,13 @@ export default function PulmonaryComplication(){
             	<View style={styles.formInfo}>
             		<Text style={styles.infoText}>{t('creator')}: {'Dr. Jaume Canet'}</Text>
 				</View>
-            	
-	      	</View>	
+
+	      	</View>
 	      </TouchableWithoutFeedback>
 	    </KeyboardAvoidingView>
 
 	    </ScrollView>
 
-	    <View>
-	    	<AdMob />
-	    </View>
 	</View>
 	)
 }

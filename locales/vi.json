@@ -41,5 +41,19 @@
   "risk_hospital": "Tỉ lệ nguy cơ",
   "low": "Thấp",
   "intermediate": "Trung bình",
-  "high": "Cao"
+  "high": "Cao",
+
+  "asa_title": "Chỉ số ASA / Phân loại ASA",
+  "asa_title_desc": "Đánh giá tình trạng sức khỏe của bệnh nhân trước phẫu thuật",
+  "description": "Mô tả",
+  "asa_class": "Phân loại ASA",
+  "asa_physical": "Chỉ số ASA",
+  "asa1": "Sức khỏe bình thường",
+  "asa2": "Có bệnh, nhưng không ảnh hưởng đến cuộc sống và sinh hoạt",
+  "asa3": "Bệnh ảnh hưởng đến cuộc sống, sinh hoạt (tiểu đường, tăng huyết áp, COPD...)",
+  "asa4": "Bệnh đe dọa tính mạng bệnh nhân (MI, CVA/TIA, CAD/stens, ARD...)",
+  "asa5": "Bệnh rất nặng, hấp hối không có khả năng sống được 24 giờ, dù có mổ hay không",
+  "asa6": "Bệnh nhân chết não, chờ hiến tạng",
+  "asa_advice": "Với bệnh nhân cấp cứu, thêm hậu tố E phía sau. Nếu trì hoãn có thể “gia tăng đáng kể mối đe dọa đến tính mạng hoặc các cơ quan cơ thể”. ASA 2014",
+
 }

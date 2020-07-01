@@ -41,5 +41,20 @@
   "risk_hospital": "Risk of in-hospital",
   "low": "Low",
   "intermediate": "Intermadiate",
-  "high": "High"
+  "high": "High",
+
+  "asa_title": "ASA Physical status / ASA classification",
+  "asa_title_desc": "Classfies health of patient prior to surgery",
+  "description": "Description",
+  "asa_class": "ASA Classification",
+  "asa_physical": "ASA Physical status",
+  "asa1": "Normal healthy patient",
+  "asa2": "Patient with mild systemic disease",
+  "asa3": "Patient with severe systemic disease",
+  "asa4": "Patient with severe systemic disease that is a constant threat to life",
+  "asa5": "Moribund patient not expected to survive without the operation",
+  "asa6": "Declared brain-dead patient whose organs are being removed for donor purposes",
+  "asa_advice": "for emergency surgery, add suffix E. Emergency = delay would lead to “significant increase in the threat to life or body part”. ASA 2014",
+
+
 }

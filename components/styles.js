@@ -108,13 +108,15 @@ export const styles = StyleSheet.create({
   buttonNonSelect:{
     flex: 1,
     flexDirection: 'row',
-    backgroundColor: '#ededed',
+    backgroundColor: '#eeeeee',
     justifyContent: 'center',
     alignItems: 'center',
     borderStyle: 'solid',
     borderWidth: 0.5,
     borderColor: '#c1c1c1',
-    height: 40
+    padding: 5,
+    minHeight: 40,
+    maxHeight: 50
   },
   buttonSelect :{
     flex: 1,
@@ -122,18 +124,20 @@ export const styles = StyleSheet.create({
     backgroundColor: '#00bfa5',
     justifyContent: 'center',
     alignItems: 'center',
-    height: 40
+    padding: 5,
+    minHeight: 40,
+    maxHeight: 50
   },
 
   buttonTextSelect:{
     fontSize: 12,
     fontFamily: 'sans-serif',
-    color: '#fafafa'
+    color: '#fafafa',
   },
   buttonTextNonSelect:{
     fontSize: 12,
     fontFamily: 'sans-serif',
-    color: '#777'
+    color: '#777',
   },
 
   /*This is styles for result contain*/
@@ -191,16 +195,7 @@ export const styles = StyleSheet.create({
   unit:{
     color: '#fafafa',
     fontSize: 18,
-    fontWeight: 'bold',
     fontFamily: 'sans-serif',
-    lineHeight: 30
-  },
-  superUnit:{
-    color: '#fafafa',
-    fontSize: 12,
-    fontWeight: 'bold',
-    fontFamily: 'sans-serif',
-    lineHeight: 19,
   },
   rateContent:{
     padding: 8,
@@ -216,7 +211,7 @@ export const styles = StyleSheet.create({
 
   /*this is style for info content*/
   formInfo:{
-    backgroundColor: '#e0e0e0',
+    backgroundColor: '#eeeeee',
     marginVertical: 8,
     padding: 5,
     borderRadius: 4
