@@ -259,12 +259,12 @@ export const styles = StyleSheet.create({
     borderStyle: 'solid'
   },
   infoCol1:{
-    flex: 8,
-    paddingHorizontal: 8
+    flex: 7,
+    paddingHorizontal: 4
   },
   infoCol2:{
-    flex: 2,
-    paddingHorizontal: 8
+    flex: 3,
+    paddingHorizontal: 4
   },
 
   titleInfo:{
@@ -347,6 +347,19 @@ export const styles = StyleSheet.create({
     fontFamily: 'sans-serif',
     padding: 5
   },
-
-
+  formImportant:{
+    marginTop: 8,
+    padding:8,
+    backgroundColor: 'coral'
+  },
+  importantText:{
+    color: '#fafafa',
+    fontSize: 14,
+    fontFamily: 'sans-serif'
+  },
+  formIntructions:{
+    marginTop: 8,
+    padding:8,
+    backgroundColor: '#90a4ae'
+  },
 })

@@ -42,6 +42,16 @@ export default function ItraoperativeFluidAdults(){
 							</View>
 							{/*End header*/}
 
+							<View style={styles.formImportant}>
+								<Text style={styles.titleInfo, {color: '#fafafa', fontSize: 18}}>{t('important')}</Text>
+								<Text style={styles.importantText}>{t('intraoperative_fluid_important')}</Text>
+							</View>
+
+							<View style={styles.formIntructions}>
+							<Text style={styles.titleInfo, {color: '#fafafa', fontSize: 18}}>{t('intructions')}</Text>
+								<Text style={styles.importantText}>{t('intraoperative_fluid_instructions')}</Text>
+							</View>
+
 							{/*This is form container*/}
 		          <View style={styles.formContain}>
 		            {/*This is input contain*/}
@@ -127,24 +137,40 @@ export default function ItraoperativeFluidAdults(){
 							 </View>
 							{/*end from contain*/}
 
-						{/*this is result, show in result != 0*/}
-						<View style={styles.resultContain}>
-							<View style={styles.resultTitle}>
+							{/*this is result, show in result != 0*/}
+							<View style={styles.resultContain}>
+								<View style={styles.resultTitle}>
+									{
+										mainFluid != '' ?
+											<Text style={styles.resultTitleText}>{t('hourly_main')}</Text>
+										: <Text style={styles.unit}>{t('please_fill')}</Text>
+									}
+								</View>
 								{
 									mainFluid != '' ?
-										<Text style={styles.resultTitleText}>Hourly maintenance Fluid</Text>
-									: <Text style={styles.unit}>Please fill out require fields</Text>
+									<View style={styles.resultContent}>
+										<Text style={styles.result}>{mainFluid}</Text>
+										<Text style={styles.unit}>{t('mL/hr')}</Text>
+									</View>
+									: null
 								}
 							</View>
+							{/*end result*/}
+
+							{/*this is result, show in result != 0*/}
 							{
 								mainFluid != '' ?
-								<View style={styles.resultContent}>
-									<Text style={styles.result}>{mainFluid}</Text>
-									<Text style={styles.unit}>mL/hr</Text>
+							<View style={styles.resultContain}>
+								<View style={styles.resultTitle}>
+									<Text style={styles.resultTitleText}>{t('npo_fluid_deficit')}</Text>
 								</View>
-								: null
-							}
-						</View>
+								<View style={styles.resultContent}>
+									<Text style={styles.result}>{npoFluid}</Text>
+									<Text style={styles.unit}>mL</Text>
+								</View>
+							</View>
+							: null
+						}
 						{/*end result*/}
 
 						{/*this is result, show in result != 0*/}
@@ -152,39 +178,69 @@ export default function ItraoperativeFluidAdults(){
 							mainFluid != '' ?
 						<View style={styles.resultContain}>
 							<View style={styles.resultTitle}>
-								<Text style={styles.resultTitleText}>NPO fluid deficit</Text>
+								<Text style={styles.resultTitleText}>{t('1st_hour_fluids')}</Text>
 							</View>
 							<View style={styles.resultContent}>
-								<Text style={styles.result}>{npoFluid}</Text>
-								<Text style={styles.unit}>mL</Text>
+								<Text style={styles.result}>{fluid1st}</Text>
+								<Text style={styles.unit}>{t('mL/hr')}</Text>
 							</View>
+							<Text style={styles.rateContent}>{t('2nd_hour')}: {fluid2nd} {t('mL/hr')}</Text>
+							<Text style={styles.rateContent}>{t('3rd_hour')}: {fluid2nd} {t('mL/hr')}</Text>
+							<Text style={styles.rateContent}>{t('4th_hour_and')}: {fluid4th} {t('mL/hr')}</Text>
 						</View>
 						: null
 					}
 					{/*end result*/}
-
-					{/*this is result, show in result != 0*/}
-					{
-						mainFluid != '' ?
-					<View style={styles.resultContain}>
-						<View style={styles.resultTitle}>
-							<Text style={styles.resultTitleText}>1st hour fluids</Text>
-						</View>
-						<View style={styles.resultContent}>
-							<Text style={styles.result}>{fluid1st}</Text>
-							<Text style={styles.unit}>mL/hr</Text>
-						</View>
-						<Text style={styles.rateContent}>2nd hour: {fluid2nd} mL/hr</Text>
-						<Text style={styles.rateContent}>3rd hour: {fluid2nd} mL/hr</Text>
-						<Text style={styles.rateContent}>4th hr and beyond: {fluid4th} mL/hr</Text>
-					</View>
-					: null
-				}
-				{/*end result*/}
-
 						<View style={styles.formInfo}>
-							<Text style={styles.infoText}>{t('creator')}: {'Dr. Tomas Corcoran'}</Text>
+								<Text style={styles.titleInfo}>{t('formula')}</Text>
+								<Text style={styles.infoText}>{t('intraoperative_formula_1')}</Text>
+								<Text style={styles.infoText}>{t('intraoperative_formula_2')}</Text>
+								<Text style={styles.infoText}>{t('intraoperative_formula_3')}</Text>
+								<Text style={styles.infoText}>{t('intraoperative_formula_4')}</Text>
+								<Text style={styles.infoText}>{t('intraoperative_formula_5')}</Text>
+								<Text style={styles.infoText}>{t('intraoperative_formula_6')}</Text>
+								<Text style={styles.infoText}>{t('intraoperative_formula_7')}</Text>
+
+								<View style={styles.formInfo2col}>
+					        <View style={styles.infoCol2}>
+						        <Text style={styles.infoText}>{t('minimal')}</Text>
+					         </View>
+					         <View style={styles.infoCol1}>
+						        <Text style={styles.infoText}>{t('minimalEg')}</Text>
+					      	</View>
+									<View style={styles.infoCol1}>
+									 <Text style={styles.infoText}>2-4mL/kg/hr ({t('uses')} 3mL/kg/hr)</Text>
+								 	</View>
+								</View>
+
+								<View style={styles.formInfo2col}>
+					        <View style={styles.infoCol2}>
+						        <Text style={styles.infoText}>{t('moderate')}</Text>
+					         </View>
+					         <View style={styles.infoCol1}>
+						        <Text style={styles.infoText}>{t('moderateEg')}</Text>
+					      	</View>
+									<View style={styles.infoCol1}>
+									 <Text style={styles.infoText}>4-6mL/kg/hr ({t('uses')} 5mL/kg/hr)</Text>
+								 	</View>
+								</View>
+
+								<View style={styles.formInfo2col}>
+					        <View style={styles.infoCol2}>
+						        <Text style={styles.infoText}>{t('severe')}</Text>
+					         </View>
+					         <View style={styles.infoCol1}>
+						        <Text style={styles.infoText}>{t('severeEg')}</Text>
+					      	</View>
+									<View style={styles.infoCol1}>
+									 <Text style={styles.infoText}>4-6mL/kg/hr ({t('uses')} 5mL/kg/hr)</Text>
+								 	</View>
+								</View>
 						</View>
+
+							<View style={styles.formInfo}>
+								<Text style={styles.infoText}>{t('creator')}: {'Dr. Tomas Corcoran'}</Text>
+							</View>
 						</View>
 					</TouchableWithoutFeedback>
 				</KeyboardAvoidingView>
