@@ -81,7 +81,7 @@ export const styles = StyleSheet.create({
     paddingVertical: 8,
   },
   titleInputDesc:{
-    fontSize: 11,
+    fontSize: 12,
     color: '#c1c1c1',
     fontStyle: 'italic',
     paddingHorizontal: 5
@@ -211,7 +211,6 @@ export const styles = StyleSheet.create({
     flex: 1,
   },
   resultContent:{
-    paddingVertical: 8,
     flexDirection: 'row'
   },
   result:{
@@ -230,9 +229,10 @@ export const styles = StyleSheet.create({
     color: '#fafafa',
     fontSize: 18,
     fontFamily: 'sans-serif',
+    marginTop: 24
   },
   rateContent:{
-    padding: 8,
+    paddingHorizontal: 8,
     color: '#fafafa',
     fontFamily: 'sans-serif',
     fontSize: 18,

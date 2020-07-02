@@ -10,11 +10,13 @@ import DifficultAirway from './formulas/difficult_airway'
 import PostoperativePneumona from './formulas/pneumonia_risk'
 import SectionListExample from './formulas/sectionListExample'
 import PrespiratoryRisk from './formulas/respiratory_risk'
+import ItraoperativeFluidAdults from './formulas/intraoperative_fluid_adults'
 
 
 export default function App() {
   return (
-    <PrespiratoryRisk />
+    <ItraoperativeFluidAdults />
+    //<PrespiratoryRisk />
     //<SectionListExample />
     //<PostoperativePneumona />
     //<DifficultAirway />

@@ -120,5 +120,15 @@
   "formula_prespiratory_desc_2": "Where x = −1.7397 + sum of the values of the selected variables.",
   "prespiratory_failure_risk": "Prespiratory failure risk",
   "rate_prespiratory": "Risk of mechanical ventilation for >48 hrs after surgery, or unplanned intubation ≤30 days of surgery",
-  "select_procedure": "select procedure"
+  "select_procedure": "select procedure",
+
+  "intraoperative_fluid_dosing": "Intraoperative fluid dosing in adult patients",
+  "dose_iv_fluids_intraoperative": "Dose IV fluid intrperative",
+  "time_npo": "Time spent NPO",
+  "hours": "hours",
+  "trauma_tissue": "Estimated severity of trauma to tissue",
+  "trauma_tissue_desc": "estimated fuild loss from surgical trauma",
+  "minimal": "Minimal",
+  "moderate": "Moderate",
+  "severe": "Severe"
 }
