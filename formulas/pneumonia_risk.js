@@ -2,13 +2,15 @@ import React, {useState} from 'react'
 import {
 	View, Text, TextInput, ScrollView,
 	TouchableOpacity, TouchableWithoutFeedback,
-	KeyboardAvoidingView, Keyboard
+	KeyboardAvoidingView, Keyboard, FlatList,
+	YellowBox
 } from 'react-native'
 import DropDownPicker  from 'react-native-dropdown-picker'
 import AdMob from '../components/AdMob'
-
 import {styles} from '../components/styles'
 import {t} from '../locales/index'
+
+console.disableYellowBox = true
 
 export default function PostoperativePneumona(){
 
@@ -33,7 +35,7 @@ export default function PostoperativePneumona(){
 		{label: t('spine'), value: -0.5672},
 		{label: t('non-esophageal'), value: 0.8901},
 		{label: t('vein'), value: -1.4760},
-		{label: t('urology'), value: 0.1076}						 
+		{label: t('urology'), value: 0.1076}
 	]
 
 	const [functionStatus, setFunctionStatus] = useState(0)
@@ -46,12 +48,19 @@ export default function PostoperativePneumona(){
 	const [age, setAge] = useState(age)
 
 	var risk = 0
-	var i
 
 	if (age != null) {
 		var e = Math.E
 		var x = -2.8977 +((age*0.0144) + (copd + mallampati + asaClass + sepsis + smoking + procedure))
 		risk = (((Math.pow(e,x))/(1 + (Math.pow(e, x))))*100).toFixed(1)
+	}
+
+	function Item({ label }) {
+	  return (
+	    <View style={styles.buttonDesc}>
+	      <Text style={styles.titleInputText}>{t({label})}</Text>
+	    </View>
+	  );
 	}
 
 	return(
@@ -449,28 +458,35 @@ export default function PostoperativePneumona(){
 				    </View>
 
 				    <Text style={styles.titleInfo}>{t('type_of_procedure')}</Text>
-			        <View style={styles.formInfo2col}>
-				         <View style={styles.infoCol1}>
-					        <Text style={styles.infoText}>{t('anorectal')}</Text>
-				         </View>
-				         <View style={styles.infoCol2}>
-					        <Text style={styles.infoText}>-0.8470</Text>
-				         </View>
-				    </View>
-				    
-				 </View>
-
-            	<View style={styles.formInfo}>
-            		<Text style={styles.infoText}>{t('creator')}: {'Dr.Himani Gupta & Dr.Prateek K.Gupta'}</Text>
-				</View>
-
-
+						<Procedures />
+						 </View>
+			        <View style={styles.formInfo}>
+			            <Text style={styles.infoText}>{t('creator')}: {'Dr.Himani Gupta & Dr.Prateek K.Gupta'}</Text>
+							</View>
 	      	</View>
 	      </TouchableWithoutFeedback>
 	    </KeyboardAvoidingView>
-
 	    </ScrollView>
 
 	</View>
+	)
+}
+
+function Procedures (){
+	return(
+		<FlatList
+			data={DATA}
+			renderItem={({ item }) => (
+				<View style={styles.formInfo2col}>
+					<View style={styles.infoCol1}>
+						<Text style={styles.infoText}>{item.label}</Text>
+					</View>
+					<View style={styles.infoCol2}>
+						<Text style={styles.infoText}>{item.value}</Text>
+					</View>
+				</View>
+			)}
+			keyExtractor={item => item.label}
+		/>
 	)
 }
