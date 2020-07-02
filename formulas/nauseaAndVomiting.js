@@ -272,7 +272,9 @@ export default function NauseaVomiting(){
 	    </KeyboardAvoidingView>
 
 	    </ScrollView>
-
+			<View>
+				<AdMob />
+			</View>
 	</View>
 	)
 }

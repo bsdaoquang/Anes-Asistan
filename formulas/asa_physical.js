@@ -126,7 +126,9 @@ export default function ASAPhysical(){
 	    </KeyboardAvoidingView>
 
 	    </ScrollView>
-
+			<View>
+				<AdMob />
+			</View>
 	</View>
 	)
 }

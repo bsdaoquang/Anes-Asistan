@@ -397,7 +397,9 @@ export default function PulmonaryComplication(){
 				    </KeyboardAvoidingView>
 
 				    </ScrollView>
-
+						<View>
+							<AdMob />
+						</View>
 	</View>
 	)
 }

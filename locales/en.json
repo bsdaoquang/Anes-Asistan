@@ -111,6 +111,14 @@
 
   "formula": "Formula",
   "formula_postopreative_desc_1": "Postoperative pneumonia risk, % = e^x / (1 + e^x)",
-  "formula_postopreative_desc_2": "Where x = −2.8977 + sum of the values of the selected variables."
+  "formula_postopreative_desc_2": "Where x = −2.8977 + sum of the values of the selected variables.",
 
+  "prespiratory_risk": "Postoperative prespiratory failure risk",
+  "prespiratory_risk_desc": "Predicts risk of mechanical ventilation for longer than 48 hrs postop or reintubation within 30 days",
+  "emergency_case": "Emergency case",
+  "formula_prespiratory_desc_1": "Postoperative prespiratory failure risk, % = e^x / (1 + e^x)",
+  "formula_prespiratory_desc_2": "Where x = −1.7397 + sum of the values of the selected variables.",
+  "prespiratory_failure_risk": "Prespiratory failure risk",
+  "rate_prespiratory": "Risk of mechanical ventilation for >48 hrs after surgery, or unplanned intubation ≤30 days of surgery",
+  "select_procedure": "select procedure"
 }

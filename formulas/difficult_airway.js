@@ -308,7 +308,9 @@ export default function DifficultAirway(){
 	    </KeyboardAvoidingView>
 
 	    </ScrollView>
-
+			<View>
+				<AdMob />
+			</View>
 	</View>
 	)
 }

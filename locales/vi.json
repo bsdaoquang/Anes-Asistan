@@ -111,5 +111,14 @@
 
   "formula": "Công thức",
   "formula_postopreative_desc_1": "Nguy cơ viêm phổi sau phẫu thuật, % = e^x / (1 + e^x)",
-  "formula_postopreative_desc_2": "Với x = −2.8977 + Tổng các giá trị của những lựa chọn trên"
+  "formula_postopreative_desc_2": "Với x = −2.8977 + Tổng các giá trị của những lựa chọn trên",
+
+  "prespiratory_risk": "Suy hô hấp sau phẫu thuật",
+  "prespiratory_risk_desc": "Dự đoán nguy cơ thở máy > 48 giờ, hoặc đặt nội khí quản lại trong vòng 30 ngày",
+  "emergency_case": "Cấp cứu",
+  "formula_prespiratory_desc_1": "Nguy cơ suy hô hấp sau phẫu thuật, % = e^x / (1 + e^x)",
+  "formula_prespiratory_desc_2": "Với x = −1.7397 + Tổng các giá trị của những lựa chọn trên",
+  "prespiratory_failure_risk": "Suy hô hấp sau phẫu thuật",
+  "rate_prespiratory": "Nguy cơ thở máy lâu hơn 48 giờ sau phẫu thuật, hoặc đặt lại nội khí quản trong vòng 30 ngày",
+  "select_procedure": "loại phẫu thuật..."
 }
