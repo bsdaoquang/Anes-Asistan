@@ -335,11 +335,11 @@ export default function PulmonaryComplication(){
 					            		<Text style={styles.infoText}>{t('aricat_score')}</Text>
 				            		</View>
 
-				            		<View style={styles.infoCol2}>
+				            		<View style={styles.infoCol1}>
 				            			<Text style={styles.infoText}>{t('risk_group')}</Text>
 				            		</View>
 
-				            		<View style={styles.infoCol2}>
+				            		<View style={styles.infoCol1}>
 				            			<Text style={styles.infoText}>{t('risk_hospital')}</Text>
 				            		</View>
 				            	</View>
@@ -349,11 +349,11 @@ export default function PulmonaryComplication(){
 					            		<Text style={styles.infoText}>{'<26'}</Text>
 				            		</View>
 
-				            		<View style={styles.infoCol2}>
+				            		<View style={styles.infoCol1}>
 				            			<Text style={styles.infoText}>{t('low')}</Text>
 				            		</View>
 
-				            		<View style={styles.infoCol2}>
+				            		<View style={styles.infoCol1}>
 				            			<Text style={styles.infoText}>1.6%</Text>
 				            		</View>
 				            	</View>
@@ -363,11 +363,11 @@ export default function PulmonaryComplication(){
 					            		<Text style={styles.infoText}>26 - 44</Text>
 				            		</View>
 
-				            		<View style={styles.infoCol2}>
+				            		<View style={styles.infoCol1}>
 				            			<Text style={styles.infoText}>{t('intermediate')}</Text>
 				            		</View>
 
-				            		<View style={styles.infoCol2}>
+				            		<View style={styles.infoCol1}>
 				            			<Text style={styles.infoText}>13.3%</Text>
 				            		</View>
 				            	</View>
@@ -377,11 +377,11 @@ export default function PulmonaryComplication(){
 					            		<Text style={styles.infoText}>{'≥45'}</Text>
 				            		</View>
 
-				            		<View style={styles.infoCol2}>
+				            		<View style={styles.infoCol1}>
 				            			<Text style={styles.infoText}>{t('high')}</Text>
 				            		</View>
 
-				            		<View style={styles.infoCol2}>
+				            		<View style={styles.infoCol1}>
 				            			<Text style={styles.infoText}>42.1%</Text>
 				            		</View>
 				            	</View>

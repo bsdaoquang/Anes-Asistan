@@ -251,7 +251,7 @@ export const styles = StyleSheet.create({
     borderRadius: 4
   },
   formInfo2col:{
-    backgroundColor: '#e0e0e0',
+    backgroundColor: '#eeeeee',
     borderRadius: 4,
     flexDirection: 'row',
     borderBottomColor: '#aeaeae',
@@ -259,12 +259,12 @@ export const styles = StyleSheet.create({
     borderStyle: 'solid'
   },
   infoCol1:{
-    flex: 1,
+    flex: 8,
     paddingHorizontal: 8
   },
   infoCol2:{
-    paddingHorizontal: 8,
-    flex: 1
+    flex: 2,
+    paddingHorizontal: 8
   },
 
   titleInfo:{
