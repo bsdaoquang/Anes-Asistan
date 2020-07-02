@@ -16,7 +16,19 @@ export default function ItraoperativeFluidAdults(){
 	const [weight, setWeight] = useState(weight)
 	const [timeNPO, setTimeNPO] = useState(timeNPO)
 	const [traumaTissue, setTraumaTissue] = useState(0)
-	var risk = 0
+
+	var mainFluid, npoFluid, fluid1st, fluid2nd, fluid4th, fluidLoss
+
+	if (weight != null && timeNPO != null) {
+		fluidLoss = weight * traumaTissue
+
+		mainFluid = parseInt(weight) + 40
+		npoFluid = mainFluid * parseInt(timeNPO)
+		fluid1st = ((0.5*npoFluid) + mainFluid).toFixed(0)
+		fluid2nd = ((0.25*npoFluid) + mainFluid + fluidLoss).toFixed(0)
+		fluid4th = mainFluid + fluidLoss
+	}
+
 	return(
 		<View>
 			<ScrollView>
@@ -119,15 +131,15 @@ export default function ItraoperativeFluidAdults(){
 						<View style={styles.resultContain}>
 							<View style={styles.resultTitle}>
 								{
-									risk == 0 ?
-										<Text style={styles.resultTitleText}>Hourly maintenance fuild</Text>
+									mainFluid != '' ?
+										<Text style={styles.resultTitleText}>Hourly maintenance Fluid</Text>
 									: <Text style={styles.unit}>Please fill out require fields</Text>
 								}
 							</View>
 							{
-								risk == 0 ?
+								mainFluid != '' ?
 								<View style={styles.resultContent}>
-									<Text style={styles.result}>95</Text>
+									<Text style={styles.result}>{mainFluid}</Text>
 									<Text style={styles.unit}>mL/hr</Text>
 								</View>
 								: null
@@ -137,13 +149,13 @@ export default function ItraoperativeFluidAdults(){
 
 						{/*this is result, show in result != 0*/}
 						{
-							risk == 0 ?
+							mainFluid != '' ?
 						<View style={styles.resultContain}>
 							<View style={styles.resultTitle}>
 								<Text style={styles.resultTitleText}>NPO fluid deficit</Text>
 							</View>
 							<View style={styles.resultContent}>
-								<Text style={styles.result}>95</Text>
+								<Text style={styles.result}>{npoFluid}</Text>
 								<Text style={styles.unit}>mL</Text>
 							</View>
 						</View>
@@ -153,18 +165,18 @@ export default function ItraoperativeFluidAdults(){
 
 					{/*this is result, show in result != 0*/}
 					{
-						risk == 0 ?
+						mainFluid != '' ?
 					<View style={styles.resultContain}>
 						<View style={styles.resultTitle}>
 							<Text style={styles.resultTitleText}>1st hour fluids</Text>
 						</View>
 						<View style={styles.resultContent}>
-							<Text style={styles.result}>143</Text>
+							<Text style={styles.result}>{fluid1st}</Text>
 							<Text style={styles.unit}>mL/hr</Text>
 						</View>
-						<Text style={styles.rateContent}>2nd hour: 284ml/hr</Text>
-						<Text style={styles.rateContent}>3rd hour: 284ml/hr</Text>
-						<Text style={styles.rateContent}>4th hr and beyond: 260ml/hr</Text>
+						<Text style={styles.rateContent}>2nd hour: {fluid2nd} mL/hr</Text>
+						<Text style={styles.rateContent}>3rd hour: {fluid2nd} mL/hr</Text>
+						<Text style={styles.rateContent}>4th hr and beyond: {fluid4th} mL/hr</Text>
 					</View>
 					: null
 				}
