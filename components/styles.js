@@ -28,7 +28,7 @@ export const styles = StyleSheet.create({
   headerSubTitle:{
     textAlign: 'center',
     fontSize: 16,
-    color: '#777',
+    color: '#424242',
     fontWeight: '300',
     fontFamily: 'sans-serif'
   },
@@ -87,7 +87,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 5
   },
   titleInputText:{
-    color: '#777',
+    color: '#424242',
     fontSize: 14,
     fontWeight: '300',
     textAlign: 'left',
@@ -102,14 +102,14 @@ export const styles = StyleSheet.create({
   input:{
     marginHorizontal: 5,
     flexDirection: 'row',
-    borderColor: '#777',
+    borderColor: '#424242',
     borderBottomWidth: 1,
     textAlign: 'right',
     paddingHorizontal: 10,
     fontSize: 16,
     fontWeight: 'bold',
     fontFamily: 'sans-serif',
-    color: '#777',
+    color: '#424242',
   },
   alertText:{
     color: '#ef9a9a',
@@ -124,7 +124,7 @@ export const styles = StyleSheet.create({
     paddingVertical: 8,
   },
   unitTitle:{
-    color: '#777',
+    color: '#424242',
     fontFamily: 'sans-serif',
     textAlign: 'center'
   },
@@ -171,7 +171,7 @@ export const styles = StyleSheet.create({
   buttonTextNonSelect:{
     fontSize: 12,
     fontFamily: 'sans-serif',
-    color: '#777',
+    color: '#424242',
   },
 
   /*This is styles for result contain*/
@@ -268,14 +268,14 @@ export const styles = StyleSheet.create({
   },
 
   titleInfo:{
-    color: '#777',
+    color: '#424242',
     fontSize: 16,
     fontWeight: 'bold',
     fontFamily:'sans-serif'
   },
   infoText:{
     fontFamily: 'sans-serif',
-    color: '#777',
+    color: '#424242',
     fontSize: 14,
     fontStyle: 'italic',
     paddingVertical: 5
@@ -295,7 +295,7 @@ export const styles = StyleSheet.create({
   },
   listTitle:{
     textAlign: 'left',
-    color: '#777',
+    color: '#424242',
     fontWeight: 'bold',
     fontFamily: 'sans-serif',
     fontSize: 16
@@ -317,7 +317,7 @@ export const styles = StyleSheet.create({
   link:{
     fontSize: 16,
     fontFamily: 'sans-serif',
-    color: '#777',
+    color: '#424242',
     fontStyle: 'italic',
     textAlign: 'right'
   },
@@ -337,7 +337,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     fontFamily: 'sans-serif',
     fontWeight: 'bold',
-    color: '#777',
+    color: '#424242',
     fontSize: 18
   },
   infoTextLink:{
