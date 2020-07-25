@@ -62,90 +62,9 @@ function App() {
           ),
         }}
         />
-        <Stack.Screen name={t('asa_title')} component={ASAPhysical}
-          options={{
-            title: t('asa_physical'),
-            headerStyle:{
-              backgroundColor: '#00bfa5'
-            },
-            headerTintColor: '#fff',
-            headerTitleStyle: {
-              fontWeight: 'bold',
-            },
-          }}
-        />
-        <Stack.Screen name={t('nausea_voimiting')} component={NauseaVomiting}
-          options={{
-            title: t('nausea_voimiting'),
-            headerStyle:{
-              backgroundColor: '#00bfa5'
-            },
-            headerTintColor: '#fff',
-            headerTitleStyle: {
-              fontWeight: 'bold',
-            },
-          }}
-        />
-        <Stack.Screen name={t('difficult_airway_title')} component={DifficultAirway}
-          options={{
-            title: t('difficult_airway_title'),
-            headerStyle:{
-              backgroundColor: '#00bfa5'
-            },
-            headerTintColor: '#fff',
-            headerTitleStyle: {
-              fontWeight: 'bold',
-            },
-          }}
-        />
-        <Stack.Screen name={t('intraoperative_fluid_dosing')} component={ItraoperativeFluidAdults}
-          options={{
-            title: t('intraoperative_fluid_dosing'),
-            headerStyle:{
-              backgroundColor: '#00bfa5'
-            },
-            headerTintColor: '#fff',
-            headerTitleStyle: {
-              fontWeight: 'bold',
-            },
-          }}
-        />
-        <Stack.Screen name={t('pneumonia_risk_title')} component={PostoperativePneumona}
-          options={{
-            title: t('pneumonia_risk_title'),
-            headerStyle:{
-              backgroundColor: '#00bfa5'
-            },
-            headerTintColor: '#fff',
-            headerTitleStyle: {
-              fontWeight: 'bold',
-            },
-          }}
-        />
-        <Stack.Screen name={t('pulmonary_complication')} component={PulmonaryComplication}
-          options={{
-            title: t('pulmonary_complication'),
-            headerStyle:{
-              backgroundColor: '#00bfa5'
-            },
-            headerTintColor: '#fff',
-            headerTitleStyle: {
-              fontWeight: 'bold',
-            },
-          }}
-        />
-        <Stack.Screen name={t('prespiratory_risk')} component={PostoperativePneumona}
-          options={{
-            title: t('prespiratory_risk'),
-            headerStyle:{
-              backgroundColor: '#00bfa5'
-            },
-            headerTintColor: '#fff',
-            headerTitleStyle: {
-              fontWeight: 'bold',
-            },
-          }}
-        />
+        <Stack.Screen name='Phân loại ASA' component={ASAPhysical}/>
+        <Stack.Screen name='Chỉ số El-Ganzouri (EGRI)' component={DifficultAirway}/>
+        <Stack.Screen name='Truyền dịch trong phẫu thuật' component={ItraoperativeFluidAdults}/>
       </Stack.Navigator>
       </NavigationContainer>
     );

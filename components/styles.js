@@ -5,11 +5,11 @@ export const styles = StyleSheet.create({
   /*Body style*/
   container:{
     flex: 1,
+    backgroundColor: '#fafafa'
   },
   inner:{
     flex: 1,
-    marginBottom: 70,
-    paddingTop: 20,
+    paddingTop: 60,
     paddingHorizontal: 10
   },
   /*style for header*/
@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
   headerTitle:{
     fontSize: 18,
     color: '#00bfa5',
-    fontFamily: 'sans-serif',
+    
     textAlign: 'center',
     fontWeight: 'bold',
     textTransform: 'uppercase'
@@ -30,7 +30,8 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     color: '#424242',
     fontWeight: '300',
-    fontFamily: 'sans-serif'
+    fontFamily: 'sans-serif',
+    textTransform: 'uppercase'
   },
 
   /*styles for description*/
@@ -94,7 +95,7 @@ export const styles = StyleSheet.create({
     paddingVertical: 5
   },
   inputContent:{
-    flex: 4
+    flex: 3
   },
   unitContainInput:{
     flex:2
@@ -108,13 +109,13 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 10,
     fontSize: 16,
     fontWeight: 'bold',
-    fontFamily: 'sans-serif',
+    
     color: '#424242',
   },
   alertText:{
     color: '#ef9a9a',
     fontSize: 12,
-    fontFamily: 'sans-serif',
+    
     padding: 5,
     fontStyle: 'italic'
   },
@@ -125,24 +126,24 @@ export const styles = StyleSheet.create({
   },
   unitTitle:{
     color: '#424242',
-    fontFamily: 'sans-serif',
+    
     textAlign: 'center'
   },
 
   /*this is styles for radio button*/
   buttonContainHorizontal:{
-    flex:4,
+    flex:7,
     flexDirection: 'row',
     borderRadius: 4,
   },
   buttonContainVertical:{
-    flex:4,
+    flex:7,
   },
 
   buttonNonSelect:{
     flex: 1,
     flexDirection: 'row',
-    backgroundColor: '#eeeeee',
+    backgroundColor: '#fafafa',
     justifyContent: 'center',
     alignItems: 'center',
     borderStyle: 'solid',
@@ -165,12 +166,12 @@ export const styles = StyleSheet.create({
 
   buttonTextSelect:{
     fontSize: 12,
-    fontFamily: 'sans-serif',
+    
     color: '#fafafa',
   },
   buttonTextNonSelect:{
     fontSize: 12,
-    fontFamily: 'sans-serif',
+    
     color: '#424242',
   },
 
@@ -178,7 +179,7 @@ export const styles = StyleSheet.create({
   resultContain:{
     backgroundColor: '#00bfa5',
     marginTop: 10,
-    padding: 8,
+    padding: 5,
     borderRadius: 2,
     shadowColor: "#000",
     shadowOffset: {
@@ -191,19 +192,17 @@ export const styles = StyleSheet.create({
 
   },
   resultTitle:{
-    borderBottomWidth: 1,
-    borderBottomColor: '#fafafa',
     flexDirection:'row',
   },
   resultTitleText:{
     color: '#fafafa',
     fontWeight: 'bold',
-    fontFamily: 'sans-serif',
-    fontSize: 24,
+    fontSize: 20,
+    marginTop: 15
   },
   resultTitleDesc:{
     color: '#fafafa',
-    fontFamily: 'sans-serif',
+    
     fontSize: 14,
     fontStyle: 'italic',
     margin: 8,
@@ -211,13 +210,13 @@ export const styles = StyleSheet.create({
     flex: 1,
   },
   resultContent:{
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   result:{
     color: '#fafafa',
     fontWeight: 'bold',
-    fontFamily: 'sans-serif',
-    fontSize: 42,
+    
+    fontSize: 35,
     paddingHorizontal: 8
   },
   unitContain:{
@@ -228,15 +227,16 @@ export const styles = StyleSheet.create({
   unit:{
     color: '#fafafa',
     fontSize: 18,
-    fontFamily: 'sans-serif',
-    marginTop: 24
   },
   rateContent:{
-    paddingHorizontal: 8,
+    paddingHorizontal: 5,
     color: '#fafafa',
-    fontFamily: 'sans-serif',
     fontSize: 18,
-    fontStyle: 'italic'
+    fontStyle: 'italic',
+    borderColor: '#fafafa',
+    borderStyle: 'solid',
+    borderBottomWidth: 1,
+    paddingVertical: 5
   },
   icons:{
     marginLeft: 10,
@@ -274,7 +274,7 @@ export const styles = StyleSheet.create({
     fontFamily:'sans-serif'
   },
   infoText:{
-    fontFamily: 'sans-serif',
+    
     color: '#424242',
     fontSize: 14,
     fontStyle: 'italic',
@@ -286,18 +286,19 @@ export const styles = StyleSheet.create({
     backgroundColor: '#fafafa',
     padding: 5,
     borderRadius: 4,
-    marginTop: 2,
+    borderStyle: 'solid',
+    borderBottomWidth: 1,
+    borderColor: '#e0e0e0',
     flexDirection: 'row'
   },
   listContent:{
     flex: 1,
-    paddingHorizontal: 5
   },
   listTitle:{
     textAlign: 'left',
     color: '#424242',
     fontWeight: 'bold',
-    fontFamily: 'sans-serif',
+    
     fontSize: 16
   },
   iconRight:{
@@ -306,8 +307,8 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 8
   },
   bottomBanner:{
-    bottom: 0,
-    position: "absolute"
+    top: 0,
+    position: "absolute",
   },
   btnLink:{
     marginVertical: 15,
@@ -316,7 +317,7 @@ export const styles = StyleSheet.create({
   },
   link:{
     fontSize: 16,
-    fontFamily: 'sans-serif',
+    
     color: '#424242',
     fontStyle: 'italic',
     textAlign: 'right'
@@ -335,7 +336,7 @@ export const styles = StyleSheet.create({
   titleInfo:{
     paddingVertical: 5,
     flex: 1,
-    fontFamily: 'sans-serif',
+    
     fontWeight: 'bold',
     color: '#424242',
     fontSize: 18
@@ -344,7 +345,7 @@ export const styles = StyleSheet.create({
     color: '#2ecc71',
     fontSize: 14,
     fontStyle: 'italic',
-    fontFamily: 'sans-serif',
+    
     padding: 5
   },
   formImportant:{

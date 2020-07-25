@@ -2,13 +2,11 @@ import React, {useState} from 'react'
 import {
 	View, Text, TextInput, ScrollView,
 	TouchableOpacity, TouchableWithoutFeedback,
-	KeyboardAvoidingView, Keyboard, FlatList,
-	YellowBox, RefreshControl
+	KeyboardAvoidingView, Keyboard, RefreshControl
 } from 'react-native'
 import DropDownPicker  from 'react-native-dropdown-picker'
 import AdMob from '../components/AdMob'
 import {styles} from '../components/styles'
-import {t} from '../locales/index'
 
 console.disableYellowBox = true
 
@@ -30,26 +28,25 @@ export default function ItraoperativeFluidAdults(){
 	}
 
 	return(
-		<View>
+		<View  style={styles.container}>
 			<ScrollView>
-				<KeyboardAvoidingView style={styles.container}>
+				<KeyboardAvoidingView>
 					<TouchableWithoutFeedback onPress={Keyboard.dismiss}>
 						<View style={styles.inner}>
 							{/*This is header*/}
 							<View style={styles.headerContain}>
-								<Text style={styles.headerTitle}>{t('intraoperative_fluid_dosing')}</Text>
-								<Text style={styles.headerSubTitle}>{t('dose_iv_fluids_intraoperative')}</Text>
+								<Text style={styles.headerSubTitle}>Lượng dịch cần truyền trong phẫu thuật ở bệnh nhân người lớn</Text>
 							</View>
 							{/*End header*/}
 
 							<View style={styles.formImportant}>
-								<Text style={styles.titleInfo, {color: '#fafafa', fontSize: 18}}>{t('important')}</Text>
-								<Text style={styles.importantText}>{t('intraoperative_fluid_important')}</Text>
+								<Text style={styles.titleInfo, {color: '#fafafa', fontSize: 18, fontWeight: 'bold'}}>LƯU Ý</Text>
+								<Text style={styles.importantText}>Đây chỉ là công cụ hỗ trợ tính toán, không cung cấp thông tin thuốc toàn diện về thuốc. Luôn luôn kiểm tra liều dùng của thuốc và tham khảo ý kiến dược sĩ nếu cần</Text>
 							</View>
 
 							<View style={styles.formIntructions}>
-							<Text style={styles.titleInfo, {color: '#fafafa', fontSize: 18}}>{t('intructions')}</Text>
-								<Text style={styles.importantText}>{t('intraoperative_fluid_instructions')}</Text>
+							<Text style={styles.titleInfo, {color: '#fafafa', fontSize: 18, fontWeight: 'bold'}}>HƯỚNG DẪN</Text>
+								<Text style={styles.importantText}>Sử dụng ở những trường hợp phẫu thuật lớn, bệnh nhân > 20Kg và không trong tình trạng quá tải dịch như: suy tim, COPD, suy thận đang chạy thận...</Text>
 							</View>
 
 							{/*This is form container*/}
@@ -57,7 +54,7 @@ export default function ItraoperativeFluidAdults(){
 		            {/*This is input contain*/}
 		            <View style={styles.inputContain}>
 		              <View style={styles.titleInput}>
-		                <Text style={styles.titleInputText}>{t('weight')}</Text>
+		                <Text style={styles.titleInputText}>Cân nặng</Text>
 		              </View>
 
 		              <View style={styles.inputContent}>
@@ -83,7 +80,7 @@ export default function ItraoperativeFluidAdults(){
 		            {/*This is input contain*/}
 		            <View style={styles.inputContain}>
 		              <View style={styles.titleInput}>
-		                <Text style={styles.titleInputText}>{t('time_npo')}</Text>
+		                <Text style={styles.titleInputText}>Thời gian phẫu thuật</Text>
 		              </View>
 
 		              <View style={styles.inputContent}>
@@ -97,7 +94,7 @@ export default function ItraoperativeFluidAdults(){
 		              </View>
 
 		              <View style={styles.unitContainInput}>
-		                <Text style={styles.unitTitle}>{t('hours')}</Text>
+		                <Text style={styles.unitTitle}>giờ</Text>
 		              </View>
 		            </View>
 		            {/*end input contain*/}
@@ -109,27 +106,27 @@ export default function ItraoperativeFluidAdults(){
 								 {/*This is input contain*/}
 								 <View style={styles.inputContain}>
 									 <View style={styles.titleInput}>
-										 <Text style={styles.titleInputText}>{t('trauma_tissue')}</Text>
-										 <Text style={styles.titleInputDesc}>{t('trauma_tissue_desc')}</Text>
+										 <Text style={styles.titleInputText}>Mức độ tổn thương mô</Text>
+										 <Text style={styles.titleInputDesc}>Dự tính lượng dịch mất do tổn thương trong phẫu thuật</Text>
 									 </View>
 
 									 <View style={styles.buttonContainVertical}>
 											 <TouchableOpacity
 												 style= {traumaTissue == 3 ? styles.buttonSelect : styles.buttonNonSelect}
 												 onPress={() => setTraumaTissue(3)}>
-												 <Text style={traumaTissue == 3? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('minimal')}</Text>
+												 <Text style={traumaTissue == 3? styles.buttonTextSelect : styles.buttonTextNonSelect}>Tối thiểu</Text>
 											 </TouchableOpacity>
 
 											 <TouchableOpacity
 												 style={traumaTissue == 5 ? styles.buttonSelect : styles.buttonNonSelect}
 												 onPress={() => setTraumaTissue(5)}>
-												 <Text style={traumaTissue == 5? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('moderate')}</Text>
+												 <Text style={traumaTissue == 5? styles.buttonTextSelect : styles.buttonTextNonSelect}>Trung bình</Text>
 											 </TouchableOpacity>
 
 											 <TouchableOpacity
 												 style={traumaTissue == 7 ? styles.buttonSelect : styles.buttonNonSelect}
 												 onPress={() => setTraumaTissue(7)}>
-												 <Text style={traumaTissue == 7? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('severe')}</Text>
+												 <Text style={traumaTissue == 7? styles.buttonTextSelect : styles.buttonTextNonSelect}>Nghiêm trọng</Text>
 											 </TouchableOpacity>
 									 </View>
 								 </View>
@@ -139,113 +136,91 @@ export default function ItraoperativeFluidAdults(){
 
 							{/*this is result, show in result != 0*/}
 							<View style={styles.resultContain}>
-								<View style={styles.resultTitle}>
-									{
-										mainFluid != '' ?
-											<Text style={styles.resultTitleText}>{t('hourly_main')}</Text>
-										: <Text style={styles.unit}>{t('please_fill')}</Text>
-									}
-								</View>
 								{
-									mainFluid != '' ?
-									<View style={styles.resultContent}>
-										<Text style={styles.result}>{mainFluid}</Text>
-										<Text style={styles.unit}>{t('mL/hr')}</Text>
-									</View>
-									: null
+									mainFluid > 0 ?
+										<View>
+											<View style={styles.resultContent}>
+												<Text style={styles.resultTitleText}>Dịch mất trong mổ: </Text>
+												<Text style={styles.result}>{npoFluid}</Text>
+												<Text style={styles.resultTitleText}>mL</Text>
+											</View>
+
+											<View style={styles.resultContent}>
+												<Text style={styles.resultTitleText}>Duy trì: </Text>
+												<Text style={styles.result}>{mainFluid}</Text>
+												<Text style={styles.resultTitleText}>mL/giờ (~{((mainFluid*20)/60).toFixed()} g/p)</Text>
+											</View>
+
+											<View style={styles.resultContent}>
+												<Text style={styles.resultTitleText}>Giờ thứ nhất:</Text>
+												<Text style={styles.result}>{fluid1st}</Text>
+												<Text style={styles.resultTitleText}>mL/giờ (~{((fluid1st*20)/60).toFixed()} g/p)</Text>
+											</View>
+											<Text style={styles.rateContent}>Giờ thứ 2: {fluid2nd} mL/giờ (~{((fluid2nd*20)/60).toFixed()} g/p)</Text>
+											<Text style={styles.rateContent}>Giờ thứ 3: {fluid2nd} mL/giờ (~{((fluid2nd*20)/60).toFixed()} g/p)</Text>
+											<Text style={styles.rateContent}>Giờ thứ 4 và sau đó: {fluid4th} mL/giờ (~{((fluid4th*20)/60).toFixed()} g/p)</Text>
+										</View>
+
+									: <Text style={styles.unit}>Nhập đầy đủ thông tin để tính</Text>
 								}
 							</View>
 							{/*end result*/}
 
-							{/*this is result, show in result != 0*/}
-							{
-								mainFluid != '' ?
-							<View style={styles.resultContain}>
-								<View style={styles.resultTitle}>
-									<Text style={styles.resultTitleText}>{t('npo_fluid_deficit')}</Text>
-								</View>
-								<View style={styles.resultContent}>
-									<Text style={styles.result}>{npoFluid}</Text>
-									<Text style={styles.unit}>mL</Text>
-								</View>
-							</View>
-							: null
-						}
-						{/*end result*/}
-
-						{/*this is result, show in result != 0*/}
-						{
-							mainFluid != '' ?
-						<View style={styles.resultContain}>
-							<View style={styles.resultTitle}>
-								<Text style={styles.resultTitleText}>{t('1st_hour_fluids')}</Text>
-							</View>
-							<View style={styles.resultContent}>
-								<Text style={styles.result}>{fluid1st}</Text>
-								<Text style={styles.unit}>{t('mL/hr')}</Text>
-							</View>
-							<Text style={styles.rateContent}>{t('2nd_hour')}: {fluid2nd} {t('mL/hr')}</Text>
-							<Text style={styles.rateContent}>{t('3rd_hour')}: {fluid2nd} {t('mL/hr')}</Text>
-							<Text style={styles.rateContent}>{t('4th_hour_and')}: {fluid4th} {t('mL/hr')}</Text>
-						</View>
-						: null
-					}
-					{/*end result*/}
 						<View style={styles.formInfo}>
-								<Text style={styles.titleInfo}>{t('formula')}</Text>
-								<Text style={styles.infoText}>{t('intraoperative_formula_1')}</Text>
-								<Text style={styles.infoText}>{t('intraoperative_formula_2')}</Text>
-								<Text style={styles.infoText}>{t('intraoperative_formula_3')}</Text>
-								<Text style={styles.infoText}>{t('intraoperative_formula_4')}</Text>
-								<Text style={styles.infoText}>{t('intraoperative_formula_5')}</Text>
-								<Text style={styles.infoText}>{t('intraoperative_formula_6')}</Text>
-								<Text style={styles.infoText}>{t('intraoperative_formula_7')}</Text>
+							<Text style={styles.titleInfo}>Công thức</Text>
+							<Text style={styles.infoText}>- Dịch cơ bản mỗi giờ, mL/giờ = cân nặng, kg + 40 mL</Text>
+							<Text style={styles.infoText}>- Dịch mất trong mổ, mL = Dịch cơ bản mỗi giờ, mL/giờ × thời gian phẫu thuật, giờ</Text>
+							<Text style={styles.infoText}>- Giờ thứ 1: ½ Dịch mất trong mổ + Dịch cơ bản mỗi giờ</Text>
+							<Text style={styles.infoText}>- Giờ thứ 2: ¼ Dịch mất trong mổ + Dịch cơ bản mỗi giờ + dịch mất do tổn thương*</Text>
+							<Text style={styles.infoText}>- Giờ thứ 3: ¼ Dịch mất trong mổ + Dịch cơ bản mỗi giờ + dịch mất do tổn thương*</Text>
+							<Text style={styles.infoText}>- Giờ thứ 4 và hơn: Dịch cơ bản mỗi giờ + dịch mất do tổn thương*</Text>
+							<Text style={styles.infoText}>*Ước lượng lượng dịch mất do tổn thương:</Text>
 
 								<View style={styles.formInfo2col}>
 					        <View style={styles.infoCol2}>
-						        <Text style={styles.infoText}>{t('minimal')}</Text>
+						        <Text style={styles.infoText}>Tối thiểu</Text>
 					         </View>
 					         <View style={styles.infoCol1}>
-						        <Text style={styles.infoText}>{t('minimalEg')}</Text>
+						        <Text style={styles.infoText}>vd: nội soi, thoát vị</Text>
 					      	</View>
 									<View style={styles.infoCol1}>
-									 <Text style={styles.infoText}>2-4mL/kg/hr ({t('uses')} 3mL/kg/hr)</Text>
+									 <Text style={styles.infoText}>2-4mL/kg/giờ, sử dụng: 3mL/kg/giờ</Text>
 								 	</View>
 								</View>
 
 								<View style={styles.formInfo2col}>
 					        <View style={styles.infoCol2}>
-						        <Text style={styles.infoText}>{t('moderate')}</Text>
+						        <Text style={styles.infoText}>Trung bình</Text>
 					         </View>
 					         <View style={styles.infoCol1}>
-						        <Text style={styles.infoText}>{t('moderateEg')}</Text>
+						        <Text style={styles.infoText}>vd: cắt túi mật...</Text>
 					      	</View>
 									<View style={styles.infoCol1}>
-									 <Text style={styles.infoText}>4-6mL/kg/hr ({t('uses')} 5mL/kg/hr)</Text>
+									 <Text style={styles.infoText}>4-6mL/kg/giờ, sử dụng 5mL/kg/giờ</Text>
 								 	</View>
 								</View>
 
 								<View style={styles.formInfo2col}>
 					        <View style={styles.infoCol2}>
-						        <Text style={styles.infoText}>{t('severe')}</Text>
+						        <Text style={styles.infoText}>Nghiêm trọng</Text>
 					         </View>
 					         <View style={styles.infoCol1}>
-						        <Text style={styles.infoText}>{t('severeEg')}</Text>
+						        <Text style={styles.infoText}>vd: Cắt đoạn ruột</Text>
 					      	</View>
 									<View style={styles.infoCol1}>
-									 <Text style={styles.infoText}>4-6mL/kg/hr ({t('uses')} 5mL/kg/hr)</Text>
+									 <Text style={styles.infoText}>4-6mL/kg/giờ, sử dụng 5mL/kg/giờ</Text>
 								 	</View>
 								</View>
 						</View>
 
 							<View style={styles.formInfo}>
-								<Text style={styles.infoText}>{t('creator')}: {'Dr. Tomas Corcoran'}</Text>
+								<Text style={styles.infoText}>Tác giả: Dr. Tomas Corcoran</Text>
 							</View>
 						</View>
 					</TouchableWithoutFeedback>
 				</KeyboardAvoidingView>
 			</ScrollView>
-			<View>
+			<View style={styles.bottomBanner}>
 				<AdMob />
 			</View>
 		</View>
