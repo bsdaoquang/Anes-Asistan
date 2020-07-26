@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
   headerTitle:{
     fontSize: 18,
     color: '#00bfa5',
-    
+
     textAlign: 'center',
     fontWeight: 'bold',
     textTransform: 'uppercase'
@@ -109,13 +109,11 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 10,
     fontSize: 16,
     fontWeight: 'bold',
-    
     color: '#424242',
   },
   alertText:{
     color: '#ef9a9a',
     fontSize: 12,
-    
     padding: 5,
     fontStyle: 'italic'
   },
@@ -126,7 +124,6 @@ export const styles = StyleSheet.create({
   },
   unitTitle:{
     color: '#424242',
-    
     textAlign: 'center'
   },
 
@@ -166,12 +163,12 @@ export const styles = StyleSheet.create({
 
   buttonTextSelect:{
     fontSize: 12,
-    
+
     color: '#fafafa',
   },
   buttonTextNonSelect:{
     fontSize: 12,
-    
+
     color: '#424242',
   },
 
@@ -202,7 +199,7 @@ export const styles = StyleSheet.create({
   },
   resultTitleDesc:{
     color: '#fafafa',
-    
+
     fontSize: 14,
     fontStyle: 'italic',
     margin: 8,
@@ -215,7 +212,7 @@ export const styles = StyleSheet.create({
   result:{
     color: '#fafafa',
     fontWeight: 'bold',
-    
+
     fontSize: 35,
     paddingHorizontal: 8
   },
@@ -274,7 +271,7 @@ export const styles = StyleSheet.create({
     fontFamily:'sans-serif'
   },
   infoText:{
-    
+
     color: '#424242',
     fontSize: 14,
     fontStyle: 'italic',
@@ -298,7 +295,7 @@ export const styles = StyleSheet.create({
     textAlign: 'left',
     color: '#424242',
     fontWeight: 'bold',
-    
+
     fontSize: 16
   },
   iconRight:{
@@ -317,7 +314,7 @@ export const styles = StyleSheet.create({
   },
   link:{
     fontSize: 16,
-    
+
     color: '#424242',
     fontStyle: 'italic',
     textAlign: 'right'
@@ -336,7 +333,7 @@ export const styles = StyleSheet.create({
   titleInfo:{
     paddingVertical: 5,
     flex: 1,
-    
+
     fontWeight: 'bold',
     color: '#424242',
     fontSize: 18
@@ -345,7 +342,7 @@ export const styles = StyleSheet.create({
     color: '#2ecc71',
     fontSize: 14,
     fontStyle: 'italic',
-    
+
     padding: 5
   },
   formImportant:{
