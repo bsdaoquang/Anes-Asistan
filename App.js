@@ -66,6 +66,8 @@ function App() {
         <Stack.Screen name='Phân loại ASA' component={ASAPhysical}/>
         <Stack.Screen name='Chỉ số El-Ganzouri (EGRI)' component={DifficultAirway}/>
         <Stack.Screen name='Truyền dịch trong phẫu thuật' component={ItraoperativeFluidAdults}/>
+        <Stack.Screen name='Nguy cơ nôn sau phẫu thuật' component={NauseaVomiting}/>
+        <Stack.Screen name='Nguy cơ viêm phổi sau phẫu thuật' component={PostoperativePneumona}/>
       </Stack.Navigator>
       </NavigationContainer>
     );

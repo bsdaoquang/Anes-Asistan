@@ -1,10 +1,7 @@
 import React, {useState} from 'react'
-import {View, Text, TextInput, ScrollView, TouchableOpacity, TouchableWithoutFeedback, KeyboardAvoidingView, Keyboard} from 'react-native'
-
+import {View, Text, ScrollView, TouchableOpacity, TouchableWithoutFeedback, KeyboardAvoidingView} from 'react-native'
 import AdMob from '../components/AdMob'
-
 import {styles} from '../components/styles'
-import {t} from '../locales/index'
 
 export default function NauseaVomiting(){
 
@@ -37,20 +34,19 @@ export default function NauseaVomiting(){
 	}
 
 	return(
-	<View>
+	<View style={styles.container}>
 	    <ScrollView>
-	    <KeyboardAvoidingView style={styles.container}>
-	      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+	    <KeyboardAvoidingView>
+	      <TouchableWithoutFeedback>
 	      	<View style={styles.inner}>
 	      		{/*This is header*/}
 		        <View style={styles.headerContain}>
-			        <Text style={styles.headerTitle}>{t('nausea_voimiting')}</Text>
-			        <Text style={styles.headerSubTitle}>{t('nausea_voimiting_desc')}</Text>
+			        <Text style={styles.headerSubTitle}>Đánh giá nguy cơ buồn nôn và nôn sau phẫu thuật</Text>
 			        </View>
 		        {/*End header*/}
 
 				<View style={styles.formInfo}>
-              		<Text style={styles.infoText}>{t('nausea_voimiting_info')}</Text>
+              		<Text style={styles.infoText}>Sử dụng trong những trường hợp gây mê toàn thân</Text>
             	</View>
 
 				{/*This is form container*/}
@@ -58,7 +54,7 @@ export default function NauseaVomiting(){
 		            {/*This is input contain*/}
 		            <View style={styles.inputContain}>
 		              <View style={styles.titleInput}>
-		                <Text style={styles.titleInputText}>{t('gender')}</Text>
+		                <Text style={styles.titleInputText}>Giới tính</Text>
 		              </View>
 
 		              <View style={styles.buttonContainHorizontal}>
@@ -66,7 +62,7 @@ export default function NauseaVomiting(){
 											style= {gender == 0 ? styles.buttonSelect : styles.buttonNonSelect}
 											onPress={() => setGender(0)}>
 
-											<Text style={gender == 0? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('male')}</Text>
+											<Text style={gender == 0? styles.buttonTextSelect : styles.buttonTextNonSelect}>Nam</Text>
 											<Text style={styles.titleInputDesc}>+0</Text>
 
 										</TouchableOpacity>
@@ -75,7 +71,7 @@ export default function NauseaVomiting(){
 											style={gender == 1 ? styles.buttonSelect : styles.buttonNonSelect}
 											onPress={() => setGender(1)}>
 
-											<Text style={gender == 1? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('female')}</Text>
+											<Text style={gender == 1? styles.buttonTextSelect : styles.buttonTextNonSelect}>Nữ</Text>
 											<Text style={styles.titleInputDesc}>+1</Text>
 
 										</TouchableOpacity>
@@ -90,7 +86,7 @@ export default function NauseaVomiting(){
 		            {/*This is input contain*/}
 		            <View style={styles.inputContain}>
 		              <View style={styles.titleInput}>
-		                <Text style={styles.titleInputText}>{t('smoking_status')}</Text>
+		                <Text style={styles.titleInputText}>Hút thuốc lá</Text>
 		              </View>
 
 		              <View style={styles.buttonContainHorizontal}>
@@ -98,7 +94,7 @@ export default function NauseaVomiting(){
 											style= {smoke == 0 ? styles.buttonSelect : styles.buttonNonSelect}
 											onPress={() => setSmoke(0)}>
 
-											<Text style={smoke == 0? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('yes')}</Text>
+											<Text style={smoke == 0? styles.buttonTextSelect : styles.buttonTextNonSelect}>Có</Text>
 											<Text style={styles.titleInputDesc}>+0</Text>
 
 										</TouchableOpacity>
@@ -107,7 +103,7 @@ export default function NauseaVomiting(){
 											style={smoke == 1 ? styles.buttonSelect : styles.buttonNonSelect}
 											onPress={() => setSmoke(1)}>
 
-											<Text style={smoke == 1? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('no')}</Text>
+											<Text style={smoke == 1? styles.buttonTextSelect : styles.buttonTextNonSelect}>Không</Text>
 											<Text style={styles.titleInputDesc}>+1</Text>
 
 										</TouchableOpacity>
@@ -122,7 +118,7 @@ export default function NauseaVomiting(){
 		            {/*This is input contain*/}
 		            <View style={styles.inputContain}>
 		              <View style={styles.titleInput}>
-		                <Text style={styles.titleInputText}>{t('history_ motion_sickness')}</Text>
+		                <Text style={styles.titleInputText}>Tiền sử say tàu xe hoặc PONV</Text>
 		              </View>
 
 		              <View style={styles.buttonContainHorizontal}>
@@ -130,7 +126,7 @@ export default function NauseaVomiting(){
 											style= {history == 1 ? styles.buttonSelect : styles.buttonNonSelect}
 											onPress={() => setHistory(1)}>
 
-											<Text style={history == 1? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('yes')}</Text>
+											<Text style={history == 1? styles.buttonTextSelect : styles.buttonTextNonSelect}>Có</Text>
 											<Text style={styles.titleInputDesc}>+1</Text>
 
 										</TouchableOpacity>
@@ -139,7 +135,7 @@ export default function NauseaVomiting(){
 											style={history == 0 ? styles.buttonSelect : styles.buttonNonSelect}
 											onPress={() => setHistory(0)}>
 
-											<Text style={history == 0? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('no')}</Text>
+											<Text style={history == 0? styles.buttonTextSelect : styles.buttonTextNonSelect}>Không</Text>
 											<Text style={styles.titleInputDesc}>+0</Text>
 
 										</TouchableOpacity>
@@ -154,7 +150,7 @@ export default function NauseaVomiting(){
 		            {/*This is input contain*/}
 		            <View style={styles.inputContain}>
 		              <View style={styles.titleInput}>
-		                <Text style={styles.titleInputText}>{t('use_postoperative_opioid')}</Text>
+		                <Text style={styles.titleInputText}>Sử dụng Opioid sau mổ</Text>
 		              </View>
 
 		              <View style={styles.buttonContainHorizontal}>
@@ -162,7 +158,7 @@ export default function NauseaVomiting(){
 											style= {opioid == 1 ? styles.buttonSelect : styles.buttonNonSelect}
 											onPress={() => setOpioid(1)}>
 
-											<Text style={opioid == 1? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('yes')}</Text>
+											<Text style={opioid == 1? styles.buttonTextSelect : styles.buttonTextNonSelect}>Có</Text>
 											<Text style={styles.titleInputDesc}>+1</Text>
 
 										</TouchableOpacity>
@@ -171,7 +167,7 @@ export default function NauseaVomiting(){
 											style={opioid == 0 ? styles.buttonSelect : styles.buttonNonSelect}
 											onPress={() => setOpioid(0)}>
 
-											<Text style={opioid == 0? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('no')}</Text>
+											<Text style={opioid == 0? styles.buttonTextSelect : styles.buttonTextNonSelect}>Không</Text>
 											<Text style={styles.titleInputDesc}>+0</Text>
 
 										</TouchableOpacity>
@@ -183,31 +179,27 @@ export default function NauseaVomiting(){
 
 	         		{/*This is result contain*/}
 		          <View style={styles.resultContain}>
-		              <View style={styles.resultTitle}>
-		                <Text style={styles.resultTitleText}>{point} {t('point')}</Text>
-		              	<Text style={styles.resultTitleDesc}>{t('apfel_score')}</Text>
-		           </View>
-
-		           <Text style={styles.result}>{risk}%</Text>
-		           <Text style={styles.unit}>{t('risk_ponv')}</Text>
+								<Text style={styles.unit}>Nguy cơ PONV trong 24 giờ</Text>
+								<Text style={styles.result}>{risk}%</Text>
+		           	<Text style={styles.unit}>Thang điểm Apfel: {point} điểm</Text>
 		          </View>
 		          {/*End result contain*/}
 
 		         <View style={styles.formInfo}>
-		         	<Text style={styles.titleInfo}>{t('advice')}</Text>
-              		<Text style={styles.infoText}>{t('ponv_advice')}</Text>
+		         	<Text style={styles.titleInfo}>Lời khuyên</Text>
+              		<Text style={styles.infoText}>Sử dụng dự phòng thuốc chống nôn cho những bệnh nhân có nguy cơ cao</Text>
             	</View>
 
             	<View style={styles.formInfo}>
-            		<Text style={styles.titleInfo}>{t('facts_figures')}</Text>
+            		<Text style={styles.titleInfo}>Đánh giá</Text>
 
             		<View style={styles.formInfo2col}>
 	            		<View style={styles.infoCol1}>
-		            		<Text style={styles.infoText}>{t('apfel_score')}</Text>
+		            		<Text style={styles.infoText}>Thang điểm Apfel</Text>
 	            		</View>
 
 	            		<View style={styles.infoCol2}>
-	            			<Text style={styles.infoText}>{t('risk_ponv')}</Text>
+	            			<Text style={styles.infoText}>Nguy cơ PONV</Text>
 	            		</View>
 	            	</View>
 
@@ -264,7 +256,7 @@ export default function NauseaVomiting(){
             	</View>
 
             	<View style={styles.formInfo}>
-            		<Text style={styles.infoText}>{t('creator')}: {'Dr. Christian C. Apfel'}</Text>
+            		<Text style={styles.infoText}>Tác giả: Dr. Christian C. Apfel</Text>
 				</View>
 
 	      	</View>
@@ -272,7 +264,7 @@ export default function NauseaVomiting(){
 	    </KeyboardAvoidingView>
 
 	    </ScrollView>
-			<View>
+			<View style={styles.bottomBanner}>
 				<AdMob />
 			</View>
 	</View>

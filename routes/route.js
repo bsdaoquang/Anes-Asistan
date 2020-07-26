@@ -8,11 +8,11 @@ import {styles} from '../components/styles'
 import {t} from '../locales/index'
 
 const formulas = [
-  {id: '1',title: t('nausea_voimiting'), desc: t('nausea_voimiting_desc')},
   {id: '2',title: 'Phân loại ASA', desc: 'Đánh giá tình trạng sức khỏe bệnh nhân trước phẫu thuật'},
   {id: '3',title: 'Chỉ số El-Ganzouri (EGRI)', desc: 'Đánh giá nguy cơ đặt nội khí quản khó'},
+  {id: '1',title: 'Nguy cơ nôn sau phẫu thuật', desc: 'Đánh giá nguy cơ nôn và buồn nôn sau phẫu thuật (PONV)'},
   {id: '4',title: 'Truyền dịch trong phẫu thuật', desc: 'Tính lượng dịch cần truyền trong phẫu thuật'},
-  {id: '5',title: t('pneumonia_risk_title'), desc: t('pneumonia_risk_desc')},
+  {id: '5',title: 'Nguy cơ viêm phổi sau phẫu thuật', desc: 'Dự đoán nguy cơ viêm phổi sau phẫu thuật'},
   {id: '6',title: t('pulmonary_complication'), desc: t('pulmonary_complication_desc')},
   {id: '7',title: t('prespiratory_risk'), desc: t('prespiratory_risk_desc')},
 ]

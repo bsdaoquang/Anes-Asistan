@@ -35,7 +35,6 @@ export default function ItraoperativeFluidAdults(){
 								<Text style={styles.headerSubTitle}>Lượng dịch cần truyền trong phẫu thuật ở bệnh nhân người lớn</Text>
 							</View>
 							{/*End header*/}
-
 							<View style={styles.formImportant}>
 								<Text style={styles.titleInfo, {color: '#fafafa', fontSize: 18, fontWeight: 'bold'}}>LƯU Ý</Text>
 								<Text style={styles.importantText}>Đây chỉ là công cụ hỗ trợ tính toán, không cung cấp thông tin thuốc toàn diện về thuốc. Luôn luôn kiểm tra liều dùng của thuốc và tham khảo ý kiến dược sĩ nếu cần</Text>
