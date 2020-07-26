@@ -4,11 +4,8 @@ import {
 	TouchableOpacity, TouchableWithoutFeedback,
 	KeyboardAvoidingView, Keyboard, RefreshControl
 } from 'react-native'
-import DropDownPicker  from 'react-native-dropdown-picker'
 import AdMob from '../components/AdMob'
 import {styles} from '../components/styles'
-
-console.disableYellowBox = true
 
 export default function ItraoperativeFluidAdults(){
 	const [weight, setWeight] = useState(weight)

@@ -12,14 +12,10 @@ import ScreenNavigation from './routes/route'
 
 import ASAPhysical from './formulas/asa_physical'
 import DifficultAirway from './formulas/difficult_airway'
-<<<<<<< HEAD
 import PostoperativePneumona from './formulas/pneumonia_risk'
 import PrespiratoryRisk from './formulas/respiratory_risk'
-=======
->>>>>>> 2ae6f626d46c711e3082db6952da8797dacdb62e
 import ItraoperativeFluidAdults from './formulas/intraoperative_fluid_adults'
 import NauseaVomiting from './formulas/nauseaAndVomiting'
-import PostoperativePneumona from './formulas/pneumonia_risk'
 import PulmonaryComplication from './formulas/pulmonary_complication'
 import RespiratoryRisk from './formulas/respiratory_risk'
 
@@ -50,18 +46,6 @@ const Stack = createStackNavigator();
 
 function App() {
   return (
-<<<<<<< HEAD
-    //<ItraoperativeFluidAdults />
-    <PrespiratoryRisk />
-    //<SectionListExample />
-    //<PostoperativePneumona />
-    //<DifficultAirway />
-    //<ASAPhysical />
-  	//<PulmonaryComplication />
-    //<NauseaVomiting />
-  );
-}
-=======
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={ScreenNavigation}
@@ -88,4 +72,3 @@ function App() {
   }
 
 export default App;
->>>>>>> 2ae6f626d46c711e3082db6952da8797dacdb62e
