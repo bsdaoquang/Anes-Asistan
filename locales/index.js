@@ -18,8 +18,8 @@ import en from './en.json'
 I18n.defaultLocale = 'en';
 I18n.fallbacks = true;
 I18n.translations = {
-  en,
-  vi
+  vi,
+  en
 }
 
 //set app to local phones setting
