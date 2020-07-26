@@ -3,8 +3,15 @@ import * as React from 'react';
 import { View, Text, Button, Share } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { createDrawerNavigator } from '@react-navigation/drawer'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StatusBar } from 'expo-status-bar';
-import { FontAwesome } from '@expo/vector-icons'
+import { FontAwesome, Ionicons } from '@expo/vector-icons'
+
+//tab Screen
+import HomeScreen from './components/home';
+import About from './components/about'
+import Contact from './components/contact'
 
 //import formulas
 import ScreenNavigation from './routes/route'
@@ -40,12 +47,13 @@ const onShare = async () => {
     }
   };
 
+const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator()
 
 
-function App() {
+function StackNavigation({navigation}){
   return (
-    <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={ScreenNavigation}
           options={{
@@ -57,9 +65,9 @@ function App() {
           headerTitleStyle: {
             fontWeight: 'bold',
           },
-          headerRight:() => (
-            <FontAwesome name="share-square-o" size={28} color='white' style={{marginRight: 24}} onPress={onShare} />
-          ),
+          headerLeft:() => (
+            <Ionicons name="ios-menu" size={28} color='white' style={{marginLeft: 15, marginTop: 5}} onPress={() => navigation.openDrawer()}/>
+          )
         }}
         />
         <Stack.Screen name='Phân loại ASA' component={ASAPhysical}/>
@@ -70,8 +78,49 @@ function App() {
         <Stack.Screen name='Nguy cơ biến chứng phổi' component={PulmonaryComplication}/>
         <Stack.Screen name='Nguy cơ suy hô hấp' component={RespiratoryRisk}/>
       </Stack.Navigator>
-      </NavigationContainer>
     );
   }
 
-export default App;
+  //tab
+  function TabNavigation({navigation}){
+    return(
+      <Tab.Navigator
+          screenOptions={({ route }) => ({
+            tabBarIcon: ({ focused, color, size }) => {
+              let iconName;
+
+              if (route.name === 'HomeScreen') {
+                iconName = focused
+                  ? 'md-star'
+                  : 'md-star-outline';
+              } else if (route.name === 'Máy tính') {
+                iconName = focused ? 'ios-list-box' : 'ios-list';
+              }
+
+              //can return any component that you like here!
+              return <Ionicons name={iconName} size={size} color={color} />;
+            },
+          })}
+          tabBarOptions={{
+            activeTintColor: '#00bfa5',
+            inactiveTintColor: 'gray',
+          }}
+        >
+        <Tab.Screen name='HomeScreen' component={HomeScreen}/>
+        <Tab.Screen name='Máy tính' component={StackNavigation}/>
+        <Tab.Screen name='Tài liệu' component={About}/>
+      </Tab.Navigator>
+    )
+  }
+
+  export default function App(){
+    return(
+        <NavigationContainer>
+          <Drawer.Navigator initialRouteName="Home">
+            <Drawer.Screen name='Trang chủ' component={TabNavigation}/>
+            <Drawer.Screen name='Giới thiệu' component={About}/>
+            <Drawer.Screen name='Liên hệ' component={Contact}/>
+          </Drawer.Navigator>
+        </NavigationContainer>
+      )
+  }
