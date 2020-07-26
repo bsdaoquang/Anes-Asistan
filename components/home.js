@@ -91,7 +91,12 @@ export default function HomeScreen(){
           <View style={styles.headerContain}>
             <Text style={styles.title}>Thông tin bệnh nhân</Text>
             <FontAwesome5 name={gender} size={gender === 'child' ? 42 : 72} color="#00bfa5" />
-            <Text style={styles.genderTitle}>{gender}: {weight} kg, {height} cm</Text>
+            {
+              weight != 0 ?
+              <Text style={styles.genderTitle}>{gender}: {weight} kg, {height} cm</Text>
+              :
+              <Text style={{...styles.genderTitle, fontStyle: 'italic', fontSize: 14}}>Nhấp để nhập thông tin</Text>
+            }
           </View>
         </TouchableOpacity>
       </ScrollView>
