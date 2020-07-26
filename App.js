@@ -6,7 +6,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { StatusBar } from 'expo-status-bar';
 import { FontAwesome } from '@expo/vector-icons'
 
-import {t} from './locales/index'
 //import formulas
 import ScreenNavigation from './routes/route'
 
@@ -22,7 +21,7 @@ import RespiratoryRisk from './formulas/respiratory_risk'
 const onShare = async () => {
     try {
       const result = await Share.share({
-        title: t('anes_assistant'),
+        title: 'Trợ Lý Gây Mê',
         message:
           'Tải miễn phí trên CH Play',
         url: ''
@@ -50,7 +49,7 @@ function App() {
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={ScreenNavigation}
           options={{
-          title: t('anes_assistant'),
+          title: 'Trợ Lý Gây Mê',
           headerStyle: {
             backgroundColor: '#00bfa5',
           },
@@ -66,8 +65,10 @@ function App() {
         <Stack.Screen name='Phân loại ASA' component={ASAPhysical}/>
         <Stack.Screen name='Chỉ số El-Ganzouri (EGRI)' component={DifficultAirway}/>
         <Stack.Screen name='Truyền dịch trong phẫu thuật' component={ItraoperativeFluidAdults}/>
-        <Stack.Screen name='Nguy cơ nôn sau phẫu thuật' component={NauseaVomiting}/>
-        <Stack.Screen name='Nguy cơ viêm phổi sau phẫu thuật' component={PostoperativePneumona}/>
+        <Stack.Screen name='Nguy cơ buồn nôn và nôn' component={NauseaVomiting}/>
+        <Stack.Screen name='Nguy cơ viêm phổi' component={PostoperativePneumona}/>
+        <Stack.Screen name='Nguy cơ biến chứng phổi' component={PulmonaryComplication}/>
+        <Stack.Screen name='Nguy cơ suy hô hấp' component={RespiratoryRisk}/>
       </Stack.Navigator>
       </NavigationContainer>
     );

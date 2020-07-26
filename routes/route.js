@@ -1,20 +1,17 @@
 import React, {useState} from 'react';
 import { SafeAreaView, View, FlatList, StyleSheet, Text, TouchableOpacity, Alert, ScrollView} from 'react-native';
 import Constants from 'expo-constants';
-import { FontAwesome } from '@expo/vector-icons'
 import AdMob from '../components/AdMob'
 import {styles} from '../components/styles'
-
-import {t} from '../locales/index'
 
 const formulas = [
   {id: '2',title: 'Phân loại ASA', desc: 'Đánh giá tình trạng sức khỏe bệnh nhân trước phẫu thuật'},
   {id: '3',title: 'Chỉ số El-Ganzouri (EGRI)', desc: 'Đánh giá nguy cơ đặt nội khí quản khó'},
-  {id: '1',title: 'Nguy cơ nôn sau phẫu thuật', desc: 'Đánh giá nguy cơ nôn và buồn nôn sau phẫu thuật (PONV)'},
+  {id: '1',title: 'Nguy cơ buồn nôn và nôn', desc: 'Đánh giá nguy cơ nôn và buồn nôn sau phẫu thuật (PONV)'},
   {id: '4',title: 'Truyền dịch trong phẫu thuật', desc: 'Tính lượng dịch cần truyền trong phẫu thuật'},
-  {id: '5',title: 'Nguy cơ viêm phổi sau phẫu thuật', desc: 'Dự đoán nguy cơ viêm phổi sau phẫu thuật'},
-  {id: '6',title: t('pulmonary_complication'), desc: t('pulmonary_complication_desc')},
-  {id: '7',title: t('prespiratory_risk'), desc: t('prespiratory_risk_desc')},
+  {id: '5',title: 'Nguy cơ viêm phổi', desc: 'Dự đoán nguy cơ viêm phổi sau phẫu thuật'},
+  {id: '6',title: 'Nguy cơ biến chứng phổi', desc: 'Dự đoán nguy cơ biến chứng phổi bao gồm cả suy hô hấp'},
+  {id: '7',title: 'Nguy cơ suy hô hấp', desc: 'Nguy cơ thở máy trong 48 giờ hoặc đặt lại nội khí quản trong 30 ngày'},
 ]
 
 function Item({ title }) {

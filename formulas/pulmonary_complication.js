@@ -1,10 +1,7 @@
 import React, {useState} from 'react'
 import {View, Text, TextInput, ScrollView, TouchableOpacity, TouchableWithoutFeedback, KeyboardAvoidingView, Keyboard} from 'react-native'
-
 import AdMob from '../components/AdMob'
-
 import {styles} from '../components/styles'
-import {t} from '../locales/index'
 
 export default function PulmonaryComplication(){
 
@@ -35,13 +32,12 @@ export default function PulmonaryComplication(){
 	      	<View style={styles.inner}>
 	      		{/*This is header*/}
 		        <View style={styles.headerContain}>
-			        <Text style={styles.headerTitle}>{t('pulmonary_complication')}</Text>
-			        <Text style={styles.headerSubTitle}>{t('pulmonary_complication_desc')}</Text>
+			        <Text style={styles.headerSubTitle}>Dự đoán nguy cơ các biến chứng phổi sau phẫu thuật</Text>
 			        </View>
 		        {/*End header*/}
 
 				<View style={styles.formInfo}>
-              		<Text style={styles.infoText}>{t('pulmonary_complication_info')}</Text>
+              		<Text style={styles.infoText}>Áp dụng cho những bệnh nhân được gây mê toàn thân, tê tủy sống và tê cục bộ</Text>
             	</View>
 
 				{/*This is form container*/}
@@ -49,7 +45,7 @@ export default function PulmonaryComplication(){
 		            {/*This is input contain*/}
 		            <View style={styles.inputContain}>
 		              <View style={styles.titleInput}>
-		                <Text style={styles.titleInputText}>{t('age')}, {t('years')}</Text>
+		                <Text style={styles.titleInputText}>Tuổi: </Text>
 		              </View>
 
 		              <View style={styles.buttonContainHorizontal}>
@@ -91,7 +87,7 @@ export default function PulmonaryComplication(){
 		            {/*This is input contain*/}
 		            <View style={styles.inputContain}>
 		              <View style={styles.titleInput}>
-		                <Text style={styles.titleInputText}>{t('preoperative')} SpO2</Text>
+		                <Text style={styles.titleInputText}>SpO2 trước phẫu thuật</Text>
 		              </View>
 
 		              <View style={styles.buttonContainHorizontal}>
@@ -133,8 +129,8 @@ export default function PulmonaryComplication(){
 		            {/*This is input contain*/}
 		            <View style={styles.inputContain}>
 		              <View style={styles.titleInput}>
-		                <Text style={styles.titleInputText}>{t('respiratory_infection')}</Text>
-		                <Text style={styles.titleInputDesc}>{t('respiratory_infection_desc')}</Text>
+		                <Text style={styles.titleInputText}>Nhiễm trùng hô hấp trong vòng 1 tháng</Text>
+		                <Text style={styles.titleInputDesc}>Gồm cả đường hô hấp dưới và trên (vd:, URI, viêm mũi họng, phế quản), với sốt và điều trị kháng sinh</Text>
 		              </View>
 
 		              <View style={styles.buttonContainHorizontal}>
@@ -142,7 +138,7 @@ export default function PulmonaryComplication(){
 							style= {respiratory == 17 ? styles.buttonSelect : styles.buttonNonSelect}
 							onPress={() => setRespiratory(17)}>
 
-							<Text style={respiratory == 17? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('yes')}</Text>
+							<Text style={respiratory == 17? styles.buttonTextSelect : styles.buttonTextNonSelect}>Có</Text>
 							<Text style={styles.titleInputDesc}>+17</Text>
 
 						</TouchableOpacity>
@@ -151,7 +147,7 @@ export default function PulmonaryComplication(){
 							style={respiratory == 0 ? styles.buttonSelect : styles.buttonNonSelect}
 							onPress={() => setRespiratory(0)}>
 
-							<Text style={respiratory == 0? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('no')}</Text>
+							<Text style={respiratory == 0? styles.buttonTextSelect : styles.buttonTextNonSelect}>Không</Text>
 							<Text style={styles.titleInputDesc}>+0</Text>
 
 						</TouchableOpacity>
@@ -166,7 +162,8 @@ export default function PulmonaryComplication(){
 		            {/*This is input contain*/}
 		            <View style={styles.inputContain}>
 		              <View style={styles.titleInput}>
-		                <Text style={styles.titleInputText}>{t('anemia')} (Hgb ≤ 10 g/dL)</Text>
+		                <Text style={styles.titleInputText}>Thiếu máu</Text>
+										<Text style={styles.titleInputDesc}>Trước phẫu thuật (Hgb ≤ 10 g/dL)</Text>
 		              </View>
 
 		              <View style={styles.buttonContainHorizontal}>
@@ -174,7 +171,7 @@ export default function PulmonaryComplication(){
 							style= {anemia == 11 ? styles.buttonSelect : styles.buttonNonSelect}
 							onPress={() => setAnemia(11)}>
 
-							<Text style={anemia == 11? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('yes')}</Text>
+							<Text style={anemia == 11? styles.buttonTextSelect : styles.buttonTextNonSelect}>Có</Text>
 							<Text style={styles.titleInputDesc}>+11</Text>
 
 						</TouchableOpacity>
@@ -183,7 +180,7 @@ export default function PulmonaryComplication(){
 							style={anemia == 0 ? styles.buttonSelect : styles.buttonNonSelect}
 							onPress={() => setAnemia(0)}>
 
-							<Text style={anemia == 0? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('no')}</Text>
+							<Text style={anemia == 0? styles.buttonTextSelect : styles.buttonTextNonSelect}>Không</Text>
 							<Text style={styles.titleInputDesc}>+0</Text>
 
 						</TouchableOpacity>
@@ -198,7 +195,7 @@ export default function PulmonaryComplication(){
 		            {/*This is input contain*/}
 		            <View style={styles.inputContain}>
 		              <View style={styles.titleInput}>
-		                <Text style={styles.titleInputText}>{t('surgical_incision')}</Text>
+		                <Text style={styles.titleInputText}>Vị trí phẫu thuật</Text>
 		              </View>
 
 		              <View style={styles.buttonContainVertical}>
@@ -206,7 +203,7 @@ export default function PulmonaryComplication(){
 							style= {incision == 0 ? styles.buttonSelect : styles.buttonNonSelect}
 							onPress={() => setIncision(0)}>
 
-							<Text style={incision == 0? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('peripheral')}</Text>
+							<Text style={incision == 0? styles.buttonTextSelect : styles.buttonTextNonSelect}>Mạch máu ngoại biên</Text>
 							<Text style={styles.titleInputDesc}>+0</Text>
 
 						</TouchableOpacity>
@@ -215,7 +212,7 @@ export default function PulmonaryComplication(){
 							style= {incision == 15 ? styles.buttonSelect : styles.buttonNonSelect}
 							onPress={() => setIncision(15)}>
 
-							<Text style={incision == 15? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('upper_abdominal')}</Text>
+							<Text style={incision == 15? styles.buttonTextSelect : styles.buttonTextNonSelect}>Phẫu thuật bụng</Text>
 							<Text style={styles.titleInputDesc}>+15</Text>
 
 						</TouchableOpacity>
@@ -224,7 +221,7 @@ export default function PulmonaryComplication(){
 							style= {incision == 24 ? styles.buttonSelect : styles.buttonNonSelect}
 							onPress={() => setIncision(24)}>
 
-							<Text style={incision == 24? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('intrathoracic')}</Text>
+							<Text style={incision == 24? styles.buttonTextSelect : styles.buttonTextNonSelect}>Phẫu thuật nội sọ</Text>
 							<Text style={styles.titleInputDesc}>+24</Text>
 
 						</TouchableOpacity>
@@ -241,7 +238,7 @@ export default function PulmonaryComplication(){
 		            {/*This is input contain*/}
 		            <View style={styles.inputContain}>
 		              <View style={styles.titleInput}>
-		                <Text style={styles.titleInputText}>{t('duration_surgery')}</Text>
+		                <Text style={styles.titleInputText}>Thời gian phẫu thuật</Text>
 		              </View>
 
 		              <View style={styles.buttonContainVertical}>
@@ -283,7 +280,7 @@ export default function PulmonaryComplication(){
 		            {/*This is input contain*/}
 		            <View style={styles.inputContain}>
 		              <View style={styles.titleInput}>
-		                <Text style={styles.titleInputText}>{t('emergency')}</Text>
+		                <Text style={styles.titleInputText}>Phẫu thuật cấp cứu</Text>
 		              </View>
 
 		              <View style={styles.buttonContainHorizontal}>
@@ -291,7 +288,7 @@ export default function PulmonaryComplication(){
 											style= {emergency == 8 ? styles.buttonSelect : styles.buttonNonSelect}
 											onPress={() => setEmergency(8)}>
 
-											<Text style={emergency == 8? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('yes')}</Text>
+											<Text style={emergency == 8? styles.buttonTextSelect : styles.buttonTextNonSelect}>Có</Text>
 											<Text style={styles.titleInputDesc}>+8</Text>
 
 										</TouchableOpacity>
@@ -300,7 +297,7 @@ export default function PulmonaryComplication(){
 											style={emergency == 0 ? styles.buttonSelect : styles.buttonNonSelect}
 											onPress={() => setEmergency(0)}>
 
-											<Text style={emergency == 0? styles.buttonTextSelect : styles.buttonTextNonSelect}>{t('no')}</Text>
+											<Text style={emergency == 0? styles.buttonTextSelect : styles.buttonTextNonSelect}>Không</Text>
 											<Text style={styles.titleInputDesc}>+0</Text>
 
 										</TouchableOpacity>
@@ -313,34 +310,32 @@ export default function PulmonaryComplication(){
 				         	{/*This is result contain*/}
 					          <View style={styles.resultContain}>
 					              <View style={styles.resultTitle}>
-					                <Text style={styles.resultTitleText}>{point} {t('point')}</Text>
-					              	<Text style={styles.resultTitleDesc}>{t('aricat_score')}</Text>
+													<Text style={styles.resultTitleText}>Nguy cơ: </Text>
+													<Text style={styles.result}>{risk} %</Text>
 					           </View>
-
-					           <Text style={styles.result}>{risk}%</Text>
-					           <Text style={styles.unit}>{t('risk_complication')}</Text>
+					           <Text style={styles.unit}>Nguy cơ biến chứng phổi sau phẫu thuật tại bệnh viện*</Text>
 					          </View>
 					          {/*End result contain*/}
 
 					         <View style={styles.formInfo}>
-					         	<Text style={styles.titleInfo}>{t('note')}</Text>
-			              		<Text style={styles.infoText}>{t('complication_advice')}</Text>
+					         	<Text style={styles.titleInfo}>Ghi chú:</Text>
+			              		<Text style={styles.infoText}>*Những biến chứng này bao gồm suy hô hấp, nhiễm trùng, tràn dịch, tràn khí màng phổi, co thắt phế quản điều trị bằng thuốc và viêm phổi hít</Text>
 			            	</View>
 
 			            	<View style={styles.formInfo}>
-			            		<Text style={styles.titleInfo}>{t('facts_figures')}</Text>
+			            		<Text style={styles.titleInfo}>Đánh giá:</Text>
 
 			            		<View style={styles.formInfo2col}>
 				            		<View style={styles.infoCol1}>
-					            		<Text style={styles.infoText}>{t('aricat_score')}</Text>
+					            		<Text style={styles.infoText}>Thang điểm ARISCAT</Text>
 				            		</View>
 
 				            		<View style={styles.infoCol1}>
-				            			<Text style={styles.infoText}>{t('risk_group')}</Text>
+				            			<Text style={styles.infoText}>Nhóm nguy cơ</Text>
 				            		</View>
 
 				            		<View style={styles.infoCol1}>
-				            			<Text style={styles.infoText}>{t('risk_hospital')}</Text>
+				            			<Text style={styles.infoText}>Tỉ lệ</Text>
 				            		</View>
 				            	</View>
 
@@ -350,7 +345,7 @@ export default function PulmonaryComplication(){
 				            		</View>
 
 				            		<View style={styles.infoCol1}>
-				            			<Text style={styles.infoText}>{t('low')}</Text>
+				            			<Text style={styles.infoText}>Thấp</Text>
 				            		</View>
 
 				            		<View style={styles.infoCol1}>
@@ -364,7 +359,7 @@ export default function PulmonaryComplication(){
 				            		</View>
 
 				            		<View style={styles.infoCol1}>
-				            			<Text style={styles.infoText}>{t('intermediate')}</Text>
+				            			<Text style={styles.infoText}>Trung bình</Text>
 				            		</View>
 
 				            		<View style={styles.infoCol1}>
@@ -378,7 +373,7 @@ export default function PulmonaryComplication(){
 				            		</View>
 
 				            		<View style={styles.infoCol1}>
-				            			<Text style={styles.infoText}>{t('high')}</Text>
+				            			<Text style={styles.infoText}>Cao</Text>
 				            		</View>
 
 				            		<View style={styles.infoCol1}>
@@ -389,7 +384,7 @@ export default function PulmonaryComplication(){
 			            	</View>
 
 			            	<View style={styles.formInfo}>
-			            		<Text style={styles.infoText}>{t('creator')}: {'Dr. Jaume Canet'}</Text>
+			            		<Text style={styles.infoText}>Tác giả: Dr. Jaume Canet</Text>
 							</View>
 
 				      	</View>
