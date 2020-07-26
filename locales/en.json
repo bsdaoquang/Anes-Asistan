@@ -1,4 +1,5 @@
 {
+  "anes_assistant": "Anes Assistant",
   "nausea_voimiting": "Nausea and Voimiting",
   "nausea_voimiting_desc": "Predicts risk of Postoperative Nausea and Vomiting (PONV)",
   "nausea_voimiting_info": "Use in patients undergoing general anesthesia.",
