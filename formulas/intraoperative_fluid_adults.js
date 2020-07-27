@@ -42,7 +42,7 @@ export default function ItraoperativeFluidAdults(){
 
 							<View style={styles.formIntructions}>
 							<Text style={styles.titleInfo, {color: '#fafafa', fontSize: 18, fontWeight: 'bold'}}>HƯỚNG DẪN</Text>
-								<Text style={styles.importantText}>Sử dụng ở những trường hợp phẫu thuật lớn, bệnh nhân > 20Kg và không trong tình trạng quá tải dịch như: suy tim, COPD, suy thận đang chạy thận...</Text>
+								<Text style={styles.importantText}>"Sử dụng ở những trường hợp phẫu thuật lớn, bệnh nhân > 20Kg và không trong tình trạng quá tải dịch như: suy tim, COPD, suy thận đang chạy thận..."</Text>
 							</View>
 
 							{/*This is form container*/}
@@ -180,7 +180,7 @@ export default function ItraoperativeFluidAdults(){
 						        <Text style={styles.infoText}>vd: nội soi, thoát vị</Text>
 					      	</View>
 									<View style={styles.infoCol1}>
-									 <Text style={styles.infoText}>2-4mL/kg/giờ, sử dụng: 3mL/kg/giờ</Text>
+									 <Text style={styles.infoText}>"2-4mL/kg/giờ, sử dụng: 3mL/kg/giờ"</Text>
 								 	</View>
 								</View>
 
@@ -192,7 +192,7 @@ export default function ItraoperativeFluidAdults(){
 						        <Text style={styles.infoText}>vd: cắt túi mật...</Text>
 					      	</View>
 									<View style={styles.infoCol1}>
-									 <Text style={styles.infoText}>4-6mL/kg/giờ, sử dụng 5mL/kg/giờ</Text>
+									 <Text style={styles.infoText}>4-6mL/kg/giờ, sử dụng: 5mL/kg/giờ</Text>
 								 	</View>
 								</View>
 
@@ -210,7 +210,7 @@ export default function ItraoperativeFluidAdults(){
 						</View>
 
 							<View style={styles.formInfo}>
-								<Text style={styles.infoText}>Tác giả: Dr. Tomas Corcoran</Text>
+								<Text style={styles.infoText}>"Tác giả: Dr. Tomas Corcoran"</Text>
 							</View>
 						</View>
 					</TouchableWithoutFeedback>

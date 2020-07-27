@@ -22,10 +22,19 @@ export default function HomeScreen(){
     setModalVisible(false)
   }
   //Phần tính toán các giá trị
+  var ibw
+
   var heightM = height/100
   var heightInch = height*0.39370
 
   var bmi = (weight / Math.pow(heightM,2)).toFixed(1)
+
+  //ibw
+  gender === 'male' ?
+    ibw = (50 + 2.3 * (heightInch - 60)).toFixed(1)
+  :
+    ibw = (45.5 + 2.3 * (heightInch - 60)).toFixed(1)
+
   //hết phần tính toán
 
   return(
@@ -49,10 +58,6 @@ export default function HomeScreen(){
                 <Text style={styles.genderTitle}>Nữ</Text>
               </TouchableOpacity>
 
-              <TouchableOpacity style={styles.selectGender} onPress={() => setGender('child')}>
-                <FontAwesome5 name="child" size={42} color={gender === 'child' ? "#00bfa5" : '#bdbdbd'} style={{marginTop: 22}}/>
-                <Text style={styles.genderTitle}>Trẻ em</Text>
-              </TouchableOpacity>
             </View>
             <View style={{paddingVertical: 8, justifyContent: 'center'}}>
               <View style={styles.selectGenderContainer}>
@@ -94,10 +99,10 @@ export default function HomeScreen(){
         <TouchableOpacity onPress = {() => setModalVisible(true)}>
           <View style={styles.headerContain}>
             <Text style={styles.title}>Thông tin bệnh nhân</Text>
-            <FontAwesome5 name={gender} size={gender === 'child' ? 42 : 72} color="#00bfa5" />
+            <FontAwesome5 name={gender} size={72} color="#00bfa5" />
             {
               weight != null ?
-              <Text style={styles.genderTitle}>{gender}: {weight} kg, {height} cm</Text>
+              <Text style={styles.genderTitle}>{gender === 'male'? "Nam": "Nữ"}: {weight} kg, {height} cm</Text>
               :
               <Text style={{...styles.genderTitle, fontStyle: 'italic', fontSize: 14}}>Nhấp để nhập thông tin</Text>
             }
@@ -106,11 +111,33 @@ export default function HomeScreen(){
 
         <View style={styles.basicInfoContain}>
           <View style={styles.infoContain}>
-            <Text style={styles.infoText}>BMI</Text>
+            <Text style={styles.infoText}>Chỉ số khối cơ thể (BMI): </Text>
             <Text style={{...styles.infoText, textAlign: 'right'}}>{bmi}</Text>
+          </View>
+
+          <View style={styles.infoContain}>
+            <Text style={styles.infoText}>Cân nặng lý tưởng (IBW):</Text>
+            <Text style={{...styles.infoText, textAlign: 'right'}}>{ibw}</Text>
           </View>
         </View>
 
+        <View style={styles.basicInfoContain}>
+          <Text style={{...styles.genderTitle, fontWeight: 'bold'}}>Thông khí</Text>
+          <View style={styles.infoContain}>
+            <Text style={styles.infoText}>Vt:</Text>
+            <Text style={{...styles.infoText, textAlign: 'right'}}>{ibw * 6} - {ibw * 8} mL</Text>
+          </View>
+
+          <View style={styles.infoContain}>
+            <Text style={styles.infoText}>Rate:</Text>
+            <Text style={{...styles.infoText, textAlign: 'right'}}>8 - 12 lần/phút</Text>
+          </View>
+
+          <View style={styles.infoContain}>
+            <Text style={styles.infoText}>PEEP:</Text>
+            <Text style={{...styles.infoText, textAlign: 'right'}}>0-5 cm H2O</Text>
+          </View>
+        </View>
       </ScrollView>
     </KeyboardAvoidingView>
   );
@@ -135,14 +162,14 @@ const styles = StyleSheet.create({
   },
   genderTitle:{
     fontWeight: '400',
-    color: '#707070',
+    color: '#424242',
     fontSize: 18,
     paddingVertical: 8
   },
   title:{
     textTransform: 'uppercase',
     fontSize: 20,
-    color: '#707070',
+    color: '#424242',
     paddingBottom: 15
   },
 
@@ -173,7 +200,7 @@ const styles = StyleSheet.create({
   },
   input:{
     marginHorizontal: 5,
-    borderColor: '#707070',
+    borderColor: '#616161',
     borderBottomWidth: 1,
     textAlign: 'right',
     paddingHorizontal: 10,
@@ -185,13 +212,13 @@ const styles = StyleSheet.create({
   inputTitle:{
     fontSize: 16,
     flex: 3,
-    color: '#707070',
+    color: '#616161',
     paddingVertical: 5
   },
   inputUnit:{
     fontSize: 16,
     flex: 2,
-    color: '#707070',
+    color: '#616161',
     textAlign: 'center'
   },
   btnDongY:{
@@ -208,9 +235,9 @@ const styles = StyleSheet.create({
   },
   btnHuy:{
     textAlign: 'center',
-    color: '#707070',
+    color: '#616161',
     padding: 10,
-    borderColor: '#707070',
+    borderColor: '#616161',
     borderWidth: 1,
     borderStyle: 'solid',
     borderRadius: 4,
@@ -224,14 +251,14 @@ const styles = StyleSheet.create({
   },
   infoContain:{
     flexDirection: 'row',
-    paddingVertical: 5,
+    paddingVertical: 8,
     borderStyle: 'solid',
     borderColor: '#e0e0e0',
     borderBottomWidth: 1,
     paddingHorizontal: 5
   },
   infoText:{
-    color: '#707070',
+    color: '#616161',
     fontSize: 14,
     flex: 1,
     textAlign: 'left'
