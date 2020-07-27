@@ -10,8 +10,8 @@ import { FontAwesome5 } from '@expo/vector-icons';
 export default function HomeScreen(){
   const [modalVisible, setModalVisible] = useState(false);
   const [gender, setGender] = useState('male')
-  const [weight, setWeight] = useState('')
-  const [height, setHeight] = useState('')
+  const [weight, setWeight] = useState(weight)
+  const [height, setHeight] = useState(height)
 
 
   const cancel = () => {
@@ -21,6 +21,13 @@ export default function HomeScreen(){
 
     setModalVisible(false)
   }
+  //Phần tính toán các giá trị
+  var heightM = height/100
+  var heightInch = height*0.39370
+
+  var bmi = (weight / Math.pow(heightM,2)).toFixed(1)
+  //hết phần tính toán
+
   return(
     <KeyboardAvoidingView style={styles.container}>
       <ScrollView>
@@ -29,9 +36,6 @@ export default function HomeScreen(){
           animationType="slide"
           transparent={true}
           visible={modalVisible}
-          onRequestClose={() => {
-            Alert.alert("Modal has been closed.");
-          }}
           >
           <View style={styles.modalContainer}>
             <View style={styles.selectGenderContainer}>
@@ -79,7 +83,7 @@ export default function HomeScreen(){
                 <Text style={styles.btnHuy}>HỦY</Text>
               </TouchableOpacity>
 
-              <TouchableOpacity style={{flex: 1}} onPress= {() => setModalVisible(false)}>
+              <TouchableOpacity style={{flex: 1}} onPress= {() => setModalVisible(!modalVisible)}>
                 <Text style={styles.btnDongY}>ĐỒNG Ý</Text>
               </TouchableOpacity>
             </View>
@@ -92,13 +96,21 @@ export default function HomeScreen(){
             <Text style={styles.title}>Thông tin bệnh nhân</Text>
             <FontAwesome5 name={gender} size={gender === 'child' ? 42 : 72} color="#00bfa5" />
             {
-              weight != 0 ?
+              weight != null ?
               <Text style={styles.genderTitle}>{gender}: {weight} kg, {height} cm</Text>
               :
               <Text style={{...styles.genderTitle, fontStyle: 'italic', fontSize: 14}}>Nhấp để nhập thông tin</Text>
             }
           </View>
         </TouchableOpacity>
+
+        <View style={styles.basicInfoContain}>
+          <View style={styles.infoContain}>
+            <Text style={styles.infoText}>BMI</Text>
+            <Text style={{...styles.infoText, textAlign: 'right'}}>{bmi}</Text>
+          </View>
+        </View>
+
       </ScrollView>
     </KeyboardAvoidingView>
   );
@@ -204,5 +216,24 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     fontSize: 16,
     marginRight: 5
+  },
+
+  //basic info contain
+  basicInfoContain:{
+    marginVertical: 8
+  },
+  infoContain:{
+    flexDirection: 'row',
+    paddingVertical: 5,
+    borderStyle: 'solid',
+    borderColor: '#e0e0e0',
+    borderBottomWidth: 1,
+    paddingHorizontal: 5
+  },
+  infoText:{
+    color: '#707070',
+    fontSize: 14,
+    flex: 1,
+    textAlign: 'left'
   }
 })

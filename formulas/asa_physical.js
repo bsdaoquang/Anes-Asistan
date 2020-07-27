@@ -2,8 +2,8 @@ import React, {useState} from 'react'
 import {View, Text, TextInput, ScrollView, TouchableOpacity, TouchableWithoutFeedback, KeyboardAvoidingView, Keyboard} from 'react-native'
 import AdMob from '../components/AdMob'
 import {styles} from '../components/styles'
-export default function ASAPhysical(){
 
+export default function ASAPhysical(){
 	const [description, setDescription] = useState(0)
 	const [emergency, setEmergency] = useState('')
 
