@@ -12,6 +12,7 @@ import { FontAwesome, Ionicons } from '@expo/vector-icons'
 import HomeScreen from './components/home';
 import About from './components/about'
 import Contact from './components/contact'
+import Documents from './components/documents'
 
 //import formulas
 import ScreenNavigation from './routes/route'
@@ -89,15 +90,13 @@ function StackNavigation({navigation}){
             tabBarIcon: ({ focused, color, size }) => {
               let iconName;
 
-              if (route.name === 'HomeScreen') {
-                iconName = focused
-                  ? 'md-star'
-                  : 'md-star-outline';
+              if (route.name === 'Home') {
+                iconName = focused ? 'ios-home': 'ios-home';
               } else if (route.name === 'Máy tính') {
-                iconName = focused ? 'ios-list-box' : 'ios-list';
-              }
-
-              //can return any component that you like here!
+                iconName = focused ? 'ios-calculator' : 'ios-calculator';
+              } else if (route.name === 'Tài liệu') {
+                iconName = focused ? 'ios-bookmarks' : 'ios-bookmarks';
+              }//can return any component that you like here!
               return <Ionicons name={iconName} size={size} color={color} />;
             },
           })}
@@ -106,9 +105,9 @@ function StackNavigation({navigation}){
             inactiveTintColor: 'gray',
           }}
         >
-        <Tab.Screen name='HomeScreen' component={HomeScreen}/>
+        <Tab.Screen name='Home' component={HomeScreen}/>
         <Tab.Screen name='Máy tính' component={StackNavigation}/>
-        <Tab.Screen name='Tài liệu' component={About}/>
+        <Tab.Screen name='Tài liệu' component={Documents}/>
       </Tab.Navigator>
     )
   }

@@ -12,6 +12,8 @@ const formulas = [
   {id: '5',title: 'Nguy cơ viêm phổi', desc: 'Dự đoán nguy cơ viêm phổi sau phẫu thuật'},
   {id: '6',title: 'Nguy cơ biến chứng phổi', desc: 'Dự đoán nguy cơ biến chứng phổi bao gồm cả suy hô hấp'},
   {id: '7',title: 'Nguy cơ suy hô hấp', desc: 'Nguy cơ thở máy trong 48 giờ hoặc đặt lại nội khí quản trong 30 ngày'},
+  {id: '8',title: 'Tính lượng máu mất', desc: 'Tính lượng máu mất dựa vào chỉ số HCT'},
+  {id: '9',title: 'Tính lượng thuốc mê hô hấp sử dụng', desc: 'Thể tích thuốc mê hô hấp sử dụng mL'},
 ]
 
 function Item({ title }) {

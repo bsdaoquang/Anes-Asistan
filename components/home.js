@@ -13,6 +13,8 @@ export default function HomeScreen(){
   const [weight, setWeight] = useState(weight)
   const [height, setHeight] = useState(height)
 
+  const [showInfo, setShowInfo] = useState(true)
+  const [showVentilation, setShowVentilation] = useState(true)
 
   const cancel = () => {
     setHeight()
@@ -21,8 +23,20 @@ export default function HomeScreen(){
 
     setModalVisible(false)
   }
+
+  //các hàm đóng mở phần thông tin
+  //thông tin cơ bản
+  const showBasicInfo = () => {
+    setShowInfo(!showInfo)
+  }
+
+  const showVentilationInfo = () => {
+    setShowVentilation(!showVentilation)
+  }
+
   //Phần tính toán các giá trị
-  var ibw
+  var ibw // cân nặng lý tưởng
+  var evb //lượng máu trung bình
 
   var heightM = height/100
   var heightInch = height*0.39370
@@ -34,6 +48,8 @@ export default function HomeScreen(){
     ibw = (50 + 2.3 * (heightInch - 60)).toFixed(1)
   :
     ibw = (45.5 + 2.3 * (heightInch - 60)).toFixed(1)
+
+  //Tính lượng máu trung bình
 
   //hết phần tính toán
 
@@ -110,33 +126,95 @@ export default function HomeScreen(){
         </TouchableOpacity>
 
         <View style={styles.basicInfoContain}>
-          <View style={styles.infoContain}>
-            <Text style={styles.infoText}>Chỉ số khối cơ thể (BMI): </Text>
-            <Text style={{...styles.infoText, textAlign: 'right'}}>{bmi}</Text>
+          <View style={{flexDirection: 'row'}}>
+            <Text style={{...styles.genderTitle, fontWeight: 'bold'}} onPress={showBasicInfo}>Thông số cơ bản</Text>
+            <FontAwesome5 name={showInfo === false ? 'angle-down' : 'angle-up'} size={28} color="#424242" style={{...styles.genderTitle, textAlign: 'right', flex: 1, marginHorizontal: 10}}/>
           </View>
+            {showInfo === true ?
+            <View>
+              <View style={styles.infoContain}>
+                <Text style={styles.infoText}>Chỉ số khối cơ thể (BMI): </Text>
+                <Text style={{...styles.infoText, textAlign: 'right'}}>{bmi}</Text>
+              </View>
 
-          <View style={styles.infoContain}>
-            <Text style={styles.infoText}>Cân nặng lý tưởng (IBW):</Text>
-            <Text style={{...styles.infoText, textAlign: 'right'}}>{ibw}</Text>
-          </View>
+              <View style={styles.infoContain}>
+                <Text style={styles.infoText}>Cân nặng lý tưởng (IBW):</Text>
+                <Text style={{...styles.infoText, textAlign: 'right'}}>{ibw}</Text>
+              </View>
+
+              <View style={styles.infoContain}>
+                <Text style={styles.infoText}>Lượng máu trung bình (EBV):</Text>
+                <Text style={{...styles.infoText, textAlign: 'right'}}>{gender === 'male'? 70*weight : 65*weight} - {gender === 'male'? 75*weight : 70*weight} mL</Text>
+              </View>
+
+              <View style={styles.infoContain}>
+                <Text style={styles.infoText}>Mạch:</Text>
+                <Text style={{...styles.infoText, textAlign: 'right'}}>60 - 90 nhịp/phút</Text>
+              </View>
+
+              <View style={styles.infoContain}>
+                <Text style={styles.infoText}>Huyết áp:</Text>
+                <Text style={{...styles.infoText, textAlign: 'right'}}>90 - 120 / 60 - 90 mmHg</Text>
+              </View>
+
+              <View style={styles.infoContain}>
+                <Text style={styles.infoText}>Nhịp thở:</Text>
+                <Text style={{...styles.infoText, textAlign: 'right'}}>12 - 25 lần/phút</Text>
+              </View>
+
+              <View style={styles.infoContain}>
+                <Text style={styles.infoText}>Dịch cơ bản:</Text>
+                <Text style={{...styles.infoText, textAlign: 'right'}}>{weight*1 + 40} mL/giờ</Text>
+              </View>
+
+              <View style={styles.infoContain}>
+                <Text style={styles.infoText}>Thể tích khí lưu thông:</Text>
+                <Text style={{...styles.infoText, textAlign: 'right'}}>{weight*10} mL</Text>
+              </View>
+
+              <View style={styles.infoContain}>
+                <Text style={styles.infoText}>Dung tích sống:</Text>
+                <Text style={{...styles.infoText, textAlign: 'right'}}>{weight*65} - {weight * 75} mL</Text>
+              </View>
+            </View>
+            : null }
         </View>
 
         <View style={styles.basicInfoContain}>
-          <Text style={{...styles.genderTitle, fontWeight: 'bold'}}>Thông khí</Text>
-          <View style={styles.infoContain}>
+          <View style={{flexDirection: 'row'}}>
+          <Text style={{...styles.genderTitle, fontWeight: 'bold'}} onPress={showVentilationInfo}>Thông khí</Text>
+          <FontAwesome5 name={showVentilation === false ? 'angle-down' : 'angle-up'} size={28} color="#424242" style={{...styles.genderTitle, textAlign: 'right', flex: 1, marginHorizontal: 10}}/>
+          </View>
+          {
+            showVentilation === false ? null
+            :
+            <View>
+            <View style={styles.infoContain}>
             <Text style={styles.infoText}>Vt:</Text>
-            <Text style={{...styles.infoText, textAlign: 'right'}}>{ibw * 6} - {ibw * 8} mL</Text>
-          </View>
+            <Text style={{...styles.infoText, textAlign: 'right'}}>{ibw * 8} - {ibw * 10} mL</Text>
+            </View>
 
-          <View style={styles.infoContain}>
+            <View style={styles.infoContain}>
             <Text style={styles.infoText}>Rate:</Text>
-            <Text style={{...styles.infoText, textAlign: 'right'}}>8 - 12 lần/phút</Text>
-          </View>
+            <Text style={{...styles.infoText, textAlign: 'right'}}>12 - 14 lần/phút</Text>
+            </View>
 
-          <View style={styles.infoContain}>
+            <View style={styles.infoContain}>
             <Text style={styles.infoText}>PEEP:</Text>
             <Text style={{...styles.infoText, textAlign: 'right'}}>0-5 cm H2O</Text>
-          </View>
+            </View>
+
+            <View style={styles.infoContain}>
+            <Text style={styles.infoText}>PIP:</Text>
+            <Text style={{...styles.infoText, textAlign: 'right'}}>25 - 35cmH20</Text>
+            </View>
+
+            <View style={styles.infoContain}>
+            <Text style={styles.infoText}>I:E</Text>
+            <Text style={{...styles.infoText, textAlign: 'right'}}>1:2 - 1:3</Text>
+            </View>
+            </View>
+          }
         </View>
       </ScrollView>
     </KeyboardAvoidingView>
@@ -247,7 +325,10 @@ const styles = StyleSheet.create({
 
   //basic info contain
   basicInfoContain:{
-    marginVertical: 8
+    marginVertical: 5,
+    borderStyle: 'solid',
+    borderColor: '#e0e0e0',
+    borderBottomWidth: 1,
   },
   infoContain:{
     flexDirection: 'row',
