@@ -29,13 +29,14 @@ import NauseaVomiting from './formulas/nauseaAndVomiting'
 import PulmonaryComplication from './formulas/pulmonary_complication'
 import RespiratoryRisk from './formulas/respiratory_risk'
 import TinhLuongMauMat from './formulas/luong_mau_mat'
+import TinhLuongMeHoi from './formulas/luong_thuoc_me_hoi'
 
 const onShare = async () => {
     try {
       const result = await Share.share({
         title: 'Trợ Lý Gây Mê',
         message:
-          'Tải miễn phí trên CH Play',
+          'TRỢ LÝ GÂY MÊ - công cụ hữu ích dành cho Gây mê hồi sức - Tải miễn phí trên CH Play',
         url: ''
       });
       if (result.action === Share.sharedAction) {
@@ -72,6 +73,9 @@ function StackNavigation({navigation}){
           },
           headerLeft:() => (
             <Ionicons name="ios-menu" size={28} color='white' style={{marginLeft: 15, marginTop: 5}} onPress={() => navigation.openDrawer()}/>
+          ),
+          headerRight:() => (
+            <Ionicons name="md-share" size={28} color='white' style={{marginRight: 15, marginTop: 5}} onPress={onShare}/>
           )
         }}
         />
@@ -83,6 +87,7 @@ function StackNavigation({navigation}){
         <Stack.Screen name='Nguy cơ biến chứng phổi' component={PulmonaryComplication}/>
         <Stack.Screen name='Nguy cơ suy hô hấp' component={RespiratoryRisk}/>
         <Stack.Screen name='Tính lượng máu mất tối đa (ABL)' component={TinhLuongMauMat}/>
+        <Stack.Screen name='Tính lượng thuốc mê hô hấp sử dụng' component={TinhLuongMeHoi}/>
       </Stack.Navigator>
     );
   }

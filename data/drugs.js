@@ -10,3 +10,37 @@ export const DRUGS = [
   {name: 'Cisatracurium', brandName: 'Cisatracurium', doses: [0.15, 0.2, 'mg/Kg', 'IV', 'mg'], typically: 0.15},
   {name: 'Neostigmine', brandName: '', doses: [0.03, 0.07, 'mg/Kg', 'IV', 'mg'], typically: 0.05},
 ]
+
+export const DrugsList = [
+  { class: 'Thuốc mê tĩnh mạch',
+    drugs: ['Propofol (Diprivan)', 'Etomidate (Amidate)', 'Ketamin (Ketalar)', 'Dexmedetomidine (Precedex)', 'Barbituates - Thiopental (Pentothal, Brevital)']
+  },
+  {
+    class: 'Benzodiazepines',
+    drugs: ['Midazolam', 'Diazepam', 'Lorazepam']
+  },
+  {
+    class: 'Opioids (Thuốc đối kháng: Naloxone)',
+    drugs: ['Morphine', 'Fentanyl', 'Sufentanyl', 'Remifentanyl', 'Hydromorphone (Dilaudid)']
+  },
+  {
+    class: 'Thuốc mê hô hấp',
+    drugs: ['Isoflurane', 'Sevoflurane', 'Desflurane', 'Nitrous Oxide']
+  },
+  {
+    class: 'Thuốc giãn cơ khử cực',
+    drugs: ['Succinylcholine', 'Rocuronium']
+  },
+  {
+    class: 'Thuốc giãn cơ không khử cực',
+    drugs: ['Rocuronium (Esmeron)', 'Vecuronium', 'Cisatracurium']
+  },
+  {
+    class: 'Thuốc giãn mạch',
+    drugs: ['Nicardipine', 'Nitroprusside', 'Esmolol', 'Labetalol', 'Hydralazine']
+  },
+  {
+    class: 'Thuốc vận mạch',
+    drugs: ['Phenylephrine', 'Norepinephrine', 'Epinephrine', 'Dopamine', 'Dobutamine', 'Isoproterenol']
+  }
+]
