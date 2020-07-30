@@ -12,35 +12,35 @@ export const DRUGS = [
 ]
 
 export const DrugsList = [
-  { class: 'Thuốc mê tĩnh mạch',
-    drugs: ['Propofol (Diprivan)', 'Etomidate (Amidate)', 'Ketamin (Ketalar)', 'Dexmedetomidine (Precedex)', 'Barbituates - Thiopental (Pentothal, Brevital)']
+  { title: 'Thuốc mê tĩnh mạch',
+    data: ['Propofol', 'Etomidate', 'Ketamine', 'Dexmedetomidine', 'Barbituates - Thiopental']
   },
   {
-    class: 'Benzodiazepines',
-    drugs: ['Midazolam', 'Diazepam', 'Lorazepam']
+    title: 'Benzodiazepines',
+    data: ['Midazolam', 'Diazepam', 'Lorazepam']
   },
   {
-    class: 'Opioids (Thuốc đối kháng: Naloxone)',
-    drugs: ['Morphine', 'Fentanyl', 'Sufentanyl', 'Remifentanyl', 'Hydromorphone (Dilaudid)']
+    title: 'Opioids (Thuốc đối kháng: Naloxone)',
+    data: ['Morphine', 'Fentanyl', 'Sufentanyl', 'Remifentanyl', 'Hydromorphone']
   },
   {
-    class: 'Thuốc mê hô hấp',
-    drugs: ['Isoflurane', 'Sevoflurane', 'Desflurane', 'Nitrous Oxide']
+    title: 'Thuốc mê hô hấp',
+    data: ['Isoflurane', 'Sevoflurane', 'Desflurane', 'Nitrous Oxide']
   },
   {
-    class: 'Thuốc giãn cơ khử cực',
-    drugs: ['Succinylcholine', 'Rocuronium']
+    title: 'Thuốc giãn cơ khử cực',
+    data: ['Succinylcholine', 'Rocuronium']
   },
   {
-    class: 'Thuốc giãn cơ không khử cực',
-    drugs: ['Rocuronium (Esmeron)', 'Vecuronium', 'Cisatracurium']
+    title: 'Thuốc giãn cơ không khử cực',
+    data: ['Rocuronium', 'Vecuronium', 'Cisatracurium']
   },
   {
-    class: 'Thuốc giãn mạch',
-    drugs: ['Nicardipine', 'Nitroprusside', 'Esmolol', 'Labetalol', 'Hydralazine']
+    title: 'Thuốc giãn mạch',
+    data: ['Nicardipine', 'Nitroprusside', 'Esmolol', 'Labetalol', 'Hydralazine']
   },
   {
-    class: 'Thuốc vận mạch',
-    drugs: ['Phenylephrine', 'Norepinephrine', 'Epinephrine', 'Dopamine', 'Dobutamine', 'Isoproterenol']
+    title: 'Thuốc vận mạch',
+    data: ['Phenylephrine', 'Norepinephrine', 'Epinephrine', 'Dopamine', 'Dobutamine', 'Isoproterenol']
   }
 ]

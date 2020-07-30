@@ -16,6 +16,7 @@ import Documents from './components/documents'
 
 //drugs
 import DrugsHome from './drugs/index_drugs';
+import DrugWebView from './drugs/drug_web_view'
 
 //import formulas
 import ScreenNavigation from './routes/route'
@@ -132,6 +133,7 @@ function StackNavigation({navigation}){
             <Drawer.Screen name='Trang chủ' component={TabNavigation}/>
             <Drawer.Screen name='Giới thiệu' component={About}/>
             <Drawer.Screen name='Liên hệ' component={Contact}/>
+            <Drawer.Screen name='webview' component={DrugWebView}/>
           </Drawer.Navigator>
         </NavigationContainer>
       )

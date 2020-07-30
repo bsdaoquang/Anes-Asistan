@@ -1,14 +1,67 @@
-import React from 'react';
-import {View, Text, SectionList } from 'react-native';
-import {styles} from '../components/styles'
+import React from "react";
+import { Text, View, SafeAreaView, SectionList, StyleSheet, Linking, TouchableOpacity } from "react-native";
+import AdMob, {showAdInter} from '../components/AdMob'
 
-//import list of drugs
 import {DrugsList} from '../data/drugs'
 
-export default function DrugsHome(){
-  return(
-    <View style={styles.container}>
-      <Text>This is list drugs</Text>
+const Item = ({ title, navigation}) => (
+  <TouchableOpacity>
+  <View style={styles.listItem}>
+    <Text style={styles.items}>{title}</Text>
+  </View>
+  </TouchableOpacity>
+);
+
+const DrugsHome = ({navigation}) => (
+  <SafeAreaView style={styles.container}>
+    <View style={styles.inner}>
+      <Text onPress={() => navigation.navigate('webview')}>open WebView</Text>
+      <SectionList
+        sections={DrugsList}
+        keyExtractor={(item, index) => item + index}
+        renderItem={({ item }) => <Item title={item} />}
+        renderSectionHeader={({ section: { title } }) => (
+          <Text style={styles.titleList}>{title}</Text>
+        )}
+      />
     </View>
-  )
-}
+      {/*Admob form*/}
+      <View style={{top: 0, position: 'absolute', marginTop: 30}}>
+        <AdMob />
+      </View>
+      {/*end admob*/}
+  </SafeAreaView>
+);
+
+export default DrugsHome;
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#fafafa',
+    flex: 1
+  },
+  inner:{
+    marginTop: 90,
+    //padding: 10
+  },
+  titleList:{
+    flex: 1,
+    backgroundColor: '#e0e0e0',
+    color: '#424242',
+    textAlign: 'center',
+    fontWeight: 'bold',
+    fontSize: 16,
+    paddingVertical: 5,
+  },
+  listItem:{
+    borderBottomWidth: 1,
+    borderColor: '#e0e0e0',
+    borderStyle: 'solid',
+    paddingVertical: 8,
+    marginHorizontal: 10
+  },
+  items:{
+    color: '#424242',
+    fontSize: 14
+  }
+})
