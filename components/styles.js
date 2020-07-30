@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
   inner:{
     flex: 1,
     paddingTop: 60,
-    paddingHorizontal: 10
+    paddingHorizontal: 10,
   },
   /*style for header*/
   headerContain:{
@@ -193,8 +193,8 @@ export const styles = StyleSheet.create({
   },
   resultTitleText:{
     color: '#fafafa',
-    fontWeight: 'bold',
-    fontSize: 20,
+    fontWeight: '200',
+    fontSize: 18,
     marginTop: 15
   },
   resultTitleDesc:{
@@ -360,4 +360,17 @@ export const styles = StyleSheet.create({
     padding:8,
     backgroundColor: '#90a4ae'
   },
+  textLink:{
+    color: '#01579b',
+    fontSize: 14,
+    fontStyle: 'italic',
+    paddingVertical: 15
+  },
+  errorAlert:{
+    backgroundColor: 'coral',
+    padding: 5,
+    borderRadius: 5,
+    color: '#fafafa',
+    marginTop: 5
+  }
 })

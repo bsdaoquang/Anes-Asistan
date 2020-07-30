@@ -3,11 +3,22 @@ import { View, Text, Modal,
   ScrollView, StyleSheet,
   KeyboardAvoidingView,
   Alert, TouchableOpacity,
-  Button, TextInput
+  Button, TextInput, FlatList
 } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 
-export default function HomeScreen(){
+//import drugs data
+import {DRUGS} from '../data/drugs';
+
+function Item({ name }) {
+  return (
+    <View>
+      <Text>{name}</Text>
+    </View>
+  );
+}
+
+export default function HomeScreen({navigation}){
   const [modalVisible, setModalVisible] = useState(false);
   const [gender, setGender] = useState('male')
   const [weight, setWeight] = useState(weight)
@@ -139,7 +150,7 @@ export default function HomeScreen(){
 
               <View style={styles.infoContain}>
                 <Text style={styles.infoText}>Cân nặng lý tưởng (IBW):</Text>
-                <Text style={{...styles.infoText, textAlign: 'right'}}>{ibw}</Text>
+                <Text style={{...styles.infoText, textAlign: 'right'}}>{ibw} Kg</Text>
               </View>
 
               <View style={styles.infoContain}>
@@ -182,8 +193,8 @@ export default function HomeScreen(){
 
         <View style={styles.basicInfoContain}>
           <View style={{flexDirection: 'row'}}>
-          <Text style={{...styles.genderTitle, fontWeight: 'bold'}} onPress={showVentilationInfo}>Thông khí</Text>
-          <FontAwesome5 name={showVentilation === false ? 'angle-down' : 'angle-up'} size={28} color="#424242" style={{...styles.genderTitle, textAlign: 'right', flex: 1, marginHorizontal: 10}}/>
+            <Text style={{...styles.genderTitle, fontWeight: 'bold'}} onPress={showVentilationInfo}>Thông khí</Text>
+            <FontAwesome5 name={showVentilation === false ? 'angle-down' : 'angle-up'} size={28} color="#424242" style={{...styles.genderTitle, textAlign: 'right', flex: 1, marginHorizontal: 10}}/>
           </View>
           {
             showVentilation === false ? null
@@ -216,16 +227,47 @@ export default function HomeScreen(){
             </View>
           }
         </View>
+
+        {/*This is drugs contain*/}
+        <View style={styles.basicInfoContain}>
+          <Text style={{...styles.genderTitle, fontWeight: 'bold'}}>Thuốc thường dùng</Text>
+        </View>
+
+        {/*this is list drugs contain*/}
+          <FlatList
+            data={DRUGS}
+            renderItem={({ item }) => (
+              <View style={styles.itemContain}>
+                <View style={{flexDirection: 'row'}}>
+                  <Text style={styles.titleList}>{item.name}</Text>
+                  <FontAwesome5 name="external-link-alt" size={16} color="#424242" onPress={() => Alert.alert('Chuyển đến trang thuốc chi tiết')}/>
+                </View>
+                <Text style={{...styles.infoText, flex:1, textAlign: 'center', fontStyle: 'italic'}}>{item.brandName}</Text>
+                <View style={{flexDirection: 'row', padding: 8}}>
+                  <View style={{flex: 1}}>
+                    <Text style={{...styles.infoText, textAlign: 'center', fontWeight: 'bold'}}>{item.doses[3]}: {item.doses[0]} - {item.doses[1]} {item.doses[2]}</Text>
+                    <Text style={styles.infoText}>Trung bình: {item.typically} {item.doses[2]}</Text>
+                  </View>
+
+                  <View style={{flex: 1, borderColor: '#424242', borderStyle: 'solid', borderLeftWidth: 1}}>
+                    <Text style={{...styles.infoText, textAlign: 'center'}}>{(item.doses[0] * weight).toFixed(1)} - {(item.doses[1] * weight).toFixed(1)} {item.doses[4]}</Text>
+                    <Text style={{...styles.infoText, textAlign: 'center', fontWeight: 'bold'}}>{(item.typically * weight).toFixed(0)} {item.doses[4]}</Text>
+                  </View>
+                </View>
+              </View>
+            )}
+            keyExtractor={item => item.name}
+          />
+        {/*end list*/}
       </ScrollView>
     </KeyboardAvoidingView>
   );
 }
-
 const styles = StyleSheet.create({
   container:{
     flex: 1,
     padding: 8,
-    marginTop: 70,
+    marginTop: 25,
     backgroundColor: '#fafafa',
     justifyContent: 'center'
   },
@@ -326,9 +368,6 @@ const styles = StyleSheet.create({
   //basic info contain
   basicInfoContain:{
     marginVertical: 5,
-    borderStyle: 'solid',
-    borderColor: '#e0e0e0',
-    borderBottomWidth: 1,
   },
   infoContain:{
     flexDirection: 'row',
@@ -343,5 +382,22 @@ const styles = StyleSheet.create({
     fontSize: 14,
     flex: 1,
     textAlign: 'left'
+  },
+
+  //this is styles of list
+  itemContain:{
+    borderColor: '#424242',
+    borderStyle: 'solid',
+    borderWidth: 1,
+    borderRadius: 4,
+    padding: 5,
+    marginVertical: 5
+  },
+  titleList:{
+    fontWeight: 'bold',
+    fontSize: 24,
+    color: '#424242',
+    flex: 1,
+    textAlign: 'center'
   }
 })

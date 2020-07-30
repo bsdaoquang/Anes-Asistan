@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { SafeAreaView, View, FlatList, StyleSheet, Text, TouchableOpacity, Alert, ScrollView} from 'react-native';
 import Constants from 'expo-constants';
-import AdMob from '../components/AdMob'
+import AdMob, {showAdInter} from '../components/AdMob'
 import {styles} from '../components/styles'
 
 const formulas = [
@@ -12,7 +12,7 @@ const formulas = [
   {id: '5',title: 'Nguy cơ viêm phổi', desc: 'Dự đoán nguy cơ viêm phổi sau phẫu thuật'},
   {id: '6',title: 'Nguy cơ biến chứng phổi', desc: 'Dự đoán nguy cơ biến chứng phổi bao gồm cả suy hô hấp'},
   {id: '7',title: 'Nguy cơ suy hô hấp', desc: 'Nguy cơ thở máy trong 48 giờ hoặc đặt lại nội khí quản trong 30 ngày'},
-  {id: '8',title: 'Tính lượng máu mất', desc: 'Tính lượng máu mất dựa vào chỉ số HCT'},
+  {id: '8',title: 'Tính lượng máu mất tối đa (ABL)', desc: 'Lượng máu mất tối đa cho phép mà không cần truyền máu'},
   {id: '9',title: 'Tính lượng thuốc mê hô hấp sử dụng', desc: 'Thể tích thuốc mê hô hấp sử dụng mL'},
 ]
 
@@ -24,8 +24,13 @@ function Item({ title }) {
   );
 }
 
-
 export default function SceensNavigation({navigation}) {
+
+  function moveScreen(title, id){
+    showAdInter()
+    navigation.navigate(title)
+  }
+  
   return (
     <View style={styles.container}>
       <View style={styles.inner}>
@@ -35,7 +40,7 @@ export default function SceensNavigation({navigation}) {
             data={formulas}
             renderItem={({ item }) => (
               <TouchableOpacity
-                onPress={() => navigation.navigate(item.title)}
+                onPress={() => moveScreen(item.title, item.id)}
                 style={styles.listContainer}>
 
                 <View style={styles.listContent}>

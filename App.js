@@ -14,6 +14,9 @@ import About from './components/about'
 import Contact from './components/contact'
 import Documents from './components/documents'
 
+//drugs
+import DrugsHome from './drugs/index_drugs';
+
 //import formulas
 import ScreenNavigation from './routes/route'
 
@@ -25,6 +28,7 @@ import ItraoperativeFluidAdults from './formulas/intraoperative_fluid_adults'
 import NauseaVomiting from './formulas/nauseaAndVomiting'
 import PulmonaryComplication from './formulas/pulmonary_complication'
 import RespiratoryRisk from './formulas/respiratory_risk'
+import TinhLuongMauMat from './formulas/luong_mau_mat'
 
 const onShare = async () => {
     try {
@@ -78,6 +82,7 @@ function StackNavigation({navigation}){
         <Stack.Screen name='Nguy cơ viêm phổi' component={PostoperativePneumona}/>
         <Stack.Screen name='Nguy cơ biến chứng phổi' component={PulmonaryComplication}/>
         <Stack.Screen name='Nguy cơ suy hô hấp' component={RespiratoryRisk}/>
+        <Stack.Screen name='Tính lượng máu mất tối đa (ABL)' component={TinhLuongMauMat}/>
       </Stack.Navigator>
     );
   }
@@ -96,6 +101,8 @@ function StackNavigation({navigation}){
                 iconName = focused ? 'ios-calculator' : 'ios-calculator';
               } else if (route.name === 'Tài liệu') {
                 iconName = focused ? 'ios-bookmarks' : 'ios-bookmarks';
+              } else if (route.name === 'Thuốc') {
+                iconName = focused ? 'ios-list-box' : 'ios-list';
               }//can return any component that you like here!
               return <Ionicons name={iconName} size={size} color={color} />;
             },
@@ -107,6 +114,7 @@ function StackNavigation({navigation}){
         >
         <Tab.Screen name='Home' component={HomeScreen}/>
         <Tab.Screen name='Máy tính' component={StackNavigation}/>
+        <Tab.Screen name='Thuốc' component={DrugsHome}/>
         <Tab.Screen name='Tài liệu' component={Documents}/>
       </Tab.Navigator>
     )

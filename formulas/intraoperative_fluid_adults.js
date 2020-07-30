@@ -37,7 +37,7 @@ export default function ItraoperativeFluidAdults(){
 							{/*End header*/}
 							<View style={styles.formImportant}>
 								<Text style={styles.titleInfo, {color: '#fafafa', fontSize: 18, fontWeight: 'bold'}}>LƯU Ý</Text>
-								<Text style={styles.importantText}>Đây chỉ là công cụ hỗ trợ tính toán, không cung cấp thông tin thuốc toàn diện về thuốc. Luôn luôn kiểm tra liều dùng của thuốc và tham khảo ý kiến dược sĩ nếu cần</Text>
+								<Text style={styles.importantText}>Đây chỉ là công cụ hỗ trợ tính toán, không cung cấp thông tin toàn diện về thuốc. Luôn luôn kiểm tra liều dùng của thuốc và tham khảo ý kiến dược sĩ nếu cần</Text>
 							</View>
 
 							<View style={styles.formIntructions}>

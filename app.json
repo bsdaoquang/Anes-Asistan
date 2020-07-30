@@ -1,7 +1,8 @@
 {
   "expo": {
-    "name": "Anesthesia Assistant",
-    "slug": "anesassitan",
+    "name": "Trợ lý gây mê",
+    "slug": "tro-ly-gay-me",
+    "description": "Tính nhanh các công thức thường dùng trong lâm sàng",
     "version": "1.0.0",
     "platforms": [
       "ios",
@@ -13,8 +14,9 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#03989e"
     },
+    "privacy": "public",
     "updates": {
       "fallbackToCacheTimeout": 0
     },
@@ -24,13 +26,17 @@
     "android": {
       "config": {
         "googleMobileAdsAppId": "ca-app-pub-6209888091137615~9289911597"
-      }
+      },
+      "package": "com.bsdaoquang.trolygayme",
+      "versionCode": 1
     },
     "ios": {
       "supportsTablet": true,
+      "bundleIdentifier": "com.bsdaoquang.trolygayme",
       "config": {
         "googleMobileAdsAppId": "ca-app-pub-3940256099942544~1458002511"
       },
+      "buildNumber": "1.0.0"
     }
   }
 }
