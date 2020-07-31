@@ -3,7 +3,7 @@ import { WebView } from 'react-native-webview';
 
 export default function DrugWebView ({route}) {
   const {nameDrug} = route.params
-  var uri = 'https://www.drugs.com/'+nameDrug+'.html'
+  var uri = 'https://www.drugs.com/dosage/'+nameDrug+'.html'
 
     return (
       <WebView

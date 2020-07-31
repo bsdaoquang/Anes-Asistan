@@ -10,14 +10,21 @@ const Item = ({ title }) => (
   </View>
 );
 
-const DrugsHome = ({ navigation }) => (
+export default function DrugsHome({ navigation }){
+
+  function goToDrugWeb(item){
+    showAdInter()
+    navigation.navigate('Thuốc gây mê', {nameDrug: item})
+  }
+
+  return(
   <SafeAreaView style={styles.container}>
     <View style={styles.inner}>
       <SectionList
         sections={DrugsList}
         keyExtractor={(item, index) => item + index}
         renderItem={({ item }) => (
-          <TouchableOpacity onPress={() => navigation.navigate('Thuốc gây mê', {nameDrug: item })}>
+          <TouchableOpacity onPress={() => goToDrugWeb(item)}>
             <Item title={item} />
           </TouchableOpacity>
         )}
@@ -32,9 +39,10 @@ const DrugsHome = ({ navigation }) => (
       </View>
       {/*end admob*/}
   </SafeAreaView>
-);
+  );
+}
 
-export default DrugsHome;
+
 
 const styles = StyleSheet.create({
   container: {
