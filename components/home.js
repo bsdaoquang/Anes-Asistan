@@ -6,6 +6,7 @@ import { View, Text, Modal,
   Button, TextInput, FlatList
 } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
+import {showAdInter} from './AdMob'
 
 //import drugs data
 import {DRUGS} from '../data/drugs';
@@ -63,6 +64,11 @@ export default function HomeScreen({navigation}){
   //Tính lượng máu trung bình
 
   //hết phần tính toán
+
+  function moveScreen(name){
+    showAdInter()
+    navigation.navigate('Thuốc gây mê', {nameDrug: name})
+  }
 
   return(
     <KeyboardAvoidingView style={styles.container}>
@@ -240,7 +246,7 @@ export default function HomeScreen({navigation}){
               <View style={styles.itemContain}>
                 <View style={{flexDirection: 'row'}}>
                   <Text style={styles.titleList}>{item.name}</Text>
-                  <FontAwesome5 name="external-link-alt" size={16} color="#424242" onPress={() => Alert.alert('Chuyển đến trang thuốc chi tiết')}/>
+                  <FontAwesome5 name="external-link-alt" size={16} color="#424242" onPress={() => moveScreen(item.name)}/>
                 </View>
                 <Text style={{...styles.infoText, flex:1, textAlign: 'center', fontStyle: 'italic'}}>{item.brandName}</Text>
                 <View style={{flexDirection: 'row', padding: 8}}>
