@@ -29,7 +29,7 @@ export const DrugsList = [
   },
   {
     title: 'Thuốc giãn cơ khử cực',
-    data: ['Succinylcholine', 'Rocuronium']
+    data: ['Succinylcholine']
   },
   {
     title: 'Thuốc giãn cơ không khử cực',

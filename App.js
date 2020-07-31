@@ -133,7 +133,7 @@ function StackNavigation({navigation}){
             <Drawer.Screen name='Trang chủ' component={TabNavigation}/>
             <Drawer.Screen name='Giới thiệu' component={About}/>
             <Drawer.Screen name='Liên hệ' component={Contact}/>
-            <Drawer.Screen name='webview' component={DrugWebView}/>
+            <Drawer.Screen name='Thuốc gây mê' component={DrugWebView}/>
           </Drawer.Navigator>
         </NavigationContainer>
       )

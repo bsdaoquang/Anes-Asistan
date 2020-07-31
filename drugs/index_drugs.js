@@ -4,24 +4,25 @@ import AdMob, {showAdInter} from '../components/AdMob'
 
 import {DrugsList} from '../data/drugs'
 
-const Item = ({ title, navigation}) => (
-  <TouchableOpacity>
+const Item = ({ title }) => (
   <View style={styles.listItem}>
     <Text style={styles.items}>{title}</Text>
   </View>
-  </TouchableOpacity>
 );
 
-const DrugsHome = ({navigation}) => (
+const DrugsHome = ({ navigation }) => (
   <SafeAreaView style={styles.container}>
     <View style={styles.inner}>
-      <Text onPress={() => navigation.navigate('webview')}>open WebView</Text>
       <SectionList
         sections={DrugsList}
         keyExtractor={(item, index) => item + index}
-        renderItem={({ item }) => <Item title={item} />}
+        renderItem={({ item }) => (
+          <TouchableOpacity onPress={() => navigation.navigate('Thuốc gây mê', {nameDrug: item })}>
+            <Item title={item} />
+          </TouchableOpacity>
+        )}
         renderSectionHeader={({ section: { title } }) => (
-          <Text style={styles.titleList}>{title}</Text>
+            <Text style={styles.titleList}>{title}</Text>
         )}
       />
     </View>

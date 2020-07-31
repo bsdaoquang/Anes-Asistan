@@ -56,9 +56,9 @@ export default function HomeScreen({navigation}){
 
   //ibw
   gender === 'male' ?
-    ibw = (50 + 2.3 * (heightInch - 60)).toFixed(1)
+    ibw = heightInch < 60 ? weight : (50 + 2.3 * (heightInch - 60)).toFixed(1)
   :
-    ibw = (45.5 + 2.3 * (heightInch - 60)).toFixed(1)
+    ibw = heightInch < 60 ? weight : (45.5 + 2.3 * (heightInch - 60)).toFixed(1)
 
   //Tính lượng máu trung bình
 
@@ -212,7 +212,7 @@ export default function HomeScreen({navigation}){
 
             <View style={styles.infoContain}>
             <Text style={styles.infoText}>PEEP:</Text>
-            <Text style={{...styles.infoText, textAlign: 'right'}}>0-5 cm H2O</Text>
+            <Text style={{...styles.infoText, textAlign: 'right'}}>0 - 5 cm H2O</Text>
             </View>
 
             <View style={styles.infoContain}>
@@ -222,7 +222,7 @@ export default function HomeScreen({navigation}){
 
             <View style={styles.infoContain}>
             <Text style={styles.infoText}>I:E</Text>
-            <Text style={{...styles.infoText, textAlign: 'right'}}>1:2 - 1:3</Text>
+            <Text style={{...styles.infoText, textAlign: 'right'}}>1 : 2 - 1 : 3</Text>
             </View>
             </View>
           }
