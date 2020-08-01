@@ -18,6 +18,9 @@ import Documents from './components/documents'
 import DrugsHome from './drugs/index_drugs';
 import DrugWebView from './drugs/drug_web_view'
 
+//book
+import ReadBook from './books/readbook'
+
 //import formulas
 import ScreenNavigation from './routes/route'
 
@@ -105,7 +108,7 @@ function StackNavigation({navigation}){
                 iconName = focused ? 'ios-home': 'ios-home';
               } else if (route.name === 'Máy tính') {
                 iconName = focused ? 'ios-calculator' : 'ios-calculator';
-              } else if (route.name === 'Tài liệu') {
+              } else if (route.name === 'Thư viện') {
                 iconName = focused ? 'ios-bookmarks' : 'ios-bookmarks';
               } else if (route.name === 'Thuốc') {
                 iconName = focused ? 'ios-list-box' : 'ios-list';
@@ -121,7 +124,7 @@ function StackNavigation({navigation}){
         <Tab.Screen name='Home' component={HomeScreen}/>
         <Tab.Screen name='Máy tính' component={StackNavigation}/>
         <Tab.Screen name='Thuốc' component={DrugsHome}/>
-        <Tab.Screen name='Tài liệu' component={Documents}/>
+        <Tab.Screen name='Thư viện' component={Documents}/>
       </Tab.Navigator>
     )
   }
@@ -134,6 +137,7 @@ function StackNavigation({navigation}){
             <Drawer.Screen name='Giới thiệu' component={About}/>
             <Drawer.Screen name='Liên hệ' component={Contact}/>
             <Drawer.Screen name='Thuốc gây mê' component={DrugWebView}/>
+            <Drawer.Screen name='Tài liệu' component={ReadBook}/>
           </Drawer.Navigator>
         </NavigationContainer>
       )
