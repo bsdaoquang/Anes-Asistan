@@ -8,18 +8,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StatusBar } from 'expo-status-bar';
 import { FontAwesome, Ionicons } from '@expo/vector-icons'
 
-//tab Screen
-import HomeScreen from './components/home';
 import About from './components/about'
 import Contact from './components/contact'
-import Documents from './components/documents'
 
-//drugs
-import DrugsHome from './drugs/index_drugs';
-import DrugWebView from './drugs/drug_web_view'
-
-//book
-import ReadBook from './books/readbook'
 
 //import formulas
 import ScreenNavigation from './routes/route'
@@ -96,48 +87,13 @@ function StackNavigation({navigation}){
     );
   }
 
-  //tab
-  function TabNavigation({navigation}){
-    return(
-      <Tab.Navigator
-          screenOptions={({ route }) => ({
-            tabBarIcon: ({ focused, color, size }) => {
-              let iconName;
-
-              if (route.name === 'Home') {
-                iconName = focused ? 'ios-home': 'ios-home';
-              } else if (route.name === 'Máy tính') {
-                iconName = focused ? 'ios-calculator' : 'ios-calculator';
-              } else if (route.name === 'Thư viện') {
-                iconName = focused ? 'ios-bookmarks' : 'ios-bookmarks';
-              } else if (route.name === 'Thuốc') {
-                iconName = focused ? 'ios-list-box' : 'ios-list';
-              }//can return any component that you like here!
-              return <Ionicons name={iconName} size={size} color={color} />;
-            },
-          })}
-          tabBarOptions={{
-            activeTintColor: '#00bfa5',
-            inactiveTintColor: 'gray',
-          }}
-        >
-        <Tab.Screen name='Home' component={HomeScreen}/>
-        <Tab.Screen name='Máy tính' component={StackNavigation}/>
-        <Tab.Screen name='Thuốc' component={DrugsHome}/>
-        <Tab.Screen name='Thư viện' component={Documents}/>
-      </Tab.Navigator>
-    )
-  }
-
   export default function App(){
     return(
         <NavigationContainer>
           <Drawer.Navigator initialRouteName="Home">
-            <Drawer.Screen name='Trang chủ' component={TabNavigation}/>
+            <Drawer.Screen name='Home' component={StackNavigation}/>
             <Drawer.Screen name='Giới thiệu' component={About}/>
             <Drawer.Screen name='Liên hệ' component={Contact}/>
-            <Drawer.Screen name='Thuốc gây mê' component={DrugWebView}/>
-            <Drawer.Screen name='Tài liệu' component={ReadBook}/>
           </Drawer.Navigator>
         </NavigationContainer>
       )

@@ -27,7 +27,7 @@ function Item({ title }) {
 export default function SceensNavigation({navigation}) {
 
   function moveScreen(title, id){
-    showAdInter()
+    //showAdInter()
     navigation.navigate(title)
   }
 
