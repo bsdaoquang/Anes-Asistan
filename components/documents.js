@@ -1,16 +1,16 @@
 import React from 'react';
 import {View, Text, FlatList, StyleSheet, Image, TextInput, TouchableOpacity, Linking } from 'react-native';
 import {fireBase} from '../components/firebaseConfig';
-import AdMob, {showAdInter} from './AdMob'
+import AdMob from './AdMob'
 import { Ionicons } from '@expo/vector-icons';
 
-const ebooks = []
-
-fireBase.database().ref().child('ebook').child('anesthesia').on('value', (snapshot) => {
-  snapshot.forEach(item => {
-    ebooks.push(item.val())
-  })
-});
+// const ebooks = []
+//
+// fireBase.database().ref().child('ebook').child('anesthesia').on('value', (snapshot) => {
+//   snapshot.forEach(item => {
+//     ebooks.push(item.val())
+//   })
+// });
 
 function Item({ title }) {
   return (
