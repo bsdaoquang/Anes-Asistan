@@ -13,7 +13,7 @@ const Item = ({ title }) => (
 export default function DrugsHome({ navigation }){
 
   function goToDrugWeb(item){
-    showAdInter()
+    //showAdInter()
     navigation.navigate('Thuốc gây mê', {nameDrug: item})
   }
 

@@ -24,7 +24,6 @@ console.log(ebooks)
 export default function Documents({ navigation }){
 
   function gotoReadbook(id){
-    showAdInter()
     navigation.navigate('Tài liệu', {idBook: id})
   }
   return(

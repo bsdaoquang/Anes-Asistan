@@ -1,6 +1,6 @@
 import React from 'react'
 import {View, Text} from 'react-native';
-import {AdMobBanner, AdMobInterstitial} from 'expo-ads-admob'
+import {AdMobBanner} from 'expo-ads-admob'
 
 export default function AdMob(){
   return(
@@ -14,12 +14,4 @@ export default function AdMob(){
       />
     </View>
   )
-}
-
-
-export const showAdInter = async() => {
-//await AdMobInterstitial.setAdUnitID('ca-app-pub-6209888091137615/9068964448'); //Quảng cáo thật
-await AdMobInterstitial.setAdUnitID('ca-app-pub-3940256099942544/1033173712');
-await AdMobInterstitial.requestAdAsync({ servePersonalizedAds: true});
-await AdMobInterstitial.showAdAsync();
 }
