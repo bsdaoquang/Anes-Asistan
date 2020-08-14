@@ -12,7 +12,6 @@ import { FontAwesome, Ionicons } from '@expo/vector-icons'
 import HomeScreen from './components/home';
 import About from './components/about'
 import Contact from './components/contact'
-import Documents from './components/documents'
 
 //drugs
 import DrugsHome from './drugs/index_drugs';
@@ -124,7 +123,6 @@ function StackNavigation({navigation}){
         <Tab.Screen name='Home' component={HomeScreen}/>
         <Tab.Screen name='Máy tính' component={StackNavigation}/>
         <Tab.Screen name='Thuốc' component={DrugsHome}/>
-        <Tab.Screen name='Thư viện' component={Documents}/>
       </Tab.Navigator>
     )
   }
@@ -137,7 +135,6 @@ function StackNavigation({navigation}){
             <Drawer.Screen name='Giới thiệu' component={About}/>
             <Drawer.Screen name='Liên hệ' component={Contact}/>
             <Drawer.Screen name='Thuốc gây mê' component={DrugWebView}/>
-            <Drawer.Screen name='Tài liệu' component={ReadBook}/>
           </Drawer.Navigator>
         </NavigationContainer>
       )

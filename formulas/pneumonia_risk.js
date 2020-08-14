@@ -7,9 +7,8 @@ import DropDownPicker  from 'react-native-dropdown-picker'
 import AdMob from '../components/AdMob'
 import {styles} from '../components/styles'
 
-export default function PostoperativePneumona(){
 
-	DATA = [
+	const DATA = [
 		{label: 'Hậu môn trực tràng', value: -0.8470},
 		{label: 'Động mạch chủ', value: 0.7178},
 		{label: 'Nhi khoa', value: -0.6282},
@@ -32,6 +31,8 @@ export default function PostoperativePneumona(){
 		{label: 'Mạch máu', value: -1.4760},
 		{label: 'Tiết niệu', value: 0.1076}
 	]
+
+export default function PostoperativePneumona(){
 
 	const [functionStatus, setFunctionStatus] = useState(0)
 	const [copd, setCopd] = useState(0)
@@ -73,13 +74,9 @@ export default function PostoperativePneumona(){
 	}, [refreshing])
 
 	return(
-	<View>
-	    <ScrollView
-				RefreshControl ={
-					<RefreshControl refreshing={refreshing} onRefresh = {onRefresh} />
-				}
-			>
-	    <KeyboardAvoidingView style={styles.container}>
+	<View style={styles.container}>
+	    <ScrollView>
+	    <KeyboardAvoidingView>
 	      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
 	      	<View style={styles.inner}>
 	      		{/*This is header*/}
@@ -475,7 +472,7 @@ export default function PostoperativePneumona(){
 	      </TouchableWithoutFeedback>
 	    </KeyboardAvoidingView>
 	    </ScrollView>
-			<View>
+			<View style={styles.bottomBanner}>
 				<AdMob />
 			</View>
 	</View>

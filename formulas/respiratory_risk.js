@@ -8,9 +8,7 @@ import DropDownPicker  from 'react-native-dropdown-picker'
 import AdMob from '../components/AdMob'
 import {styles} from '../components/styles'
 
-export default function RespiratoryRisk(){
-
-	DATA = [
+const	DATA = [
 		{label: 'Hậu môn trực tràng', value: -1.3530},
 		{label: 'Động mạch chủ', value: 1.0781},
 		{label: 'Nhi khoa', value: -1.0112},
@@ -33,6 +31,9 @@ export default function RespiratoryRisk(){
 		{label: 'Mạch máu', value: -2.0080},
 		{label: 'Tiết niệu', value: 0.3093}
 	]
+
+
+export default function RespiratoryRisk(){
 
 	const [functionStatus, setFunctionStatus] = useState(0)
 	const [asaClass, setAsaClass] = useState(-3.5265)
@@ -69,11 +70,7 @@ export default function RespiratoryRisk(){
 
 	return(
 	<View style={styles.container}>
-	    <ScrollView
-				RefreshControl ={
-					<RefreshControl refreshing={refreshing} onRefresh = {onRefresh} />
-				}
-			>
+	    <ScrollView>
 	    <KeyboardAvoidingView>
 	      <TouchableWithoutFeedback>
 	      	<View style={styles.inner}>

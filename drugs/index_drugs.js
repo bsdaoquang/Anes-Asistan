@@ -18,27 +18,29 @@ export default function DrugsHome({ navigation }){
   }
 
   return(
-  <SafeAreaView style={styles.container}>
-    <View style={styles.inner}>
-      <SectionList
-        sections={DrugsList}
-        keyExtractor={(item, index) => item + index}
-        renderItem={({ item }) => (
-          <TouchableOpacity onPress={() => goToDrugWeb(item)}>
-            <Item title={item} />
-          </TouchableOpacity>
-        )}
-        renderSectionHeader={({ section: { title } }) => (
-            <Text style={styles.titleList}>{title}</Text>
-        )}
-      />
-    </View>
+    <View style={styles.container}>
+      <SafeAreaView>
+        <View style={styles.inner}>
+          <SectionList
+            sections={DrugsList}
+            keyExtractor={(item, index) => item + index}
+            renderItem={({ item }) => (
+              <TouchableOpacity onPress={() => goToDrugWeb(item)}>
+                <Item title={item} />
+              </TouchableOpacity>
+            )}
+            renderSectionHeader={({ section: { title } }) => (
+                <Text style={styles.titleList}>{title}</Text>
+            )}
+          />
+        </View>
+      </SafeAreaView>
       {/*Admob form*/}
       <View style={{top: 0, position: 'absolute', marginTop: 30}}>
         <AdMob />
       </View>
       {/*end admob*/}
-  </SafeAreaView>
+  </View>
   );
 }
 

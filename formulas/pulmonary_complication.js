@@ -25,9 +25,9 @@ export default function PulmonaryComplication(){
 	}
 
 	return(
-	<View>
+	<View style={styles.container}>
 	    <ScrollView>
-	    <KeyboardAvoidingView style={styles.container}>
+	    <KeyboardAvoidingView>
 	      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
 	      	<View style={styles.inner}>
 	      		{/*This is header*/}
@@ -391,10 +391,10 @@ export default function PulmonaryComplication(){
 				      </TouchableWithoutFeedback>
 				    </KeyboardAvoidingView>
 
-				    </ScrollView>
-						<View>
-							<AdMob />
-						</View>
+			</ScrollView>
+			<View style={styles.bottomBanner}>
+				<AdMob />
+			</View>
 	</View>
 	)
 }

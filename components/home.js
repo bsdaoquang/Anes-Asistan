@@ -72,200 +72,200 @@ export default function HomeScreen({navigation}){
 
   return(
     <KeyboardAvoidingView style={styles.container}>
-      <ScrollView>
-        {/*This is the Modal*/}
-        <Modal
-          animationType="slide"
-          transparent={true}
-          visible={modalVisible}
-          >
-          <View style={styles.modalContainer}>
-            <View style={styles.selectGenderContainer}>
-              <TouchableOpacity style={styles.selectGender} onPress={() => setGender('male')}>
-                <FontAwesome5 name="male" size={64} color={gender === 'male' ? "#00bfa5" : '#bdbdbd'}/>
-                <Text style={styles.genderTitle}>Nam</Text>
-              </TouchableOpacity>
-
-              <TouchableOpacity style={styles.selectGender} onPress={() => setGender('female')}>
-                <FontAwesome5 name="female" size={64} color={gender === 'female' ? "#00bfa5" : '#bdbdbd'}/>
-                <Text style={styles.genderTitle}>Nữ</Text>
-              </TouchableOpacity>
-
-            </View>
-            <View style={{paddingVertical: 8, justifyContent: 'center'}}>
+        <ScrollView>
+          {/*This is the Modal*/}
+          <Modal
+            animationType="slide"
+            transparent={true}
+            visible={modalVisible}
+            >
+            <View style={styles.modalContainer}>
               <View style={styles.selectGenderContainer}>
-                <Text style={styles.inputTitle}>Cân nặng : </Text>
-                <TextInput
-                  style={styles.input}
-                  placeholder = '0'
-                  keyboardType = 'number-pad'
-                  onChangeText = {weight => setWeight(weight)}
-                />
-                <Text style={styles.inputUnit}>Kg</Text>
+                <TouchableOpacity style={styles.selectGender} onPress={() => setGender('male')}>
+                  <FontAwesome5 name="male" size={64} color={gender === 'male' ? "#00bfa5" : '#bdbdbd'}/>
+                  <Text style={styles.genderTitle}>Nam</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.selectGender} onPress={() => setGender('female')}>
+                  <FontAwesome5 name="female" size={64} color={gender === 'female' ? "#00bfa5" : '#bdbdbd'}/>
+                  <Text style={styles.genderTitle}>Nữ</Text>
+                </TouchableOpacity>
+
+              </View>
+              <View style={{paddingVertical: 8, justifyContent: 'center'}}>
+                <View style={styles.selectGenderContainer}>
+                  <Text style={styles.inputTitle}>Cân nặng : </Text>
+                  <TextInput
+                    style={styles.input}
+                    placeholder = '0'
+                    keyboardType = 'number-pad'
+                    onChangeText = {weight => setWeight(weight)}
+                  />
+                  <Text style={styles.inputUnit}>Kg</Text>
+                </View>
+
+                <View style={styles.selectGenderContainer}>
+                  <Text style={styles.inputTitle}>Chiều cao: </Text>
+                  <TextInput
+                    style={styles.input}
+                    placeholder = '0'
+                    keyboardType = 'number-pad'
+                    onChangeText = {height => setHeight(height)}
+                  />
+                  <Text style={styles.inputUnit}>Cm</Text>
+                </View>
               </View>
 
-              <View style={styles.selectGenderContainer}>
-                <Text style={styles.inputTitle}>Chiều cao: </Text>
-                <TextInput
-                  style={styles.input}
-                  placeholder = '0'
-                  keyboardType = 'number-pad'
-                  onChangeText = {height => setHeight(height)}
-                />
-                <Text style={styles.inputUnit}>Cm</Text>
+              <View style={{flexDirection: 'row', margin: 5}}>
+                <TouchableOpacity style={{flex: 1}} onPress= {cancel}>
+                  <Text style={styles.btnHuy}>HỦY</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={{flex: 1}} onPress= {() => setModalVisible(!modalVisible)}>
+                  <Text style={styles.btnDongY}>ĐỒNG Ý</Text>
+                </TouchableOpacity>
               </View>
             </View>
+          </Modal>
+          {/*end Modal*/}
 
-            <View style={{flexDirection: 'row', margin: 5}}>
-              <TouchableOpacity style={{flex: 1}} onPress= {cancel}>
-                <Text style={styles.btnHuy}>HỦY</Text>
-              </TouchableOpacity>
-
-              <TouchableOpacity style={{flex: 1}} onPress= {() => setModalVisible(!modalVisible)}>
-                <Text style={styles.btnDongY}>ĐỒNG Ý</Text>
-              </TouchableOpacity>
+          <TouchableOpacity onPress = {() => setModalVisible(true)}>
+            <View style={styles.headerContain}>
+              <Text style={styles.title}>Thông tin bệnh nhân</Text>
+              <FontAwesome5 name={gender} size={72} color="#00bfa5" />
+              {
+                weight != null ?
+                <Text style={styles.genderTitle}>{gender === 'male'? "Nam": "Nữ"}: {weight} kg, {height} cm</Text>
+                :
+                <Text style={{...styles.genderTitle, fontStyle: 'italic', fontSize: 14}}>Nhấp để nhập thông tin</Text>
+              }
             </View>
+          </TouchableOpacity>
+
+          <View style={styles.basicInfoContain}>
+            <View style={{flexDirection: 'row'}}>
+              <Text style={{...styles.genderTitle, fontWeight: 'bold'}} onPress={showBasicInfo}>Thông số cơ bản</Text>
+              <FontAwesome5 name={showInfo === false ? 'angle-down' : 'angle-up'} size={28} color="#424242" style={{...styles.genderTitle, textAlign: 'right', flex: 1, marginHorizontal: 10}}/>
+            </View>
+              {showInfo === true ?
+              <View>
+                <View style={styles.infoContain}>
+                  <Text style={styles.infoText}>Chỉ số khối cơ thể (BMI): </Text>
+                  <Text style={{...styles.infoText, textAlign: 'right'}}>{bmi}</Text>
+                </View>
+
+                <View style={styles.infoContain}>
+                  <Text style={styles.infoText}>Cân nặng lý tưởng (IBW):</Text>
+                  <Text style={{...styles.infoText, textAlign: 'right'}}>{ibw} Kg</Text>
+                </View>
+
+                <View style={styles.infoContain}>
+                  <Text style={styles.infoText}>Lượng máu trung bình (EBV):</Text>
+                  <Text style={{...styles.infoText, textAlign: 'right'}}>{gender === 'male'? 70*weight : 65*weight} - {gender === 'male'? 75*weight : 70*weight} mL</Text>
+                </View>
+
+                <View style={styles.infoContain}>
+                  <Text style={styles.infoText}>Mạch:</Text>
+                  <Text style={{...styles.infoText, textAlign: 'right'}}>60 - 90 nhịp/phút</Text>
+                </View>
+
+                <View style={styles.infoContain}>
+                  <Text style={styles.infoText}>Huyết áp:</Text>
+                  <Text style={{...styles.infoText, textAlign: 'right'}}>90 - 120 / 60 - 90 mmHg</Text>
+                </View>
+
+                <View style={styles.infoContain}>
+                  <Text style={styles.infoText}>Nhịp thở:</Text>
+                  <Text style={{...styles.infoText, textAlign: 'right'}}>12 - 25 lần/phút</Text>
+                </View>
+
+                <View style={styles.infoContain}>
+                  <Text style={styles.infoText}>Dịch cơ bản:</Text>
+                  <Text style={{...styles.infoText, textAlign: 'right'}}>{weight*1 + 40} mL/giờ</Text>
+                </View>
+
+                <View style={styles.infoContain}>
+                  <Text style={styles.infoText}>Thể tích khí lưu thông:</Text>
+                  <Text style={{...styles.infoText, textAlign: 'right'}}>{weight*10} mL</Text>
+                </View>
+
+                <View style={styles.infoContain}>
+                  <Text style={styles.infoText}>Dung tích sống:</Text>
+                  <Text style={{...styles.infoText, textAlign: 'right'}}>{weight*65} - {weight * 75} mL</Text>
+                </View>
+              </View>
+              : null }
           </View>
-        </Modal>
-        {/*end Modal*/}
 
-        <TouchableOpacity onPress = {() => setModalVisible(true)}>
-          <View style={styles.headerContain}>
-            <Text style={styles.title}>Thông tin bệnh nhân</Text>
-            <FontAwesome5 name={gender} size={72} color="#00bfa5" />
+          <View style={styles.basicInfoContain}>
+            <View style={{flexDirection: 'row'}}>
+              <Text style={{...styles.genderTitle, fontWeight: 'bold'}} onPress={showVentilationInfo}>Thông khí</Text>
+              <FontAwesome5 name={showVentilation === false ? 'angle-down' : 'angle-up'} size={28} color="#424242" style={{...styles.genderTitle, textAlign: 'right', flex: 1, marginHorizontal: 10}}/>
+            </View>
             {
-              weight != null ?
-              <Text style={styles.genderTitle}>{gender === 'male'? "Nam": "Nữ"}: {weight} kg, {height} cm</Text>
+              showVentilation === false ? null
               :
-              <Text style={{...styles.genderTitle, fontStyle: 'italic', fontSize: 14}}>Nhấp để nhập thông tin</Text>
+              <View>
+              <View style={styles.infoContain}>
+              <Text style={styles.infoText}>Vt:</Text>
+              <Text style={{...styles.infoText, textAlign: 'right'}}>{ibw * 8} - {ibw * 10} mL</Text>
+              </View>
+
+              <View style={styles.infoContain}>
+              <Text style={styles.infoText}>Rate:</Text>
+              <Text style={{...styles.infoText, textAlign: 'right'}}>12 - 14 lần/phút</Text>
+              </View>
+
+              <View style={styles.infoContain}>
+              <Text style={styles.infoText}>PEEP:</Text>
+              <Text style={{...styles.infoText, textAlign: 'right'}}>0 - 5 cm H2O</Text>
+              </View>
+
+              <View style={styles.infoContain}>
+              <Text style={styles.infoText}>PIP:</Text>
+              <Text style={{...styles.infoText, textAlign: 'right'}}>25 - 35cmH20</Text>
+              </View>
+
+              <View style={styles.infoContain}>
+              <Text style={styles.infoText}>I:E</Text>
+              <Text style={{...styles.infoText, textAlign: 'right'}}>1 : 2 - 1 : 3</Text>
+              </View>
+              </View>
             }
           </View>
-        </TouchableOpacity>
 
-        <View style={styles.basicInfoContain}>
-          <View style={{flexDirection: 'row'}}>
-            <Text style={{...styles.genderTitle, fontWeight: 'bold'}} onPress={showBasicInfo}>Thông số cơ bản</Text>
-            <FontAwesome5 name={showInfo === false ? 'angle-down' : 'angle-up'} size={28} color="#424242" style={{...styles.genderTitle, textAlign: 'right', flex: 1, marginHorizontal: 10}}/>
+          {/*This is drugs contain*/}
+          <View style={styles.basicInfoContain}>
+            <Text style={{...styles.genderTitle, fontWeight: 'bold'}}>Thuốc thường dùng</Text>
           </View>
-            {showInfo === true ?
-            <View>
-              <View style={styles.infoContain}>
-                <Text style={styles.infoText}>Chỉ số khối cơ thể (BMI): </Text>
-                <Text style={{...styles.infoText, textAlign: 'right'}}>{bmi}</Text>
-              </View>
 
-              <View style={styles.infoContain}>
-                <Text style={styles.infoText}>Cân nặng lý tưởng (IBW):</Text>
-                <Text style={{...styles.infoText, textAlign: 'right'}}>{ibw} Kg</Text>
-              </View>
-
-              <View style={styles.infoContain}>
-                <Text style={styles.infoText}>Lượng máu trung bình (EBV):</Text>
-                <Text style={{...styles.infoText, textAlign: 'right'}}>{gender === 'male'? 70*weight : 65*weight} - {gender === 'male'? 75*weight : 70*weight} mL</Text>
-              </View>
-
-              <View style={styles.infoContain}>
-                <Text style={styles.infoText}>Mạch:</Text>
-                <Text style={{...styles.infoText, textAlign: 'right'}}>60 - 90 nhịp/phút</Text>
-              </View>
-
-              <View style={styles.infoContain}>
-                <Text style={styles.infoText}>Huyết áp:</Text>
-                <Text style={{...styles.infoText, textAlign: 'right'}}>90 - 120 / 60 - 90 mmHg</Text>
-              </View>
-
-              <View style={styles.infoContain}>
-                <Text style={styles.infoText}>Nhịp thở:</Text>
-                <Text style={{...styles.infoText, textAlign: 'right'}}>12 - 25 lần/phút</Text>
-              </View>
-
-              <View style={styles.infoContain}>
-                <Text style={styles.infoText}>Dịch cơ bản:</Text>
-                <Text style={{...styles.infoText, textAlign: 'right'}}>{weight*1 + 40} mL/giờ</Text>
-              </View>
-
-              <View style={styles.infoContain}>
-                <Text style={styles.infoText}>Thể tích khí lưu thông:</Text>
-                <Text style={{...styles.infoText, textAlign: 'right'}}>{weight*10} mL</Text>
-              </View>
-
-              <View style={styles.infoContain}>
-                <Text style={styles.infoText}>Dung tích sống:</Text>
-                <Text style={{...styles.infoText, textAlign: 'right'}}>{weight*65} - {weight * 75} mL</Text>
-              </View>
-            </View>
-            : null }
-        </View>
-
-        <View style={styles.basicInfoContain}>
-          <View style={{flexDirection: 'row'}}>
-            <Text style={{...styles.genderTitle, fontWeight: 'bold'}} onPress={showVentilationInfo}>Thông khí</Text>
-            <FontAwesome5 name={showVentilation === false ? 'angle-down' : 'angle-up'} size={28} color="#424242" style={{...styles.genderTitle, textAlign: 'right', flex: 1, marginHorizontal: 10}}/>
-          </View>
-          {
-            showVentilation === false ? null
-            :
-            <View>
-            <View style={styles.infoContain}>
-            <Text style={styles.infoText}>Vt:</Text>
-            <Text style={{...styles.infoText, textAlign: 'right'}}>{ibw * 8} - {ibw * 10} mL</Text>
-            </View>
-
-            <View style={styles.infoContain}>
-            <Text style={styles.infoText}>Rate:</Text>
-            <Text style={{...styles.infoText, textAlign: 'right'}}>12 - 14 lần/phút</Text>
-            </View>
-
-            <View style={styles.infoContain}>
-            <Text style={styles.infoText}>PEEP:</Text>
-            <Text style={{...styles.infoText, textAlign: 'right'}}>0 - 5 cm H2O</Text>
-            </View>
-
-            <View style={styles.infoContain}>
-            <Text style={styles.infoText}>PIP:</Text>
-            <Text style={{...styles.infoText, textAlign: 'right'}}>25 - 35cmH20</Text>
-            </View>
-
-            <View style={styles.infoContain}>
-            <Text style={styles.infoText}>I:E</Text>
-            <Text style={{...styles.infoText, textAlign: 'right'}}>1 : 2 - 1 : 3</Text>
-            </View>
-            </View>
-          }
-        </View>
-
-        {/*This is drugs contain*/}
-        <View style={styles.basicInfoContain}>
-          <Text style={{...styles.genderTitle, fontWeight: 'bold'}}>Thuốc thường dùng</Text>
-        </View>
-
-        {/*this is list drugs contain*/}
-          <FlatList
-            data={DRUGS}
-            renderItem={({ item }) => (
-              <View style={styles.itemContain}>
-                <View style={{flexDirection: 'row'}}>
-                  <Text style={styles.titleList}>{item.name}</Text>
-                  <FontAwesome5 name="external-link-alt" size={16} color="#424242" onPress={() => moveScreen(item.name)}/>
-                </View>
-                <Text style={{...styles.infoText, flex:1, textAlign: 'center', fontStyle: 'italic'}}>{item.brandName}</Text>
-                <View style={{flexDirection: 'row', padding: 8}}>
-                  <View style={{flex: 1}}>
-                    <Text style={{...styles.infoText, textAlign: 'center', fontWeight: 'bold'}}>{item.doses[3]}: {item.doses[0]} - {item.doses[1]} {item.doses[2]}</Text>
-                    <Text style={styles.infoText}>Trung bình: {item.typically} {item.doses[2]}</Text>
+          {/*this is list drugs contain*/}
+            <FlatList
+              data={DRUGS}
+              renderItem={({ item }) => (
+                <View style={styles.itemContain}>
+                  <View style={{flexDirection: 'row'}}>
+                    <Text style={styles.titleList}>{item.name}</Text>
+                    <FontAwesome5 name="external-link-alt" size={16} color="#424242" onPress={() => moveScreen(item.name)}/>
                   </View>
+                  <Text style={{...styles.infoText, flex:1, textAlign: 'center', fontStyle: 'italic'}}>{item.brandName}</Text>
+                  <View style={{flexDirection: 'row', padding: 8}}>
+                    <View style={{flex: 1}}>
+                      <Text style={{...styles.infoText, textAlign: 'center', fontWeight: 'bold'}}>{item.doses[3]}: {item.doses[0]} - {item.doses[1]} {item.doses[2]}</Text>
+                      <Text style={styles.infoText}>Trung bình: {item.typically} {item.doses[2]}</Text>
+                    </View>
 
-                  <View style={{flex: 1, borderColor: '#424242', borderStyle: 'solid', borderLeftWidth: 1}}>
-                    <Text style={{...styles.infoText, textAlign: 'center'}}>{(item.doses[0] * weight).toFixed(1)} - {(item.doses[1] * weight).toFixed(1)} {item.doses[4]}</Text>
-                    <Text style={{...styles.infoText, textAlign: 'center', fontWeight: 'bold'}}>{(item.typically * weight).toFixed(0)} {item.doses[4]}</Text>
+                    <View style={{flex: 1, borderColor: '#424242', borderStyle: 'solid', borderLeftWidth: 1}}>
+                      <Text style={{...styles.infoText, textAlign: 'center'}}>{(item.doses[0] * weight).toFixed(1)} - {(item.doses[1] * weight).toFixed(1)} {item.doses[4]}</Text>
+                      <Text style={{...styles.infoText, textAlign: 'center', fontWeight: 'bold'}}>{(item.typically * weight).toFixed(0)} {item.doses[4]}</Text>
+                    </View>
                   </View>
                 </View>
-              </View>
-            )}
-            keyExtractor={item => item.name}
-          />
-        {/*end list*/}
-      </ScrollView>
+              )}
+              keyExtractor={item => item.name}
+            />
+          {/*end list*/}
+        </ScrollView>
     </KeyboardAvoidingView>
   );
 }
