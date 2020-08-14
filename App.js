@@ -17,9 +17,6 @@ import Contact from './components/contact'
 import DrugsHome from './drugs/index_drugs';
 import DrugWebView from './drugs/drug_web_view'
 
-//book
-import ReadBook from './books/readbook'
-
 //import formulas
 import ScreenNavigation from './routes/route'
 
@@ -107,8 +104,6 @@ function StackNavigation({navigation}){
                 iconName = focused ? 'ios-home': 'ios-home';
               } else if (route.name === 'Máy tính') {
                 iconName = focused ? 'ios-calculator' : 'ios-calculator';
-              } else if (route.name === 'Thư viện') {
-                iconName = focused ? 'ios-bookmarks' : 'ios-bookmarks';
               } else if (route.name === 'Thuốc') {
                 iconName = focused ? 'ios-list-box' : 'ios-list';
               }//can return any component that you like here!
