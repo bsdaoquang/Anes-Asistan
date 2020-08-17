@@ -1,6 +1,6 @@
 import React from 'react'
 import {View, Text} from 'react-native';
-import {AdMobBanner} from 'expo-ads-admob'
+import {AdMobBanner, AdMobInterstitial} from 'expo-ads-admob'
 
 export default function AdMob(){
   return(

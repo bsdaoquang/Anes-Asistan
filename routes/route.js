@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { SafeAreaView, View, FlatList, StyleSheet, Text, TouchableOpacity, Alert, ScrollView} from 'react-native';
 import Constants from 'expo-constants';
-import AdMob from '../components/AdMob'
+import AdMob, { showAdInter } from '../components/AdMob'
 import {styles} from '../components/styles'
 
 const formulas = [
@@ -27,6 +27,7 @@ function Item({ title }) {
 export default function SceensNavigation({navigation}) {
 
   function moveScreen(title, id){
+    showAdInter();
     navigation.navigate(title)
   }
 

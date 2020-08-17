@@ -10,6 +10,7 @@ import { FontAwesome, Ionicons } from '@expo/vector-icons'
 
 import About from './components/about'
 import Contact from './components/contact'
+import DrugWebView from './drugs/drug_web_view'
 
 
 //import formulas
