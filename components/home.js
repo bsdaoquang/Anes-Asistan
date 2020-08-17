@@ -6,7 +6,6 @@ import { View, Text, Modal,
   Button, TextInput, FlatList
 } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
-import {showAdInter} from './AdMob'
 
 //import drugs data
 import {DRUGS} from '../data/drugs';
@@ -66,7 +65,10 @@ export default function HomeScreen({navigation}){
   //hết phần tính toán
 
   function moveScreen(name){
-    showAdInter()
+<<<<<<< HEAD
+=======
+    //showAdInter() tạm thời đóng quảng cáo gây khó chịu
+>>>>>>> ffd5d0b928167709503a407191dfff546ee76e16
     navigation.navigate('Thuốc gây mê', {nameDrug: name})
   }
 

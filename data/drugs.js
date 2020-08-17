@@ -2,7 +2,7 @@ export const DRUGS = [
   {name: 'Propofol', brandName: 'Diprivan, Propoven', doses: [2, 2.5, 'mg/Kg', 'IV', 'mg'], typically: 2},
   {name: 'Etomidate', brandName: 'Amidate', doses: [0.2, 0.6, 'mg/Kg', 'IV', 'mg'], typically: 0.3},
   {name: 'Ketamin', brandName: 'Ketalar', doses: [1, 4.5, 'mg/Kg', 'IV', 'mg'], typically: 2},
-  {name: 'Midazolam', brandName: 'Versed', doses: [0.3, 0.35, 'mg/Kg', 'IV', 'mg'], typically: 0.5},
+  {name: 'Midazolam', brandName: 'Versed', doses: [0.3, 0.35, 'mg/Kg', 'IV', 'mg'], typically: 0.3},
   {name: 'Fentanyl', brandName: 'Fentanyl', doses: [1, 4, 'mcg/Kg', 'IV', 'mcg'], typically: 2},
   {name: 'Succinylcholine', brandName: '', doses: [0.5, 1.5, 'mg/Kg', 'IV', 'mg'], typically: 1.5},
   {name: 'Rocuronium', brandName: 'Esmeron', doses: [0.6, 1.2, 'mg/Kg', 'IV', 'mg'], typically: 0.6},

@@ -8,14 +8,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StatusBar } from 'expo-status-bar';
 import { FontAwesome, Ionicons } from '@expo/vector-icons'
 
-//tab Screen
-import HomeScreen from './components/home';
 import About from './components/about'
 import Contact from './components/contact'
 
-//drugs
-import DrugsHome from './drugs/index_drugs';
-import DrugWebView from './drugs/drug_web_view'
 
 //import formulas
 import ScreenNavigation from './routes/route'
@@ -92,7 +87,6 @@ function StackNavigation({navigation}){
     );
   }
 
-  //tab
   function TabNavigation({navigation}){
     return(
       <Tab.Navigator
@@ -126,7 +120,7 @@ function StackNavigation({navigation}){
     return(
         <NavigationContainer>
           <Drawer.Navigator initialRouteName="Home">
-            <Drawer.Screen name='Trang chủ' component={TabNavigation}/>
+            <Drawer.Screen name='Home' component={StackNavigation}/>
             <Drawer.Screen name='Giới thiệu' component={About}/>
             <Drawer.Screen name='Liên hệ' component={Contact}/>
             <Drawer.Screen name='Thuốc gây mê' component={DrugWebView}/>
