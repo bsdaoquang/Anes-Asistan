@@ -1,6 +1,6 @@
 
 import React, {useEffect} from 'react';
-import { View, Text, Button, Share, Alert, BackHandler } from 'react-native';
+import { View, Text, Button, Share, Alert, BackHandler, Linking } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer'
