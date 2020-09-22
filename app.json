@@ -3,7 +3,7 @@
     "name": "Trợ lý gây mê",
     "slug": "tro-ly-gay-me",
     "description": "Tính nhanh các công thức thường dùng trong lâm sàng",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "platforms": [
       "ios",
       "android",
@@ -28,7 +28,7 @@
         "googleMobileAdsAppId": "ca-app-pub-6209888091137615~9289911597"
       },
       "package": "com.bsdaoquang.trolygayme",
-      "versionCode": 5
+      "versionCode": 6
     },
     "ios": {
       "supportsTablet": true,
@@ -36,7 +36,7 @@
       "config": {
         "googleMobileAdsAppId": "ca-app-pub-3940256099942544~1458002511"
       },
-      "buildNumber": "1.0.4"
+      "buildNumber": "1.0.5"
     }
   }
 }
