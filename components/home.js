@@ -65,7 +65,7 @@ export default function HomeScreen({navigation}){
   //hết phần tính toán
 
   function moveScreen(name){
-    showAdInter()
+    //showAdInter()
     navigation.navigate('Thuốc gây mê', {nameDrug: name})
   }
 

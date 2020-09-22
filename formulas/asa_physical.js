@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import {View, Text, TextInput, ScrollView, TouchableOpacity, TouchableWithoutFeedback, KeyboardAvoidingView, Keyboard} from 'react-native'
-import AdMob from '../components/AdMob'
 import {styles} from '../components/styles'
 
 export default function ASAPhysical(){
@@ -10,7 +9,7 @@ export default function ASAPhysical(){
 	var point = description + emergency
 
 	return(
-		<View  style={styles.container}>
+		<View style={styles.container}>
 			<ScrollView>
 				<KeyboardAvoidingView>
 					<TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -107,7 +106,7 @@ export default function ASAPhysical(){
 						{/*This is result contain*/}
 						<View style={styles.resultContain}>
 							<View style={styles.resultTitle}>
-								<Text style={styles.resultTitleText}>ASA: </Text>
+								<Text style={styles.resultText}>ASA: </Text>
 								<Text style={styles.result}>{point}</Text>
 							</View>
 						</View>
@@ -122,9 +121,6 @@ export default function ASAPhysical(){
 				</KeyboardAvoidingView>
 
 			</ScrollView>
-			<View style={styles.bottomBanner}>
-				<AdMob />
-			</View>
 	</View>
 	)
 }

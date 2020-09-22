@@ -1,12 +1,14 @@
 
-import * as React from 'react';
-import { View, Text, Button, Share } from 'react-native';
+import React, {useEffect} from 'react';
+import { View, Text, Button, Share, Alert, BackHandler } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StatusBar } from 'expo-status-bar';
 import { FontAwesome, Ionicons } from '@expo/vector-icons'
+
+import { showAdInter } from './components/AdMob'
 
 import About from './components/about'
 import Contact from './components/contact'
@@ -49,6 +51,23 @@ const onShare = async () => {
     }
   };
 
+  const thongBao = () =>
+      Alert.alert(
+        "Máy Tính Y Học",
+        "Để thuận tiện cho việc update và cải thiện chất lượng người dùng, hạn chế quảng cáo, bạn chuyển sang phần mềm MÁY TÍNH Y HỌC để sử dụng nhé!!",
+        [
+          {
+            text: "Tải về ngay",
+            onPress: () => Linking.openURL('https://play.google.com/store/apps/details?id=com.bsdaoquang.maytinhyhoc'),
+            style: "cancel"
+          },
+          { text: "Hủy" }
+        ],
+        { cancelable: false }
+      );
+
+  thongBao()
+
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator()
@@ -89,6 +108,7 @@ function StackNavigation({navigation}){
   }
 
   function TabNavigation({navigation}){
+
     return(
       <Tab.Navigator
           screenOptions={({ route }) => ({
@@ -118,6 +138,16 @@ function StackNavigation({navigation}){
   }
 
   export default function App(){
+    //Phần này dùng hiện quảng cáo khi người dùng bấm thoát màn hình
+    useEffect(() => {
+      const backAction = () => {
+        showAdInter()
+      };
+
+      const backHandler = BackHandler.addEventListener('hardwareBackPress', backAction);
+
+      return () => backHandler.remove();
+    }, []);
     return(
         <NavigationContainer>
           <Drawer.Navigator initialRouteName="Home">
